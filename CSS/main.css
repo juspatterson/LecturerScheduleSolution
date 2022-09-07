@@ -1,0 +1,23 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        padding: 0;
+        margin-top: 40px;
+        color: rgb(252, 255, 234);
+        background-color: #1F2022;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        padding: 0;
+        margin-top: 40px;
+        color: #1F2022;
+        background-color: white;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+}
