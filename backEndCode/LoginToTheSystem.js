@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    test1();
+    loadDataForSubjectsTimeTable()
+    console.log(instances)
 
 })
 
