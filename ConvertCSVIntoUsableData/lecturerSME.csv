@@ -1,0 +1,15 @@
+﻿,Subjects,Information Technology Fundamentals,Programming Environments,Cloud Foundations,Object Oriented Programming Fundamentals,Information Systems,Network Engineering Fundamentals,Database Fundamentals on the Cloud,Sustainability Practices,Information System Infrastructure,Intermediate Object Oriented Programming,Internet Client Engineering,Computer Networks,Information Systems Development,Project Management,Virtualisation for the Cloud,Discrete Mathematics for Computer Science,Mobile Application Development,Operating Systems,Application Development in the Cloud ,Managing Projects in the Cloud ,Machine Learning ,Operating Systems Administration,Advanced Computer Networks,Web Development,Big Data Management on the Cloud (Elective),Computational Intelligence for Data Analysis (Elective),Cybersecurity Fundamentals (Elective),"Networks, Systems and Web Security (Elective)",Internet of Things (Elective),Wireless Network Engineering (Elective),Industry Project 3A,Industry Project 3B,Profesional Environment,Architecting on the Cloud,System Operations on the Cloud,Big Data on the Cloud,Private Cloud Solutions,Industry Project for Cloud Technology 3A,Industry Project for Cloud Technology 3B
+Lecturer Name,Load,CSE1ITX,CSE1PGX,CSE1CFX,CSE1OFX,CSE1ISX,CSE2NFX,CSE2DCX,CSE1SPX,CSE1SIX,CSE1IOX,CSE2ICX,CSE2CNX,CSE2SDX,BUS2PMX,CSE2VVX,MAT2DMX,CSE2MAX,CSE2OSX,CSE2ADX,CSE2CPX,CSE2MLX,CSE2SAX,CSE2ANX,CSE2WDX,CSE3BGX,CSE3CIX,CSE3CSX,CSE3NWX,CSE3OTX,CSE3WSX,CSE3PAX,CSE3PBX,CSE3PEX,CSE3ACX,CSE3SOX,CSE3BDX,CSE3PCX,CSE3CAX,CSE3CBX
+Acacia,1.0,X,X,X,,X,,X,,X,,X,,X,,X,,,X,,,X,,,,,X,,,,X,,,,,X,,,,
+Beech,1.0,X,X,,X,,X,,,X,X,,X,,,,,,X,X,,,,,X,,,,X,,,,,,X,,,X,,
+Cypress,1.0,X,,,X,,X,,,,X,X,,,X,,,X,,,,,,X,,X,,,,X,,X,X,,,,,,X,X
+Douglas,0.8,,X,,X,X,,X,,,X,,X,X,,X,,,,,X,,X,,,,,,,X,,,,X,,,X,,,
+Eucalypt,0.4,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Flame,1.0,X,X,,X,,X,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Guava,0.6,X,X,,X,,X,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Hickory,0.8,X,,,X,X,,X,,,X,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ironbark,1.0,,X,X,,,,,,,,,,,,,X,,,,X,,,,,,,X,,,,,,X,,,,,,
+Jacaranda,0.4,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,
+Karri,1.0,X,X,,X,,X,,,X,X,,X,,X,,,,,X,,,,,X,,,X,,,,X,X,,,,X,,X,X
+Laurel,1.0,X,X,,X,,X,,,X,X,X,,,,,,X,,X,,,,,,,,X,,,,,,,,,,X,,
+Maple,1.0,X,,X,X,X,,X,,,X,X,,X,,,,,X,,,,,,,,,,X,,,,,,,X,,,,
