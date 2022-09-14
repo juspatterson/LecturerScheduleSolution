@@ -1,0 +1,47 @@
+﻿Subject Schedule,,,,,,,,,,,,,,,,,,,,,,,,,
+,,X = Commencement of 3 month long subject instance,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,Year,2,0,2,3,,,,,,,,,2,0,2,4,,,,,,,,
+,Month,J,F,M,A,M,J,J,A,S,O,N,D,J,F,M,A,M,J,J,A,S,O,N,D
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,Total Number of Instances,8,23,8,7,22,6,7,21,7,7,21,6,8,24,7,6,25,6,8,23,7,7,24,6
+Code,Subject Name,,,,,,,,,,,,,,,,,,,,,,,,
+CSE1ITX,Information Technology Fundamentals,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+CSE1PGX,Programming Environments,X,X,X,,,,X,X,X,,,,X,X,X,,,,X,X,X,,,
+CSE1CFX,Cloud Foundations,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+CSE1OFX,Object Oriented Programming Fundamentals,X,X,X,,,,X,X,X,,,,X,X,X,,,,X,X,X,,,
+CSE1ISX,Information Systems,X,,,X,X,X,,,,X,X,X,,,,X,X,X,,,,X,X,X
+CSE2NFX,Network Engineering Fundamentals,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+CSE2DCX,Database Fundamentals on the Cloud,,X,,X,X,X,,,,X,X,X,,,,X,X,X,,,,X,X,X
+CSE1SPX,Sustainability Practices,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+CSE1SIX,Information System Infrastructure,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+CSE1IOX,Intermediate Object Oriented Programming,X,X,X,,,,X,X,X,,,,X,X,X,,,,X,X,X,,,
+CSE2ICX,Internet Client Engineering,,X,X,,,,,X,,,,,,X,,,,,,X,,,,
+CSE2CNX,Computer Networks,,,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE2SDX,Information Systems Development,,,,,X,,,X,,,X,,,,,,X,,,,,,X,
+BUS2PMX,Project Management,,X,X,X,X,,,X,,,X,X,X,,,,X,,,,X,X,X,
+CSE2VVX,Virtualisation for the Cloud,,X,,,X,,,,,,X,,,,,,X,,,,,,X,
+MAT2DMX,Discrete Mathematics for Computer Science,,X,,,X,,,X,,,,,,X,,,,,,X,,,,
+CSE2MAX,Mobile Application Development,,X,,,X,,,,,,X,,,,,,X,,,,,,X,
+CSE2OSX,Operating Systems,,X,,,X,,,,,,X,,,,,,X,,,,,,X,
+CSE2ADX,Application Development in the Cloud ,,,,,X,,,,,,X,,,,,,X,,,,,,X,
+CSE2CPX,Managing Projects in the Cloud ,,X,,,,,,,,X,,,,X,,,,,X,,,,,
+CSE2MLX,Machine Learning ,,X,,,X,,,,,,,,,X,,,X,,,,,,,
+CSE2SAX,Operating Systems Administration,,X,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE2ANX,Advanced Computer Networks,,X,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE2WDX,Web Development,,X,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE3BGX,Big Data Management on the Cloud (Elective),,X,,,,,,X,,,,,,X,,,,,,X,,,,
+CSE3CIX,Computational Intelligence for Data Analysis (Elective),,,,,,,,X,,,,,,,,,X,,,,,,,
+CSE3CSX,Cybersecurity Fundamentals (Elective),,X,,,,,,,,,X,,,,,,X,,,,,,X,
+CSE3NWX,"Networks, Systems and Web Security (Elective)",,,,,X,,,,,,X,,,,,,,,,X,,,,
+CSE3OTX,Internet of Things (Elective),,X,,,,,,X,,,,,,X,,,,,,X,,,,
+CSE3WSX,Wireless Network Engineering (Elective),,,,,X,,,,,,,,,X,,,,,,,,,X,
+CSE3PAX,Industry Project 3A,,X,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE3PBX,Industry Project 3B,,X,,,X,,,X,,,X,,,X,,,X,,,X,,,X,
+CSE3PEX,Profesional Environment,,,,,X,,,,,,X,,,,,,X,,,,,,X,
+CSE3ACX,Architecting on the Cloud,,,,,,,,X,,,,,,X,,,,,,X,,,,
+CSE3SOX,System Operations on the Cloud,,,,X,,,,,,,X,,X,,,,X,,,,,X,X,
+CSE3BDX,Big Data on the Cloud,,,,,,,,X,,,,,,X,,,,,,X,,,,
+CSE3PCX,Private Cloud Solutions,,,,,,,,,,,,,,X,,,,,,X,,,,
+CSE3CAX,Industry Project for Cloud Technology 3A,,,,,,,,,,,,,,X,,,X,,,X,,,X,
+CSE3CBX,Industry Project for Cloud Technology 3B,,,,,,,,,,,,,,,,,X,,,X,,,X,
