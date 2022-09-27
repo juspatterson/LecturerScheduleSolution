@@ -1,0 +1,33 @@
+h1 { color: black;
+    text-align: center;
+    font-size: 40px;
+}
+
+form { margin: 20px auto;
+    width: 320px;
+    color: black;
+}
+
+input { padding: 10px;
+    font-size: inherit;
+}
+
+input[type="text"]{ display: block;
+    margin-bottom: 25px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+input[type="password"]{ display: block;
+    margin-bottom: 25px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+input[type="submit"]{ width: 100px;
+    height: 45px;
+    border: none;
+    background: black;
+    color: white;
+
+}
