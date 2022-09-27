@@ -28,6 +28,7 @@ $(document).ready(function () {
                 responsive: true,
                 paging: false,
                 fixedHeader: true,
+
                 columns: [
                     {'data': 'SubjectCode'},
                     {'data': 'SubjectName'},
