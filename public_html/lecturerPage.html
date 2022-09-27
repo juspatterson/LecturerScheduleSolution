@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Lecturer</title>
     <script src="../packages/jQuery.3.6.0/Content/Scripts/jquery-3.6.0.js"></script>
@@ -11,12 +11,30 @@
     <script src="../backEndCode/LecturerPage.js"></script>
     <link rel="stylesheet" href="../CSS/main.css">
 
+        <link rel="stylesheet" type="text/css" href="../packages/DataTables/datatables.min.css"/>
+        <script type="text/javascript" src="../packages/DataTables/datatables.min.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">-->
+<!--    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>-->
 
+    <link rel="shortcut icon" href="#">
 
 </head>
 <body>
-<div>TODO write content</div>
-<h1 id="test">ABC</h1>
+    <div>TODO write content</div>
+    <h1 id="test">ABC</h1>
+
+    <table id="table_id" class="display">
+        <thead>
+        <tr class="row-1">
+            <th class="column-1">Subject Code</th>
+            <th class="column-2">Subject Name</th>
+            <th class="column-3">Start Month</th>
+            <th class="column-4">End Month</th>
+            <th class="column-5">Number Of Students</th>
+        </tr>
+        </thead>
+    </table>
+
 
 </body>
 </html>

@@ -1,7 +1,4 @@
-
-
 $(document).ready(function () {
-    convertLectureSMEData()
     loadDataForSubjectsTimeTable()
     console.log(instances)
 
