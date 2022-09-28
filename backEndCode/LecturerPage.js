@@ -1,15 +1,9 @@
 $(document).ready(function () {
-    var data = loadDataForSubjectsTimeTable()
+    loadLectureScheduleTable()
+})
 
-    console.log("loaded data")
-    console.log(data)
-
-
-    console.log("loaded instances")
-    console.log(instances)
-
-
-
+function loadLectureScheduleTable () {
+    //this needed to be updated once we have our database set up
     $.ajax({
 
         type: "GET",
@@ -17,10 +11,9 @@ $(document).ready(function () {
         dataType: 'json',
         data: '{}',
         success: function (subjectsTimeTable, textStatus) {
-            console.log("dsfdfsfgsdg")
-            console.log(subjectsTimeTable.instances[0])
 
-            $('#table_id').DataTable({
+
+            $('#lectures-schedule-table').DataTable({
                 data: subjectsTimeTable.instances,
                 dataSrc: subjectsTimeTable.instances,
                 serverSide: false,
@@ -44,22 +37,4 @@ $(document).ready(function () {
             alert(obj.msg);
         }
     });
-
-
-    // $('#table_id').DataTable( {
-    //     data: data.instance,
-    //     dataSrc: data.instance,
-    //     serverSide: false,
-    //     processing: true,
-    //     responsive: true,
-    //     columns: [
-    //
-    //         { data: 'subjectCode' },
-    //         { data: 'subjectName' },
-    //         { data: 'startMonth' },
-    //         { data: 'endMonth' },
-    //         { data: 'numberOfStudents' },
-    //     ]
-    // })
-
-})
+}
