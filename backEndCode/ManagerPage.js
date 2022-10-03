@@ -15,6 +15,10 @@ function loadInstanceTable() {
 
 
             $('#instances-table').DataTable({
+                autoWidth: true,
+                sScrollY: '80vh',
+                sScrollX: '40vh',
+                //scrollCollapse: true,
                 data: subjectsTimeTable.instances,
                 dataSrc: subjectsTimeTable.instances,
                 serverSide: false,
@@ -48,8 +52,9 @@ function loadLecturesTable() {
         dataType: 'json',
         data: '{}',
         success: function (lectureInformation, textStatus) {
-
             $('#lectures-table').DataTable({
+                autoWidth: true,
+                sScrollY: '80vh',
                 data: lectureInformation.lectures,
                 dataSrc: lectureInformation.lectures,
                 serverSide: false,
