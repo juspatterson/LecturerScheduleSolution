@@ -26,39 +26,39 @@ h1 {
     padding: 4px;
     float: left;
     margin-left: 2%;
-    font-family: "Gill Sans", sans-serif;
     color: #FFFFFF;
 }
 
 h2 {
-    color: black;
     text-align: center;
     font-size: 40px;
-    font-family: "Gill Sans", sans-serif;
 }
 
 span {
      color: #ADD8E6;
 }
 
-ul { width: auto;
-     float: right;
-     margin-top: 8px;
+ul {
+    width: auto;
+    float: right;
+    margin-top: 8px;
 }
 
-li { display: inline-block;
-     padding: 14px 28px;
+li {
+    display: inline-block;
+    padding: 14px 28px;
 }
 
-a {  text-align: center;
-     color: #ffffff;
-     text-decoration: none;
-     font-family: "Gill Sans", sans-serif;
-     font-size: 1.35vw;
+a {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.35vw;
 }
 
-a:hover { color: #ADD8E6;
-          transition: 0.4s;
+a:hover {
+    color: #ADD8E6;
+    transition: 0.4s;
 }
 
 input {
@@ -75,7 +75,6 @@ input[type="submit"]{
     background: black;
     color: white;
     text-align: center;
-    font-family: "Gill Sans", sans-serif;
 }
 
      
@@ -83,18 +82,30 @@ form {
     margin: 20px auto;
     width: 320px;
     color: black;
-    float:auto;
 }
 
 select {
     display: block;
     margin-bottom: 25px;
     width:100%;
-    border: 2px solid black;
+    border: none;
+    border-radius: 4px;
+    min-height: 21px;
+    text-align: center;
+}
+
+#net_terms_id option:empty {
+    hidden:true;
+    display:none;
+}
+
+#selected-instance, #selected-lecturer {
+    display: block;
+    width: 100%;
+    min-height: 20px;
 }
      
 label {
-    font-family: "Gill Sans", sans-serif;
 }
      
 #lectures-table-div {

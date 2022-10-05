@@ -10,11 +10,12 @@
 
   <script src="../backEndCode/DataStore.js"></script>
   <script src="../backEndCode/ManagerPage.js"></script>
-  <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/main.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/manager.css" type="text/css"/>
 
   <link rel="stylesheet" type="text/css" href="../packages/DataTables/datatables.min.css"/>
   <script type="text/javascript" src="../packages/DataTables/datatables.min.js"></script>
-    <link rel="stylesheet" href="../CSS/manager.css" type="text/css"/>
+
   </head>
 <header> 
   <h1>Team<span>B</span></h1>
@@ -61,42 +62,28 @@
     <div id="form-div">
       <di id="form">
         <form>
-          <label for="menu1"> Choose an Instance:</label>
-          <select name="menu1">
-            <option value="subject 1">Subject 1<option>
-            <option value="subject 2">Subject 2<option>
-            <option value="subject 3">Subject 3<option>
-            <option value="subject 4">Subject 4<option>
+          <label for="selected-instance"> Selected Instance:</label>
+          <button id="selected-instance" type="button">Nothing Selected</button>
+
+          <label for="selected-lecturer"> Selected Lecturer:</label>
+          <button id="selected-lecturer" type="button">Nothing Selected</button>
+
+          <label for="choose-a-lecturer-roll"> Choose a Lecturer Roll:</label>
+          <select id="choose-a-lecturer-roll">
+            <option value="Nothing Selected" selected disabled>Nothing Selected</option>
+            <option value="Main Lecturer">Main Lecturer</option>
           </select>
-
-          <label for="menu2"> Choose a lecturer:</label>
-          <select name="menu2">
-            <option value="lecturer 1">Lecturer 1<option>
-            <option value="lecturer 2">Lecturer 2<option>
-            <option value="lecturer 3">Lecturer 3<option>
-            <option value="lecturer 4">Lecturer 4<option>
-          </select>
-
-          <label for="menu3"> Choose a lecturer:</label>
-          <select name="menu3">
-            <option value="roll 1">Roll 1<option>
-            <option value="roll 2">Roll 2<option>
-            <option value="roll 3">Roll 3<option>
-            <option value="roll 4">Roll 4<option>
-          </select>
-
-
           <input type="submit" value="Create Schedule">
           <br>
         </form>
       </di>
     </div>
 
-  <div id="schedule-table-div">
+    <div id="schedule-table-div">
     <textarea name="schedule" rows="15" cols="42">
       Table of created schedules go here//
      </textarea>
-  </div>
+    </div>
     
     
    
