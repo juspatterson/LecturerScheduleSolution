@@ -3,2375 +3,2298 @@
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
-    },{
-      "SubjectCode": "CSE1ITX",
-      "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE1PGX",
-      "SubjectName": "Programming Environments",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-02",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1ITX",
+      "SubjectName": "Information Technology Fundamentals",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-05",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-05",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE1CFX",
-      "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1PGX",
+      "SubjectName": "Programming Environments",
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
-    }
-
-
-  ,
-
-
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
+    },
     {
-      "SubjectCode": "CSE1OFX",
-      "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-02",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1CFX",
+      "SubjectName": "Cloud Foundations",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-05",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-05",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE1ISX",
-      "SubjectName": "Information Systems",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1OFX",
+      "SubjectName": "Object Oriented Programming Fundamentals",
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2NFX",
-      "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1ISX",
+      "SubjectName": "Information Systems",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
-    },{
-      "SubjectCode": "CSE2NFX",
-      "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2DCX",
-      "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2NFX",
+      "SubjectName": "Network Engineering Fundamentals",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE2NFX",
+      "SubjectName": "Network Engineering Fundamentals",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE1SPX",
-      "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2DCX",
+      "SubjectName": "Database Fundamentals on the Cloud",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
-    },{
-      "SubjectCode": "CSE1SPX",
-      "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE1SIX",
-      "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-03",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
-      "SubjectCode": "CSE1SIX",
-      "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1SPX",
+      "SubjectName": "Sustainability Practices",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE1SPX",
+      "SubjectName": "Sustainability Practices",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-06",
-      "EndMonth": "2023-08",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-6",
+      "EndDate": "2023-8",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-06",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-04",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-06",
-      "EndMonth": "2024-08",
-      "NumberOfStudents": 20
+      "StartDate": "2024-04",
+      "EndDate": "2024-06",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartMonth": "2024-12",
-      "EndMonth": "2025-02",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE1IOX",
-      "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-01",
-      "EndMonth": "2023-02",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1SIX",
+      "SubjectName": "Information System Infrastructure",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE1SIX",
+      "SubjectName": "Information System Infrastructure",
+      "StartDate": "2024-12",
+      "EndDate": "2025-02",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-1",
+      "EndDate": "2023-3",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-05",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-07",
-      "EndMonth": "2023-09",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-7",
+      "EndDate": "2023-9",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2023-09",
-      "EndMonth": "2023-11",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-9",
+      "EndDate": "2023-11",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-03",
-      "EndMonth": "2024-05",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "StartDate": "2024-03",
+      "EndDate": "2024-05",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2ICX",
-      "SubjectName": "Internet Client Engineering",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE1IOX",
+      "SubjectName": "Intermediate Object Oriented Programming",
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-05",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2CNX",
-      "SubjectName": "Computer Networks",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2ICX",
+      "SubjectName": "Internet Client Engineering",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2SDX",
-      "SubjectName": "Information Systems Development",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2CNX",
+      "SubjectName": "Computer Networks",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "BUS2PMX",
-      "SubjectName": "Project Management",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2SDX",
+      "SubjectName": "Information Systems Development",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-03",
-      "EndMonth": "2023-05",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-3",
+      "EndDate": "2023-5",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2023-12",
-      "EndMonth": "2024-02",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-12",
+      "EndDate": "2024-02",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2024-09",
-      "EndMonth": "2024-11",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2VVX",
-      "SubjectName": "Virtualisation for the Cloud",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "BUS2PMX",
+      "SubjectName": "Project Management",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "MAT2DMX",
-      "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2VVX",
+      "SubjectName": "Virtualisation for the Cloud",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2MAX",
-      "SubjectName": "Mobile Application Development",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "MAT2DMX",
+      "SubjectName": "Discrete Mathematics for Computer Science",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2OSX",
-      "SubjectName": "Operating Systems",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2MAX",
+      "SubjectName": "Mobile Application Development",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2ADX",
-      "SubjectName": "Application Development in the Cloud",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2OSX",
+      "SubjectName": "Operating Systems",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ADX",
-      "SubjectName": "Application Development in the Cloud",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "SubjectName": "Application Development in the Cloud ",
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ADX",
-      "SubjectName": "Application Development in the Cloud",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "SubjectName": "Application Development in the Cloud ",
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ADX",
-      "SubjectName": "Application Development in the Cloud",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "SubjectName": "Application Development in the Cloud ",
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2CPX",
-      "SubjectName": "Managing Projects in the Cloud",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2ADX",
+      "SubjectName": "Application Development in the Cloud ",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CPX",
-      "SubjectName": "Managing Projects in the Cloud",
-      "StartMonth": "2023-10",
-      "EndMonth": "2023-12",
-      "NumberOfStudents": 20
+      "SubjectName": "Managing Projects in the Cloud ",
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CPX",
-      "SubjectName": "Managing Projects in the Cloud",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "SubjectName": "Managing Projects in the Cloud ",
+      "StartDate": "2023-10",
+      "EndDate": "2023-12",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2CPX",
-      "SubjectName": "Managing Projects in the Cloud",
-      "StartMonth": "2024-07",
-      "EndMonth": "2024-09",
-      "NumberOfStudents": 20
+      "SubjectName": "Managing Projects in the Cloud ",
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2MLX",
-      "SubjectName": "Machine Learning",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2CPX",
+      "SubjectName": "Managing Projects in the Cloud ",
+      "StartDate": "2024-07",
+      "EndDate": "2024-09",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MLX",
-      "SubjectName": "Machine Learning",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectName": "Machine Learning ",
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MLX",
-      "SubjectName": "Machine Learning",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "SubjectName": "Machine Learning ",
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2MLX",
-      "SubjectName": "Machine Learning",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "SubjectName": "Machine Learning ",
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2SAX",
-      "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2MLX",
+      "SubjectName": "Machine Learning ",
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2ANX",
-      "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2SAX",
+      "SubjectName": "Operating Systems Administration",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE2WDX",
-      "SubjectName": "Web Development",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2ANX",
+      "SubjectName": "Advanced Computer Networks",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
     {
-      "SubjectCode": "CSE3BGX",
-      "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE2WDX",
+      "SubjectName": "Web Development",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3BGX",
       "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3BGX",
       "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3BGX",
       "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3CIX",
-      "SubjectName": "Computational Intelligence for Data Analysis (Elective)",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3BGX",
+      "SubjectName": "Big Data Management on the Cloud (Elective)",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CIX",
       "SubjectName": "Computational Intelligence for Data Analysis (Elective)",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3CSX",
-      "SubjectName": "Cybersecurity Fundamentals (Elective)",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3CIX",
+      "SubjectName": "Computational Intelligence for Data Analysis (Elective)",
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CSX",
       "SubjectName": "Cybersecurity Fundamentals (Elective)",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CSX",
       "SubjectName": "Cybersecurity Fundamentals (Elective)",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CSX",
       "SubjectName": "Cybersecurity Fundamentals (Elective)",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3NWX",
-      "SubjectName": "Networks, Systems and Web Security (Elective)",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3CSX",
+      "SubjectName": "Cybersecurity Fundamentals (Elective)",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3NWX",
       "SubjectName": "Networks, Systems and Web Security (Elective)",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3NWX",
       "SubjectName": "Networks, Systems and Web Security (Elective)",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3OTX",
-      "SubjectName": "Internet of Things (Elective)",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3NWX",
+      "SubjectName": "Networks, Systems and Web Security (Elective)",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3OTX",
       "SubjectName": "Internet of Things (Elective)",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3OTX",
       "SubjectName": "Internet of Things (Elective)",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3OTX",
       "SubjectName": "Internet of Things (Elective)",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3WSX",
-      "SubjectName": "Wireless Network Engineering (Elective)",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3OTX",
+      "SubjectName": "Internet of Things (Elective)",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3WSX",
       "SubjectName": "Wireless Network Engineering (Elective)",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3WSX",
       "SubjectName": "Wireless Network Engineering (Elective)",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3PAX",
-      "SubjectName": "Industry Project 3A",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3WSX",
+      "SubjectName": "Wireless Network Engineering (Elective)",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3PBX",
-      "SubjectName": "Industry Project 3B",
-      "StartMonth": "2023-02",
-      "EndMonth": "2023-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3PAX",
+      "SubjectName": "Industry Project 3A",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-2",
+      "EndDate": "2023-4",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE3PEX",
-      "SubjectName": "Profesional Environment",
-      "StartMonth": "2023-05",
-      "EndMonth": "2023-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
-      "SubjectName": "Profesional Environment",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "SubjectName": "Industry Project 3B",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PEX",
       "SubjectName": "Profesional Environment",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-5",
+      "EndDate": "2023-7",
+      "Load": 1
     },
     {
-      "SubjectCode": "CSE3PBX",
+      "SubjectCode": "CSE3PEX",
       "SubjectName": "Profesional Environment",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE3ACX",
-      "SubjectName": "Architecting on the Cloud",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
-      "SubjectCode": "CSE3ACX",
-      "SubjectName": "Architecting on the Cloud",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3PEX",
+      "SubjectName": "Profesional Environment",
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE3PEX",
+      "SubjectName": "Profesional Environment",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3ACX",
       "SubjectName": "Architecting on the Cloud",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE3SOX",
-      "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2023-04",
-      "EndMonth": "2023-06",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
     {
-      "SubjectCode": "CSE3SOX",
-      "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2023-11",
-      "EndMonth": "2024-01",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3ACX",
+      "SubjectName": "Architecting on the Cloud",
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE3ACX",
+      "SubjectName": "Architecting on the Cloud",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3SOX",
       "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2024-01",
-      "EndMonth": "2024-03",
-      "NumberOfStudents": 20
+      "StartDate": "2023-4",
+      "EndDate": "2023-6",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3SOX",
       "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2023-11",
+      "EndDate": "2024-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3SOX",
       "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2024-10",
-      "EndMonth": "2024-12",
-      "NumberOfStudents": 20
+      "StartDate": "2024-01",
+      "EndDate": "2024-03",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3SOX",
       "SubjectName": "System Operations on the Cloud",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE3BDX",
-      "SubjectName": "Big Data on the Cloud",
-      "StartMonth": "2023-08",
-      "EndMonth": "2023-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
-      "SubjectCode": "CSE3BDX",
-      "SubjectName": "Big Data on the Cloud",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3SOX",
+      "SubjectName": "System Operations on the Cloud",
+      "StartDate": "2024-10",
+      "EndDate": "2024-12",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE3SOX",
+      "SubjectName": "System Operations on the Cloud",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3BDX",
       "SubjectName": "Big Data on the Cloud",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2023-8",
+      "EndDate": "2023-10",
+      "Load": 1
     },
-
-
+    {
+      "SubjectCode": "CSE3BDX",
+      "SubjectName": "Big Data on the Cloud",
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE3BDX",
+      "SubjectName": "Big Data on the Cloud",
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
+    },
     {
       "SubjectCode": "CSE3PCX",
       "SubjectName": "Private Cloud Solutions",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3PCX",
       "SubjectName": "Private Cloud Solutions",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
-    },
-
-
-    {
-      "SubjectCode": "CSE3CAX",
-      "SubjectName": "Industry Project for Cloud Technology 3A",
-      "StartMonth": "2024-02",
-      "EndMonth": "2024-04",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CAX",
       "SubjectName": "Industry Project for Cloud Technology 3A",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "StartDate": "2024-02",
+      "EndDate": "2024-04",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CAX",
       "SubjectName": "Industry Project for Cloud Technology 3A",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CAX",
       "SubjectName": "Industry Project for Cloud Technology 3A",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
     },
-
-
     {
-      "SubjectCode": "CSE3CBX",
-      "SubjectName": "Industry Project for Cloud Technology 3B",
-      "StartMonth": "2024-05",
-      "EndMonth": "2024-07",
-      "NumberOfStudents": 20
+      "SubjectCode": "CSE3CAX",
+      "SubjectName": "Industry Project for Cloud Technology 3A",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CBX",
       "SubjectName": "Industry Project for Cloud Technology 3B",
-      "StartMonth": "2024-08",
-      "EndMonth": "2024-10",
-      "NumberOfStudents": 20
+      "StartDate": "2024-05",
+      "EndDate": "2024-07",
+      "Load": 1
     },
     {
       "SubjectCode": "CSE3CBX",
       "SubjectName": "Industry Project for Cloud Technology 3B",
-      "StartMonth": "2024-11",
-      "EndMonth": "2025-01",
-      "NumberOfStudents": 20
+      "StartDate": "2024-08",
+      "EndDate": "2024-10",
+      "Load": 1
+    },
+    {
+      "SubjectCode": "CSE3CBX",
+      "SubjectName": "Industry Project for Cloud Technology 3B",
+      "StartDate": "2024-11",
+      "EndDate": "2025-01",
+      "Load": 1
     }
   ]
 }
-
-
