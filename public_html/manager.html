@@ -41,8 +41,6 @@
         </thead>
       </table>
 
-
-   
     </div>
 
     <div id="lectures-table-div">
@@ -61,15 +59,26 @@
       <di id="form">
         <form>
           <label for="selected-instance"> Selected Instance:</label>
-          <button id="selected-instance" type="button">Nothing Selected</button>
+          <div id="close-x-container-instance" class="close-x-container">
+            <button id="selected-instance" type="button">
+              Nothing Selected
+            </button>
+            <label id="close-x-instance" class="close-x"></label>
+          </div>
 
           <label for="selected-lecturer"> Selected Lecturer:</label>
-          <button id="selected-lecturer" type="button">Nothing Selected</button>
+          <div id="close-x-container-lecturer" class="close-x-container">
+            <button id="selected-lecturer" type="button">Nothing Selected</button>
+            <label id="close-x-lecturer" class="close-x"></label>
+          </div>
 
           <label for="choose-a-lecturer-roll"> Choose a Lecturer Roll:</label>
           <select id="choose-a-lecturer-roll">
             <option value="Nothing Selected" selected disabled>Nothing Selected</option>
             <option value="Main Lecturer">Main Lecturer</option>
+            <option value="Support - Live Demo">Support - Live Demo</option>
+            <option value="Support - support">Support - Support</option>
+            <option value="Support - Marking">Support - Marking</option>
           </select>
           <input id="create-schedule" type="button" value="Create Schedule">
           <br>

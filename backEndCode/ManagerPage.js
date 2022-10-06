@@ -11,12 +11,12 @@ function ManagementOfTablesAndFunctions(tables1) {
         loadInstanceTable()
         loadLecturesTable()
         loadScheduleTable()
+        filterOnSelectedRow()
 
-        $('#instances-table, #lectures-table').on('click', 'tr', function () {
-            filterOnSelectedRow()
-        })
+
 
         createScheduleAndAddToScheduleTable()
+        removeSelected()
     }
 
     function loadInstanceTable() {
@@ -71,7 +71,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             success: function (lectureInformation, textStatus) {
                 var table = $('#lectures-table').DataTable({
                     autoWidth: true,
-                    sScrollY: '80vh',
+                    scrollY: 777,
                     language: { search: "",searchPlaceholder: "Search..." },
                     data: lectureInformation.lectures,
                     dataSrc: lectureInformation.lectures,
@@ -106,7 +106,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
-            sScrollY: '80vh',
+            sScrollY: 80,
             language: {search: "", searchPlaceholder: "Search..."},
             //data:
             //dataSrc:
@@ -148,55 +148,56 @@ function ManagementOfTablesAndFunctions(tables1) {
         var instancesTable = tables.table( 0 );
         var lectureTable = tables.table( 1 );
 
-        selectedRowFromInstancesTable()
-        selectedRowFromLecturersTable()
 
-        var instancesSelectedData =  $('#instances-selected-data').data()
-        var lecturersSelectedData =  $('#lecturers-selected-data').data()
+        $('#instances-table, #lectures-table').on('click', 'tr', function () {
+            tables = $('.dataTable').DataTable();
+            instancesTable = tables.table( 0 );
+            lectureTable = tables.table( 1 );
+            selectedRowFromInstancesTable()
+            selectedRowFromLecturersTable()
+        })
 
         function selectedRowFromInstancesTable() {
             instancesTable
                 .on('select', function (e, dt, type, indexes) {
-                    var rowData = instancesTable.rows({ selected: true}).data().toArray();
-                    $('#instances-selected-data').data("instancesSelectedData",rowData)
-                    console.log(rowData)
-                    $('#selected-instance').text(rowData[0].SubjectCode)
+                    var instancesData = instancesTable.rows({ selected: true}).data().toArray();
+                    var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
+                    console.log("ffff")
+                    $('#selected-instance').text(instancesDataJoin )
+                    $('#close-x-instance').text("X")
 
-
-                    if (rowData != null && !lectureTable.rows('.selected').any()){
-                        console.log("dongs")
-                        lectureTable.column(2).search(rowData[0].SubjectCode).draw()
+                    if (instancesData != null && !lectureTable.rows('.selected').any()){
+                        lectureTable.column(2).search(instancesData[0].SubjectCode).draw()
                     } else {
-                        console.log("dongssssss")
                         lectureTable.columns().search('').draw()
                     }
                 })
                 .on('deselect', function (e, dt, type, indexes) {
-                    $('#instances-selected-data').removeData("instancesSelectedData")
+
                     $('#selected-instance').text("Nothing Selected")
                     lectureTable.columns().search('').draw()
+                    $('#close-x-instance').text("")
                 })
         }
         function selectedRowFromLecturersTable() {
             lectureTable
                 .on('select', function (e, dt, type, indexes) {
                     var selectedLecturer = lectureTable.rows({ selected: true}).data();
-                    $('#lecturers-selected-data').data(selectedLecturer)
                     $('#selected-lecturer').text(selectedLecturer[0].name)
-                    console.log(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode)
+                    $('#close-x-lecturer').text("X")
+
                     var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
                         return value
                     }).join('|')
-                    console.log(subjectCodes)
 
                     if (selectedLecturer != null && !instancesTable.rows('.selected').any()) {
                         instancesTable.column(0).search(subjectCodes,true,false,false).draw()
                     }
                 })
                 .on('deselect', function (e, dt, type, indexes) {
-                    $('#lecturers-selected-data').removeData('lecturers-selected-data')
                     instancesTable.column(0).search('').draw()
                     $('#selected-lecturer').text("Nothing Selected")
+                    $('#close-x-lecturer').text("")
                 });
         }
 
@@ -236,6 +237,31 @@ function ManagementOfTablesAndFunctions(tables1) {
 
         })
     }
+
+    function removeSelected() {
+        $('#selected-instance, #close-x-container-instance').on('click',function () {
+            var tables = $('.dataTable').DataTable();
+            var instancesTable = tables.table( 0 );
+            var lectureTable = tables.table( 1 );
+            $('#selected-instance').text("Nothing Selected")
+            $('#close-x-instance').text("")
+            lectureTable.columns().search('').draw()
+            instancesTable.rows('.selected').deselect().draw()
+
+        })
+
+        $('#selected-lecturer, #close-x-container-lecturer').on('click',function () {
+            var tables = $('.dataTable').DataTable();
+            var instancesTable = tables.table( 0 );
+            var lectureTable = tables.table( 1 );
+            $('#selected-lecturer').text("Nothing Selected")
+            $('#close-x-lecturer').text("")
+            instancesTable.columns().search('').draw()
+            lectureTable.rows('.selected').deselect()
+        })
+
+    }
+
 }
 
 
