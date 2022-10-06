@@ -27,8 +27,6 @@
 </header>
 
   <body>
-    <div id="instances-selected-data"></div>
-    <div id="lecturers-selected-data"></div>
     <h2> Manager</h2>
     <div id="instances-table-div">
       <table id="instances-table" class="display">
@@ -36,8 +34,8 @@
         <tr class="row-1">
           <th class="column-1">Subject Code</th>
           <th class="column-2">Subject Name</th>
-          <th class="column-3">Start Month</th>
-          <th class="column-4">End Month</th>
+          <th class="column-3">Start Date</th>
+          <th class="column-4">End Date</th>
           <th class="column-5">Load</th>
         </tr>
         </thead>
@@ -73,16 +71,28 @@
             <option value="Nothing Selected" selected disabled>Nothing Selected</option>
             <option value="Main Lecturer">Main Lecturer</option>
           </select>
-          <input type="submit" value="Create Schedule">
+          <input id="create-schedule" type="button" value="Create Schedule">
           <br>
         </form>
       </di>
     </div>
 
     <div id="schedule-table-div">
-    <textarea name="schedule" rows="15" cols="42">
-      Table of created schedules go here//
-     </textarea>
+      <table id="schedule-table" class="display">
+        <thead>
+        <tr class="row-1">
+          <th class="column-1">O.R</th>
+          <th class="column-2">Subject Code</th>
+          <th class="column-3">Subject Name</th>
+          <th class="column-4">Start Date</th>
+          <th class="column-5">End Date</th>
+          <th class="column-6">Subject Load</th>
+          <th class="column-7">Lecturers Name</th>
+          <th class="column-8">Lecturers Load</th>
+          <th class="column-8">Lecturers Roll</th>
+        </tr>
+        </thead>
+      </table>
     </div>
     
     

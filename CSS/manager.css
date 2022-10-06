@@ -1,31 +1,29 @@
 @media (prefers-color-scheme: dark) {
-    #lectures-table-div, #instances-table-div {
+    #lectures-table-div, #instances-table-div, #schedule-table-div {
         background: #2b2b2b;
     }
 }
 @media (prefers-color-scheme: light) {
-    #lectures-table-div, #instances-table-div {
+    #lectures-table-div, #instances-table-div, #schedule-table-div {
         background: #7c7c7c;
     }
 
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 header {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 75px;
     background-color: #000000;
 }
 
 h1 {
-    position: absolute;
-    padding: 4px;
     float: left;
-    margin-left: 2%;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 44px;
     color: #FFFFFF;
 }
 
@@ -67,7 +65,7 @@ input {
     width: 100%;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 100%;
     display: block;
     height: 45px;
@@ -75,9 +73,21 @@ input[type="submit"]{
     background: black;
     color: white;
     text-align: center;
+    border-radius: 25px;
 }
 
-     
+#create-schedule  {
+    width: 100%;
+    display: block;
+    height: 45px;
+    border: none;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+}
+
+
 form {
     margin: 20px auto;
     width: 320px;
@@ -92,11 +102,6 @@ select {
     border-radius: 4px;
     min-height: 21px;
     text-align: center;
-}
-
-#net_terms_id option:empty {
-    hidden:true;
-    display:none;
 }
 
 #selected-instance, #selected-lecturer {
@@ -123,7 +128,7 @@ label {
 
 
 #instances-table-div {
-    width: 35%;
+    width: 36%;
     float:left;
     display: inline-grid;
     float: left;
@@ -134,4 +139,13 @@ label {
 #instances-table, #instances-table_wrapper {
     width: 95%;
     /*float: none;*/
+}
+
+#schedule-table-div {
+    border-radius: 25px;
+    display: table;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    margin-top: 332px;
 }

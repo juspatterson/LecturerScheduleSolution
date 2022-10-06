@@ -1,31 +1,67 @@
 @media (prefers-color-scheme: dark) {
     body {
-        padding: 0;
-        margin-top: 40px;
         color: rgb(250, 250, 250);
         background-color: #1F2022;
-        font-family: Nunito, sans-serif;
-        font-weight: 400;
-        text-align: center;
     }
 
     h1 {
         color: rgb(250, 250, 250);
     }
+
+    /*for dataTables*/
+    table.fixedHeader-floating {
+        background-color:#1F2022!important;
+    }
+    /*for dataTables*/
+    table.fixedHeader-locked {
+        background-color:#1F2022!important;
+    }
+
+    /*for dataTables*/
+    .dataTables_filter input {
+        color: white
+    }
+
+    /*for dataTables*/
+    label {
+        color: white
+    }
+
+    /*for dataTables*/
+    #table_id_info{
+        color: white
+    }
+
+    /*for dataTables*/
+    table.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: white!important;
+    }
+
+
 }
 
 @media (prefers-color-scheme: light) {
     body {
-        padding: 0;
-        margin-top: 40px;
         color: #1F2022;
         background-color: white;
-        font-family: Nunito, sans-serif;
-        font-weight: 400;
-        text-align: center;
     }
 
     h1 {
         color: #1F2022;
     }
+}
+
+body {
+    padding: 0;
+    margin-top: 75px;
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*dataTables*/
+button.dt-button, div.dt-button, a.dt-button, input.dt-button {
+    border-radius: 11px !important;
 }
