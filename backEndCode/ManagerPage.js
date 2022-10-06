@@ -106,7 +106,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
-            sScrollY: 80,
+            sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
             //data:
             //dataSrc:
@@ -209,7 +209,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             var instancesTable = tables.table( 0 );
             var lecturerTable = tables.table( 1 );
             var scheduleTable = tables.table( 2 );
-            console.log("clicked")
+
             console.log(instancesTable.rows({ selected: true}).data().toArray())
 
             var instancesData = instancesTable.rows({ selected: true}).data().toArray()
@@ -231,6 +231,19 @@ function ManagementOfTablesAndFunctions(tables1) {
                     "",
 
                 ]).draw()
+                alert("Schedule Created")
+                $('#create-schedule-form').trigger('reset')
+                var tables = $('.dataTable').DataTable();
+                var instancesTable = tables.table( 0 );
+                var lectureTable = tables.table( 1 );
+                $('#selected-instance').text("Nothing Selected")
+                $('#close-x-instance').text("")
+                lectureTable.columns().search('').draw()
+                instancesTable.rows('.selected').deselect().draw()
+                $('#selected-lecturer').text("Nothing Selected")
+                $('#close-x-lecturer').text("")
+                instancesTable.columns().search('').draw()
+                lectureTable.rows('.selected').deselect()
             }
 
 
