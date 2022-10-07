@@ -93,5 +93,11 @@ body {
 /*dataTables*/
 button.dt-button, div.dt-button, a.dt-button, input.dt-button {
     border-radius: 11px !important;
+}
 
+#dataTableContainer,
+#dataTableContainer>tbody,
+#dataTableContainer>tbody>tr,
+#dataTableContainer>tbody>tr>td {
+    display: block !important;
 }

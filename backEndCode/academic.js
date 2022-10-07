@@ -14,14 +14,12 @@ function ManagementOfTablesAndFunctions(tables1) {
         var table = $('#lectures-schedule-table').DataTable({
             dom: 'Bfrtip',
             responsive: true,
-            autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
             //data:
             //dataSrc:
             serverSide: false,
             processing: true,
-            responsive: true,
             paging: false,
             fixedHeader: true,
             columnDefs: [
@@ -167,12 +165,7 @@ function ManagementOfTablesAndFunctions(tables1) {
                     roll
                 ]).draw()
             }
-
         }
-
-        //$('#lectures-schedule-table_filter.dataTables_filter').append($("#category-filter"));
-
-
     }
 
     function filterByDate() {

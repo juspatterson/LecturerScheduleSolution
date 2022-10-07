@@ -33,14 +33,12 @@ function ManagementOfTablesAndFunctions(tables1) {
                 $('#instances-table').DataTable({
                     autoWidth: true,
                     language: { search: "",searchPlaceholder: "Search..." },
-                    sScrollY: '80vh',
-                    sScrollX: '40vh',
-                    //scrollCollapse: true,
+                    sScrollY: 600,
+                    scrollCollapse: true,
                     data: subjectsTimeTable.instances,
                     dataSrc: subjectsTimeTable.instances,
                     serverSide: false,
                     processing: true,
-                    responsive: true,
                     paging: false,
                     fixedHeader: true,
                     select: true,
@@ -80,7 +78,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             success: function (lectureInformation, textStatus) {
                 var table = $('#lectures-table').DataTable({
                     autoWidth: true,
-                    scrollY: 777,
+                    scrollY: 624,
                     language: { search: "",searchPlaceholder: "Search..." },
                     data: lectureInformation.lectures,
                     dataSrc: lectureInformation.lectures,
