@@ -113,47 +113,47 @@ function processLine(data, years, subjectCode ,subjectName) {
 
         switch (true) {
             case data[j].toLowerCase() == "x" && j === 0:
-                startDate = years[0].toString() + "-1"
-                endDate = years[0].toString() + "-3"
+                startDate = years[0].toString() + "-01"
+                endDate = years[0].toString() + "-03"
                 break;
 
             case data[j].toLowerCase() == "x" && j === 1:
-                startDate = years[0].toString() + "-2"
-                endDate = years[0] + "-4"
+                startDate = years[0].toString() + "-02"
+                endDate = years[0] + "-04"
                 break;
 
             case data[j].toLowerCase() == "x" && j === 2:
-                startDate = years[0].toString() + "-3"
-                endDate = years[0] + "-5"
+                startDate = years[0].toString() + "-03"
+                endDate = years[0] + "-05"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 3:
-                startDate = years[0].toString() + "-4"
-                endDate = years[0] + "-6"
+                startDate = years[0].toString() + "-04"
+                endDate = years[0] + "-06"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 4:
-                startDate = years[0].toString() + "-5"
-                endDate = years[0] + "-7"
+                startDate = years[0].toString() + "-05"
+                endDate = years[0] + "-07"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 5:
-                startDate = years[0].toString() + "-6"
-                endDate = years[0] + "-8"
+                startDate = years[0].toString() + "-06"
+                endDate = years[0] + "-08"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 6:
-                startDate = years[0].toString() + "-7"
-                endDate = years[0] + "-9"
+                startDate = years[0].toString() + "-07"
+                endDate = years[0] + "-09"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 7:
-                startDate = years[0].toString() + "-8"
+                startDate = years[0].toString() + "-08"
                 endDate = years[0] + "-10"
                 break;
 
             case data[j].toLowerCase() == "x" && j == 8:
-                startDate = years[0].toString() + "-9"
+                startDate = years[0].toString() + "-09"
                 endDate = years[0] + "-11"
                 break;
 

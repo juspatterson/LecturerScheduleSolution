@@ -3,63 +3,63 @@
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ITX",
       "SubjectName": "Information Technology Fundamentals",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -171,42 +171,42 @@
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1PGX",
       "SubjectName": "Programming Environments",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -255,63 +255,63 @@
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1CFX",
       "SubjectName": "Cloud Foundations",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -423,42 +423,42 @@
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1OFX",
       "SubjectName": "Object Oriented Programming Fundamentals",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -507,29 +507,29 @@
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1ISX",
       "SubjectName": "Information Systems",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
@@ -598,63 +598,63 @@
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2NFX",
       "SubjectName": "Network Engineering Fundamentals",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -766,29 +766,29 @@
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2DCX",
       "SubjectName": "Database Fundamentals on the Cloud",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
@@ -857,63 +857,63 @@
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SPX",
       "SubjectName": "Sustainability Practices",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -1025,63 +1025,63 @@
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-6",
-      "EndDate": "2023-8",
+      "StartDate": "2023-06",
+      "EndDate": "2023-08",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1SIX",
       "SubjectName": "Information System Infrastructure",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -1193,42 +1193,42 @@
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-1",
-      "EndDate": "2023-3",
+      "StartDate": "2023-01",
+      "EndDate": "2023-03",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-7",
-      "EndDate": "2023-9",
+      "StartDate": "2023-07",
+      "EndDate": "2023-09",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
     {
       "SubjectCode": "CSE1IOX",
       "SubjectName": "Intermediate Object Oriented Programming",
-      "StartDate": "2023-9",
+      "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1
     },
@@ -1277,21 +1277,21 @@
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2ICX",
       "SubjectName": "Internet Client Engineering",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1312,14 +1312,14 @@
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2CNX",
       "SubjectName": "Computer Networks",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1361,14 +1361,14 @@
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2SDX",
       "SubjectName": "Information Systems Development",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1396,35 +1396,35 @@
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartDate": "2023-3",
-      "EndDate": "2023-5",
+      "StartDate": "2023-03",
+      "EndDate": "2023-05",
       "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "BUS2PMX",
       "SubjectName": "Project Management",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1480,15 +1480,15 @@
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2VVX",
       "SubjectName": "Virtualisation for the Cloud",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1515,21 +1515,21 @@
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "MAT2DMX",
       "SubjectName": "Discrete Mathematics for Computer Science",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1550,15 +1550,15 @@
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2MAX",
       "SubjectName": "Mobile Application Development",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1585,15 +1585,15 @@
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2OSX",
       "SubjectName": "Operating Systems",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1620,8 +1620,8 @@
     {
       "SubjectCode": "CSE2ADX",
       "SubjectName": "Application Development in the Cloud ",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1648,8 +1648,8 @@
     {
       "SubjectCode": "CSE2CPX",
       "SubjectName": "Managing Projects in the Cloud ",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
@@ -1676,15 +1676,15 @@
     {
       "SubjectCode": "CSE2MLX",
       "SubjectName": "Machine Learning ",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2MLX",
       "SubjectName": "Machine Learning ",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1704,21 +1704,21 @@
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2SAX",
       "SubjectName": "Operating Systems Administration",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1760,21 +1760,21 @@
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2ANX",
       "SubjectName": "Advanced Computer Networks",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1816,21 +1816,21 @@
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE2WDX",
       "SubjectName": "Web Development",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1872,14 +1872,14 @@
     {
       "SubjectCode": "CSE3BGX",
       "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3BGX",
       "SubjectName": "Big Data Management on the Cloud (Elective)",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1900,7 +1900,7 @@
     {
       "SubjectCode": "CSE3CIX",
       "SubjectName": "Computational Intelligence for Data Analysis (Elective)",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1914,8 +1914,8 @@
     {
       "SubjectCode": "CSE3CSX",
       "SubjectName": "Cybersecurity Fundamentals (Elective)",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
@@ -1942,8 +1942,8 @@
     {
       "SubjectCode": "CSE3NWX",
       "SubjectName": "Networks, Systems and Web Security (Elective)",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -1963,14 +1963,14 @@
     {
       "SubjectCode": "CSE3OTX",
       "SubjectName": "Internet of Things (Elective)",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3OTX",
       "SubjectName": "Internet of Things (Elective)",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -1991,8 +1991,8 @@
     {
       "SubjectCode": "CSE3WSX",
       "SubjectName": "Wireless Network Engineering (Elective)",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -2012,21 +2012,21 @@
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3PAX",
       "SubjectName": "Industry Project 3A",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -2068,21 +2068,21 @@
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartDate": "2023-2",
-      "EndDate": "2023-4",
+      "StartDate": "2023-02",
+      "EndDate": "2023-04",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
       "SubjectCode": "CSE3PBX",
       "SubjectName": "Industry Project 3B",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -2124,8 +2124,8 @@
     {
       "SubjectCode": "CSE3PEX",
       "SubjectName": "Profesional Environment",
-      "StartDate": "2023-5",
-      "EndDate": "2023-7",
+      "StartDate": "2023-05",
+      "EndDate": "2023-07",
       "Load": 1
     },
     {
@@ -2152,7 +2152,7 @@
     {
       "SubjectCode": "CSE3ACX",
       "SubjectName": "Architecting on the Cloud",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
@@ -2173,8 +2173,8 @@
     {
       "SubjectCode": "CSE3SOX",
       "SubjectName": "System Operations on the Cloud",
-      "StartDate": "2023-4",
-      "EndDate": "2023-6",
+      "StartDate": "2023-04",
+      "EndDate": "2023-06",
       "Load": 1
     },
     {
@@ -2215,7 +2215,7 @@
     {
       "SubjectCode": "CSE3BDX",
       "SubjectName": "Big Data on the Cloud",
-      "StartDate": "2023-8",
+      "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1
     },
