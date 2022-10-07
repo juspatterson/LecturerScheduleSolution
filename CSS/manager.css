@@ -23,6 +23,7 @@ h1 {
 h2 {
     text-align: center;
     font-size: 40px;
+    margin-bottom: 8.2px;
 }
 
 span {
@@ -184,4 +185,8 @@ label {
 .dataTables_wrapper .dataTables_filter {
     margin-right: 10px;
 
+}
+
+.dtfh-floatingparent, .dtfh-floatingparenthead {
+    top: 75px !important;
 }

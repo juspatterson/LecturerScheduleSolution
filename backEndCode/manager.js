@@ -35,11 +35,11 @@ function ManagementOfTablesAndFunctions(tables1) {
                     language: { search: "",searchPlaceholder: "Search..." },
                     sScrollY: 600,
                     scrollCollapse: true,
+                    paging: false,
                     data: subjectsTimeTable.instances,
                     dataSrc: subjectsTimeTable.instances,
                     serverSide: false,
                     processing: true,
-                    paging: false,
                     fixedHeader: true,
                     select: true,
                     "rowCallback": function( row, data, index ) {
