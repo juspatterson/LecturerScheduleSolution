@@ -44,6 +44,15 @@ function ManagementOfTablesAndFunctions(tables1) {
                     paging: false,
                     fixedHeader: true,
                     select: true,
+                    "rowCallback": function( row, data, index ) {
+                        if(index%2 == 0){
+                            $(row).removeClass('myodd myeven');
+                            $(row).addClass('myodd');
+                        }else{
+                            $(row).removeClass('myodd myeven');
+                            $(row).addClass('myeven');
+                        }
+                    },
                     columns: [
                         {'data': 'SubjectCode'},
                         {'data': 'SubjectName'},
@@ -81,7 +90,15 @@ function ManagementOfTablesAndFunctions(tables1) {
                     paging: false,
                     fixedHeader: true,
                     select: true,
-
+                    "rowCallback": function( row, data, index ) {
+                        if(index%2 == 0){
+                            $(row).removeClass('myodd myeven');
+                            $(row).addClass('myodd');
+                        }else{
+                            $(row).removeClass('myodd myeven');
+                            $(row).addClass('myeven');
+                        }
+                    },
                     columns: [
                         {'data': 'name'},
                         {'data': 'load'},
@@ -116,6 +133,15 @@ function ManagementOfTablesAndFunctions(tables1) {
             paging: false,
             fixedHeader: true,
             select: true,
+            "rowCallback": function( row, data, index ) {
+                if(index%2 == 0){
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myodd');
+                }else{
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myeven');
+                }
+            },
             buttons: [
                 {
                     text: "Delete",
@@ -162,7 +188,6 @@ function ManagementOfTablesAndFunctions(tables1) {
                 .on('select', function (e, dt, type, indexes) {
                     var instancesData = instancesTable.rows({ selected: true}).data().toArray();
                     var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
-                    console.log("ffff")
                     $('#selected-instance').text(instancesDataJoin )
                     $('#close-x-instance').text("X")
 
@@ -189,6 +214,7 @@ function ManagementOfTablesAndFunctions(tables1) {
                     var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
                         return value
                     }).join('|')
+                    console.log(subjectCodes)
 
                     if (selectedLecturer != null && !instancesTable.rows('.selected').any()) {
                         instancesTable.column(0).search(subjectCodes,true,false,false).draw()
