@@ -3,32 +3,59 @@
   <head>
     <meta charset="utf-8">
     <title>Academic</title>
-    <link rel="stylesheet" href="academic.css" type="text/css"/>
+    <script src="../packages/jQuery.3.6.0/Content/Scripts/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../backEndCode/DataStore.js"></script>
+    <script src="../backEndCode/academic.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/academic.css" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="../packages/DataTables/datatables.min.css"/>
+    <script type="text/javascript" src="../packages/DataTables/datatables.min.js"></script>
+    <script src="../packages/DataTables/Buttons-2.2.3/js/buttons.print.min.js"></script>
+
   </head>
 <header> 
-  <h1>Team<span>B</span></h1>
+  <h1 id="heading">Team<span>B</span></h1>
   <nav>
     <ul>
-      <li><a href="logout.html">Log out</a></li>
+      <li><a href="index.html">Log out</a></li>
     </ul>
   </nav>
 </header>
 
   <body>
-    <h2> Academic Staff</h2>  
+    <h2> Academic Staff</h2>
+
+
+
+    <div id="lectures-schedule-table-div">
+      <div class="category-filter">
+        <select id="category-filter" class="form-control">
+          <option value="">Filter By Date</option>
+          <option value="3 Months">3 Months</option>
+          <option value="6 Months">6 Months</option>
+          <option value="12 Months">12 Months</option>
+        </select>
+      </div>
+      <table id="lectures-schedule-table" class="display">
+        <thead>
+        <tr class="row-1">
+          <th class="column-1">Subject Code</th>
+          <th class="column-2">Subject Name</th>
+          <th class="column-3">Start Date</th>
+          <th class="column-4">End Date</th>
+          <th class="column-5">Roll</th>
+        </tr>
+        </thead>
+      </table>
+
+    </div>
  
-   <form>    
-      <div style="margin-left: 10px">
-     <input type="submit" value="View Schedule">
-     
-     <br>
-     </div>
-     <div style="margin-left: 2px">
-     <textarea name="schedule" rows="15" cols="43">
-      Schedules go here//
-     </textarea>
-     </div> 
-   </form>
+
     
   </body>
 </html>
