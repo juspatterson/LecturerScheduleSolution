@@ -3,11 +3,35 @@
         background: #2b2b2b;
     }
 
+    #category-filter {
+        color: white;
+    }
+
+    #category-filter {
+        background-image:
+                linear-gradient(rgba(170, 170, 170, 40),rgba(61, 61, 61, 100));
+        border-radius: 5px;
+        border: 1px solid rgb(170,170,170);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
 }
 
 @media (prefers-color-scheme: light) {
     #lectures-schedule-table-div {
         background: #7c7c7c;
+    }
+
+    #category-filter {
+        color: black;
+    }
+
+    #category-filter {
+        background-image:
+                linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
+        border-radius: 5px;
+        border: 1px solid rgb(170,170,170);
+        background-color: rgba(0, 0, 0, 0);
     }
 
 }
@@ -95,7 +119,7 @@ form {
     display: block;
 }
 
-.category-filter {
+.category-filter-container {
     position:relative;
 }
 
@@ -105,9 +129,6 @@ form {
     top:0px;
     height: 32px;
     z-index: 999;
-
 }
-
-
 
 
