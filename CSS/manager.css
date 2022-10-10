@@ -149,6 +149,7 @@ input[type="submit"] {
     display: block;
     height: 45px;
     border: none;
+    margin-top: 25px;
 
     text-align: center;
     border-radius: 25px;
@@ -162,7 +163,6 @@ form {
 
 select {
     display: block;
-    margin-bottom: 25px;
     width:100%;
     border: none;
     border-radius: 4px;
