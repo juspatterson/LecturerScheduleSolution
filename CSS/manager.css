@@ -19,7 +19,7 @@
         background-color: rgba(5, 5, 5, 0.2);
     }
 
-    #choose-a-lecturer-roll {
+    #choose-a-lecturer-role {
         color: whitesmoke;
         background-image:
                 linear-gradient(rgba(170, 170, 170, 0.78),rgba(61, 61, 61, 100));
@@ -68,7 +68,7 @@
         color: whitesmoke;
     }
 
-    #choose-a-lecturer-roll {
+    #choose-a-lecturer-role {
         background-image:
                 linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
         border-radius: 5px;
@@ -208,7 +208,6 @@ label {
 #instances-table, #instances-table_wrapper {
     width: 100%;
     display: block;
-    /*float: none;*/
 }
 
 #schedule-table-div {
@@ -224,7 +223,6 @@ label {
 #schedule-table, #schedule-table_wrapper {
     width: 100%;
     display: block;
-    /*float: none;*/
 }
 
 .close-x {
