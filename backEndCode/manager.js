@@ -1,7 +1,7 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
     managementOfTablesAndFunctions.init();
-    
+
 })
 
 function ManagementOfTablesAndFunctions(tables1) {
@@ -77,7 +77,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             success: function (lectureInformation, textStatus) {
                 var table = $('#lectures-table').DataTable({
                     autoWidth: true,
-                    scrollY: 624,
+                    scrollY: 610,
                     language: { search: "",searchPlaceholder: "Search..." },
                     data: lectureInformation.lectures,
                     dataSrc: lectureInformation.lectures,

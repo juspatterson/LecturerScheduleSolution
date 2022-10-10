@@ -5,7 +5,7 @@ $(document).ready(function () {
 function login() {
     $('#login-button').on('click', function (event) {
         event.preventDefault();
-        alert("User name or Password are incorrect.")
+        alert("Username or Password are incorrect.")
     })
 
 

@@ -33,7 +33,11 @@
     }
 
     /*for dataTables*/
-    table.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    table.dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
         color: white!important;
     }
 
@@ -44,7 +48,7 @@
         background-color: #4b4b4b;
     }
 
-    button.dt-button:first-of-type span {
+    button.dt-button > span {
         color: white !important;
     }
 }
@@ -66,7 +70,7 @@
         background-color: #d0d0d0;
     }
 
-    button.dt-button:first-of-type span {
+    button.dt-button > span {
         color: black !important;
     }
 
@@ -108,7 +112,9 @@ body {
 }
 
 /*dataTables*/
-button.dt-button, div.dt-button, a.dt-button, input.dt-button {
+button.dt-button,
+div.dt-button,
+a.dt-button, input.dt-button {
     border-radius: 11px !important;
 }
 

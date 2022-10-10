@@ -1,9 +1,12 @@
 @media (prefers-color-scheme: dark) {
-    #lectures-table-div, #instances-table-div, #schedule-table-div {
+    #lectures-table-div,
+    #instances-table-div,
+    #schedule-table-div {
         background: #2b2b2b;
     }
 
-    #selected-instance, #selected-lecturer {
+    #selected-instance,
+    #selected-lecturer {
         background-color: rgb(75, 75, 75);
         color: white;
         border-radius: 5px;
@@ -11,11 +14,13 @@
 
     }
 
-    #selected-instance:hover, #selected-lecturer:hover {
+    #selected-instance:hover,
+    #selected-lecturer:hover {
         background-color: rgba(170, 170, 170, 0.2);
     }
 
-    #selected-instance:active, #selected-lecturer:active {
+    #selected-instance:active,
+    #selected-lecturer:active {
         background-color: rgba(5, 5, 5, 0.2);
     }
 

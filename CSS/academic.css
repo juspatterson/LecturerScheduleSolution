@@ -19,7 +19,7 @@
 
 @media (prefers-color-scheme: light) {
     #lectures-schedule-table-div {
-        background: #7c7c7c;
+        background: rgb(176, 175, 175);
     }
 
     #category-filter {
