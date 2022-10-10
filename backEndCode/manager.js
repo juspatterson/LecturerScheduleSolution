@@ -1,8 +1,7 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
     managementOfTablesAndFunctions.init();
-
-
+    
 })
 
 function ManagementOfTablesAndFunctions(tables1) {
@@ -12,9 +11,6 @@ function ManagementOfTablesAndFunctions(tables1) {
         loadLecturesTable()
         loadScheduleTable()
         filterOnSelectedRow()
-
-
-
         createScheduleAndAddToScheduleTable()
         removeSelected()
     }
@@ -51,6 +47,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                             $(row).addClass('myeven');
                         }
                     },
+                    columnDefs: [
+                        { targets: '_all', className: 'dt-left' }
+                    ],
                     columns: [
                         {'data': 'SubjectCode'},
                         {'data': 'SubjectName'},
@@ -97,6 +96,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                             $(row).addClass('myeven');
                         }
                     },
+                    columnDefs: [
+                        { targets: '_all', className: 'dt-left' }
+                    ],
                     columns: [
                         {'data': 'name'},
                         {'data': 'load'},
@@ -140,6 +142,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                     $(row).addClass('myeven');
                 }
             },
+            columnDefs: [
+                { targets: '_all', className: 'dt-left' }
+            ],
             buttons: [
                 {
                     text: "Delete",
@@ -172,7 +177,6 @@ function ManagementOfTablesAndFunctions(tables1) {
         var instancesTable = tables.table( 0 );
         var lectureTable = tables.table( 1 );
 
-
         $('#instances-table, #lectures-table').on('click', 'tr', function () {
             tables = $('.dataTable').DataTable();
             instancesTable = tables.table( 0 );
@@ -188,6 +192,7 @@ function ManagementOfTablesAndFunctions(tables1) {
                     var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
                     $('#selected-instance').text(instancesDataJoin )
                     $('#close-x-instance').text("X")
+                    $('#selected-instance-error-massage').css('visibility', 'hidden')
 
                     if (instancesData != null && !lectureTable.rows('.selected').any()){
                         lectureTable.column(2).search(instancesData[0].SubjectCode).draw()
@@ -208,11 +213,11 @@ function ManagementOfTablesAndFunctions(tables1) {
                     var selectedLecturer = lectureTable.rows({ selected: true}).data();
                     $('#selected-lecturer').text(selectedLecturer[0].name)
                     $('#close-x-lecturer').text("X")
+                    $('#selected-lecturer-error-massage').css('visibility', 'hidden')
 
                     var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
                         return value
                     }).join('|')
-                    console.log(subjectCodes)
 
                     if (selectedLecturer != null && !instancesTable.rows('.selected').any()) {
                         instancesTable.column(0).search(subjectCodes,true,false,false).draw()
@@ -228,19 +233,34 @@ function ManagementOfTablesAndFunctions(tables1) {
     }
 
     function createScheduleAndAddToScheduleTable() {
+        var errorDisplayCount = 0
+
+        $('#choose-a-lecturer-role').on('change', function () {
+            $('#choose-a-lecturer-role-error-massage').css('visibility', 'hidden')
+        })
+
         $('#create-schedule').on('click', function() {
             var tables = $('.dataTable').DataTable();
             var instancesTable = tables.table( 0 );
             var lecturerTable = tables.table( 1 );
             var scheduleTable = tables.table( 2 );
-
-            console.log(instancesTable.rows({ selected: true}).data().toArray())
-
             var instancesData = instancesTable.rows({ selected: true}).data().toArray()
             var lecturerData = lecturerTable.rows({ selected: true}).data().toArray()
 
-            console.log($('#choose-a-lecturer-roll option:selected').text())
-            if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-roll option:selected').text() != "Nothing Selected") {
+            if ($('#selected-instance').text() == "Nothing Selected") {
+                $('#selected-instance-error-massage').css('visibility', 'revert')
+            }
+
+            if ($('#selected-lecturer').text() == "Nothing Selected") {
+                $('#selected-lecturer-error-massage').css('visibility', 'revert')
+            }
+
+            if ($('#choose-a-lecturer-role option:selected').text() == "Nothing Selected") {
+                $('#choose-a-lecturer-role-error-massage').css('visibility', 'revert')
+            }
+
+
+            if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 scheduleTable.row.add([
                     "",
                     instancesData[0].SubjectCode,
@@ -250,13 +270,11 @@ function ManagementOfTablesAndFunctions(tables1) {
                     instancesData[0].Load,
                     lecturerData[0].name,
                     lecturerData[0].load,
-                    $('#choose-a-lecturer-roll option:selected').text(),
-                    "",
-                    "",
-
+                    $('#choose-a-lecturer-role option:selected').text(),
                 ]).draw()
                 alert("Schedule Created")
                 $('#create-schedule-form').trigger('reset')
+
                 var tables = $('.dataTable').DataTable();
                 var instancesTable = tables.table( 0 );
                 var lectureTable = tables.table( 1 );
@@ -268,10 +286,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                 $('#close-x-lecturer').text("")
                 instancesTable.columns().search('').draw()
                 lectureTable.rows('.selected').deselect()
+
+                errorDisplayCount = 1
             }
-
-
-
         })
     }
 

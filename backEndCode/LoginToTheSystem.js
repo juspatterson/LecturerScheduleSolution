@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    loadDataForSubjectsTimeTable()
-    console.log(instances)
-
+    login()
 })
 
-function test1() {
-    $('#test').text( $('#test').text() + " test 1");
-    test();
+function login() {
+    $('#login-button').on('click', function (event) {
+        event.preventDefault();
+        alert("User name or Password are incorrect.")
+    })
 
 
 }
