@@ -259,8 +259,27 @@ function ManagementOfTablesAndFunctions(tables1) {
                 $('#choose-a-lecturer-role-error-massage').css('visibility', 'revert')
             }
 
+            if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
+                if (window.confirm("Click OK to override maximum load")) {
+                    scheduleTable.row.add([
+                        "<img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>",
+                        instancesData[0].SubjectCode,
+                        instancesData[0].SubjectName,
+                        instancesData[0].StartDate,
+                        instancesData[0].EndDate,
+                        instancesData[0].Load,
+                        lecturerData[0].name,
+                        lecturerData[0].load,
+                        $('#choose-a-lecturer-role option:selected').text(),
+                    ]).draw()
 
-            if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
+                    resetTablesAndForm()
+                }
+            }
+
+
+
+            else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 scheduleTable.row.add([
                     "",
                     instancesData[0].SubjectCode,
@@ -275,21 +294,25 @@ function ManagementOfTablesAndFunctions(tables1) {
                 alert("Schedule Created")
                 $('#create-schedule-form').trigger('reset')
 
-                var tables = $('.dataTable').DataTable();
-                var instancesTable = tables.table( 0 );
-                var lectureTable = tables.table( 1 );
-                $('#selected-instance').text("Nothing Selected")
-                $('#close-x-instance').text("")
-                lectureTable.columns().search('').draw()
-                instancesTable.rows('.selected').deselect().draw()
-                $('#selected-lecturer').text("Nothing Selected")
-                $('#close-x-lecturer').text("")
-                instancesTable.columns().search('').draw()
-                lectureTable.rows('.selected').deselect()
+                resetTablesAndForm()
 
-                errorDisplayCount = 1
+                errorDisplayCount += 1
             }
         })
+
+        function resetTablesAndForm() {
+            var tables = $('.dataTable').DataTable();
+            var instancesTable = tables.table( 0 );
+            var lectureTable = tables.table( 1 );
+            $('#selected-instance').text("Nothing Selected")
+            $('#close-x-instance').text("")
+            lectureTable.columns().search('').draw()
+            instancesTable.rows('.selected').deselect().draw()
+            $('#selected-lecturer').text("Nothing Selected")
+            $('#close-x-lecturer').text("")
+            instancesTable.columns().search('').draw()
+            lectureTable.rows('.selected').deselect()
+        }
     }
 
     function removeSelected() {
