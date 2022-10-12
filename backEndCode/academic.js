@@ -115,19 +115,19 @@ function ManagementOfTablesAndFunctions(tables1) {
 
             addRow("CSE1ITX",
                 "Industry Project 3A",
-                "2023-7",
-                "2023-9",
+                "2023-07",
+                "2023-09",
                 supportSupport)
 
             addRow("CSE1ITX",
                 "Wireless Network Engineering (Elective)",
-                "2023-8",
+                "2023-08",
                 "2023-10",
                 mainLecturer)
 
             addRow("CSE1ITX",
                 "Internet of Things (Elective)",
-                "2023-9",
+                "2023-09",
                 "2023-11",
                 supportMarking)
 
