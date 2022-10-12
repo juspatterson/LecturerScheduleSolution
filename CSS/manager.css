@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-    #lectures-table-div,
+    #lecturers-table-div,
     #instances-table-div,
     #schedule-table-div {
         background: #2b2b2b;
@@ -49,7 +49,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    #lectures-table-div, #instances-table-div, #schedule-table-div {
+    #lecturers-table-div, #instances-table-div, #schedule-table-div {
         background: #a4a3a3;
     }
 
@@ -187,7 +187,7 @@ select {
 label {
 }
      
-#lectures-table-div {
+#lecturers-table-div {
     width: 29%;
     display: block;
     float: right;
@@ -195,7 +195,7 @@ label {
     padding: 7px;
 }
 
-#lectures-table, lectures-table_wrapper {
+#lecturers-table, #lecturers-table_wrapper {
     width: 100%;
     float: left;
     display: block;

@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-    #lectures-schedule-table-div {
+    #lecturers-schedule-table-div {
         background: #2b2b2b;
     }
 
@@ -18,7 +18,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    #lectures-schedule-table-div {
+    #lecturers-schedule-table-div {
         background: rgb(176, 175, 175);
     }
 
@@ -94,13 +94,13 @@ form {
      
 }
 
-#lectures-schedule-table, #lectures-schedule-table_wrapper {
+#lecturers-schedule-table, #lecturers-schedule-table_wrapper {
     width: 100%;
     display: block;
     /*float: none;*/
 }
 
-#lectures-schedule-table-div {
+#lecturers-schedule-table-div {
     border-radius: 25px;
     display: table;
     margin-left: auto;

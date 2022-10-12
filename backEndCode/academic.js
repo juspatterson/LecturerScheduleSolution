@@ -11,7 +11,7 @@ function ManagementOfTablesAndFunctions(tables1) {
     }
     
     function prototypeData() {
-        var table = $('#lectures-schedule-table').DataTable({
+        var table = $('#lecturers-schedule-table').DataTable({
             dom: 'Bfrtip',
             responsive: true,
             sScrollY: 600,
@@ -218,7 +218,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             success: function (subjectsTimeTable, textStatus) {
 
 
-                $('#lectures-schedule-table').DataTable({
+                $('#lecturers-schedule-table').DataTable({
                     data: subjectsTimeTable.instances,
                     dataSrc: subjectsTimeTable.instances,
                     serverSide: false,

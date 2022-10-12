@@ -75,7 +75,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             dataType: 'json',
             data: '{}',
             success: function (lectureInformation, textStatus) {
-                var table = $('#lectures-table').DataTable({
+                var table = $('#lecturers-table').DataTable({
                     autoWidth: true,
                     scrollY: 610,
                     language: { search: "",searchPlaceholder: "Search..." },
@@ -177,7 +177,7 @@ function ManagementOfTablesAndFunctions(tables1) {
         var instancesTable = tables.table( 0 );
         var lectureTable = tables.table( 1 );
 
-        $('#instances-table, #lectures-table').on('click', 'tr', function () {
+        $('#instances-table, #lecturers-table').on('click', 'tr', function () {
             tables = $('.dataTable').DataTable();
             instancesTable = tables.table( 0 );
             lectureTable = tables.table( 1 );
