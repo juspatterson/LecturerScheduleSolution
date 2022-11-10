@@ -259,3 +259,45 @@ select {
     top: 50px !important;
 }
 
+#toaster-message {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgb(85, 170, 243);
+    color: #fff;
+    text-align: center;
+    border-radius: 48px;
+    padding: 10px;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    transform: translate(-50%, -0%);;
+    top: 51px;
+    font-size: 22px;
+}
+
+#toaster-message.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 50px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 50px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 50px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 50px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+

@@ -274,6 +274,8 @@ function ManagementOfTablesAndFunctions(tables1) {
                     ]).draw()
 
                     resetTablesAndForm()
+
+                    showToasterMessage()
                 }
             }
 
@@ -291,7 +293,10 @@ function ManagementOfTablesAndFunctions(tables1) {
                     lecturerData[0].load,
                     $('#choose-a-lecturer-role option:selected').text(),
                 ]).draw()
-                alert("Schedule Created")
+
+                showToasterMessage()
+
+
                 $('#create-schedule-form').trigger('reset')
 
                 resetTablesAndForm()
@@ -299,6 +304,12 @@ function ManagementOfTablesAndFunctions(tables1) {
                 errorDisplayCount += 1
             }
         })
+
+        function showToasterMessage() {
+            var x = document.getElementById("toaster-message");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
 
         function resetTablesAndForm() {
             var tables = $('.dataTable').DataTable();
