@@ -108,35 +108,6 @@ h2 {
     margin-bottom: 8.2px;
 }
 
-span {
-     color: #ADD8E6;
-}
-
-ul {
-    width: auto;
-    float: right;
-    margin-top: 8px;
-}
-
-li {
-    display: inline-block;
-    padding: 14px 28px;
-}
-
-
-
-a {
-    text-align: center;
-    color: #ffffff;
-    text-decoration: none;
-
-}
-
-a:hover {
-    color: #ADD8E6;
-    transition: 0.4s;
-}
-
 input {
     padding: 10px;
     font-size: inherit;
@@ -186,6 +157,15 @@ select {
     width: 100%;
     min-height: 20px;
     padding: 0px 9px 0px 9px;
+    font-size: 15px;
+}
+
+#choose-a-lecturer-role {
+    font-size: 15px;
+}
+
+.form-label {
+    font-size: 17px;
 }
 
 #lecturers-table-div {
@@ -268,12 +248,14 @@ select {
     visibility: hidden;
 }
 
-.dataTables_wrapper .dataTables_filter {
+.dataTables_wrapper,
+.dataTables_filter {
     margin-right: 10px;
 
 }
 
-.dtfh-floatingparent, .dtfh-floatingparenthead {
-    top: 75px !important;
+.dtfh-floatingparent,
+.dtfh-floatingparenthead {
+    top: 50px !important;
 }
 

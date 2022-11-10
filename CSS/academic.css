@@ -41,35 +41,7 @@ h2 {
     font-size: 40px;
 }
 
-
-span {
-     color: #ADD8E6;
-}
-
-ul {
-    width: auto;
-    float: right;
-    margin-top: 8px;
-}
-
-li {
-    display: inline-block;
-    padding: 14px 28px;
-}
-
-a {
-   text-align: center;
-   color: #ffffff;
-   text-decoration: none;
-   font-size: 1.35vw;
-}
-
-a:hover {
-  color: #ADD8E6;
-  transition: 0.4s;
-}
-
-input { 
+input {
     padding: 10px;
     font-size: inherit;
     width: 100%;
