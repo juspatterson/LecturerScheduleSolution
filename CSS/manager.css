@@ -273,6 +273,7 @@ select {
     transform: translate(-50%, -0%);;
     top: 51px;
     font-size: 22px;
+    z-index: 999;
 }
 
 #toaster-message.show {
