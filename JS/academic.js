@@ -54,6 +54,11 @@ function ManagementOfTablesAndFunctions(tables1) {
                         $(win.document.body).find('.dt-left').css('padding-left', '0px')
 
                     }
+                },
+                {
+                    extend: 'pdf',
+                    text: 'Export as PDF'
+
                 }
             ]
 
