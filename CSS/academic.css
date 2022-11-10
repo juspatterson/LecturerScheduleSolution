@@ -94,7 +94,8 @@ form {
      
 }
 
-#lecturers-schedule-table, #lecturers-schedule-table_wrapper {
+#lecturers-schedule-table,
+#lecturers-schedule-table_wrapper {
     width: 100%;
     display: block;
     /*float: none;*/

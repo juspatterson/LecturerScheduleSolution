@@ -49,11 +49,14 @@
 }
 
 @media (prefers-color-scheme: light) {
-    #lecturers-table-div, #instances-table-div, #schedule-table-div {
+    #lecturers-table-div,
+    #instances-table-div,
+    #schedule-table-div {
         background: #a4a3a3;
     }
 
-    #selected-instance, #selected-lecturer {
+    #selected-instance,
+    #selected-lecturer {
         background-color: rgb(176, 175, 175);
         color: black;
         border-radius: 5px;
@@ -61,11 +64,13 @@
 
     }
 
-    #selected-instance:hover, #selected-lecturer:hover {
+    #selected-instance:hover,
+    #selected-lecturer:hover {
         background-color: rgba(170, 170, 170, 0.2);
     }
 
-    #selected-instance:active, #selected-lecturer:active {
+    #selected-instance:active,
+    #selected-lecturer:active {
         background-color: rgba(5, 5, 5, 0.2);
     }
 
@@ -175,18 +180,14 @@ select {
     text-align: center;
 }
 
-#selected-instance, #selected-lecturer {
+#selected-instance,
+#selected-lecturer {
     display: block;
     width: 100%;
     min-height: 20px;
     padding: 0px 9px 0px 9px;
 }
 
-
-     
-label {
-}
-     
 #lecturers-table-div {
     width: 29%;
     display: block;
@@ -195,7 +196,8 @@ label {
     padding: 7px;
 }
 
-#lecturers-table, #lecturers-table_wrapper {
+#lecturers-table,
+#lecturers-table_wrapper {
     width: 100%;
     float: left;
     display: block;
@@ -211,7 +213,8 @@ label {
     padding: 7px;
 }
 
-#instances-table, #instances-table_wrapper {
+#instances-table,
+#instances-table_wrapper {
     width: 100%;
     display: block;
 }
