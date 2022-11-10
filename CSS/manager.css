@@ -2,15 +2,15 @@
     #lecturers-table-div,
     #instances-table-div,
     #schedule-table-div {
-        background: #2b2b2b;
+        background: rgba(2,74,178,0.2);
     }
 
     #selected-instance,
     #selected-lecturer {
-        background-color: rgb(75, 75, 75);
+        background-color: rgba(2,74,178,0.4);
         color: white;
         border-radius: 5px;
-        border: 1px solid rgb(170,170,170);
+        border: 1px solid rgba(2,74,178,0.4);
 
     }
 
@@ -27,15 +27,15 @@
     #choose-a-lecturer-role {
         color: whitesmoke;
         background-image:
-                linear-gradient(rgba(170, 170, 170, 0.78),rgba(61, 61, 61, 100));
+                linear-gradient(rgba(2, 74, 178, 0.93),rgba(2,74,178,0.4));
         border-radius: 5px;
         border: 1px solid rgb(170,170,170);
         background-color: rgba(0, 0, 0, 0);
     }
 
     #create-schedule {
-        background: black;
-        color: white;
+        background: rgba(2,74,128,1);
+        color: whitesmoke;
     }
 
     #create-schedule:hover {
@@ -52,15 +52,15 @@
     #lecturers-table-div,
     #instances-table-div,
     #schedule-table-div {
-        background: #a4a3a3;
+        background: rgba(2,74,178,0.6);
     }
 
     #selected-instance,
     #selected-lecturer {
-        background-color: rgb(176, 175, 175);
+        background-color: rgba(2,74,178,0.4);
         color: black;
         border-radius: 5px;
-        border: 1px solid rgb(105, 105, 105);
+        border: 1px solid rgba(2,74,178,0.4);
 
     }
 
@@ -80,15 +80,15 @@
 
     #choose-a-lecturer-role {
         background-image:
-                linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
+                linear-gradient(rgba(2,74,178,0.6),rgba(2,74,178,0.4));
         border-radius: 5px;
         border: 1px solid rgb(170,170,170);
         background-color: rgba(0, 0, 0, 0);
     }
 
     #create-schedule {
-        background: #807f7f;
-        color: black;
+        background: rgba(2,74,128,1);
+        color: whitesmoke;
     }
 
     #create-schedule:hover {

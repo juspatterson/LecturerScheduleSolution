@@ -10,12 +10,9 @@
 
     /*for dataTables*/
     table.fixedHeader-floating {
-        background-color:#1F2022!important;
+        background-color: #003460 !important;
     }
-    /*for dataTables*/
-    table.fixedHeader-locked {
-        background-color:#1F2022!important;
-    }
+
 
     /*for dataTables*/
     .dataTables_filter input {
@@ -64,10 +61,10 @@
     }
 
     table.dataTable tbody tr.myeven{
-        background-color: rgba(196, 228, 248, 0.99);
+        background-color: rgba(196, 228, 248, 0.60);
     }
     table.dataTable tbody tr.myodd{
-        background-color: rgba(105, 105, 105, 0.34);
+        background-color: rgba(105, 105, 105, 0.22);
     }
 
     button.dt-button > span {
@@ -77,11 +74,16 @@
     .dataTables_wrapper .dataTables_filter input {
         border: 1px solid #494949 !important;
     }
+
+    /*for dataTables*/
+    table.fixedHeader-floating {
+        background-color: #4d9ee3 !important;
+    }
 }
 
 body {
     padding: 0;
-    margin-top: 75px;
+    margin-top: 50px;
     font-family: Nunito, sans-serif;
     font-weight: 400;
     text-align: center;
