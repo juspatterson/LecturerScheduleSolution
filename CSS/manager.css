@@ -271,9 +271,8 @@ select {
     z-index: 999;
     left: 50%;
     transform: translate(-50%, -0%);;
-    top: 51px;
+    top: 50px;
     font-size: 22px;
-    z-index: 999;
 }
 
 #toaster-message.show {
