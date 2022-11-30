@@ -6,6 +6,8 @@ $(function () {
 
 function ManagementOfTablesAndFunctions(tables1) {
 
+    var table = null
+
     this.init = function () {
         loadInstanceTable()
         loadLecturesTable()
@@ -13,6 +15,7 @@ function ManagementOfTablesAndFunctions(tables1) {
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
         removeSelected()
+
     }
 
     function loadInstanceTable() {
@@ -118,40 +121,103 @@ function ManagementOfTablesAndFunctions(tables1) {
         });
     }
 
-    function loadScheduleTable() {
+    function createTable(schedules, textStatus) {
         var table = $('#schedule-table').DataTable({
             dom: 'Bfrtip',
+            // ajax: '/api/schedules',
+            // ajax: {
+            //     type: "GET",
+            //     url: '/api/schedules',
+            //     dataType: 'json',
+            //     data: '{}',
+            // },
             responsive: true,
             autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
-            //data:
-            //dataSrc:
-            serverSide: false,
+            data: schedules,
+            dataSrc: schedules,
+            // serverSide: false,
             processing: true,
             responsive: true,
             paging: false,
             fixedHeader: true,
+            columns: [
+                {
+                    'data': 'id',
+                    // "visible": false
+                },
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        if (scheduleJson.Override === 'true') {
+                            return "<img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>"
+                        } else {
+                            return ""
+                        }
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectCode
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectName
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectStartDate
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectEndDate
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectLoad
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.LecturerName
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.LecturerLoad
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.LecturersRole
+                    }},
+
+            ],
             select: true,
-            "rowCallback": function( row, data, index ) {
-                if(index%2 == 0){
+            "rowCallback": function (row, data, index) {
+                if (index % 2 == 0) {
                     $(row).removeClass('myodd myeven');
                     $(row).addClass('myodd');
-                }else{
+                } else {
                     $(row).removeClass('myodd myeven');
                     $(row).addClass('myeven');
                 }
             },
             columnDefs: [
-                { targets: '_all', className: 'dt-left' }
+                {targets: '_all', className: 'dt-left'}
             ],
             buttons: [
                 {
                     text: "Delete",
-                    action: function ( e, dt, node, config ) {
+                    action: function (e, dt, node, config) {
                         if (window.confirm("Click OK to delete Schedule")) {
                             table
-                                .rows( '.selected' )
+                                .rows('.selected')
                                 .remove()
                                 .draw();
                         }
@@ -159,7 +225,7 @@ function ManagementOfTablesAndFunctions(tables1) {
                 },
                 {
                     text: "Edit",
-                    action: function ( e, dt, node, config ) {
+                    action: function (e, dt, node, config) {
                         if (window.confirm("Click OK to Edit Schedule")) {
                             // table
                             //     .rows( '.selected' )
@@ -170,6 +236,22 @@ function ManagementOfTablesAndFunctions(tables1) {
                 }
             ]
         })
+
+        // $('#schedule-table').DataTable().ajax.reload();
+    }
+
+    function loadScheduleTable() {
+        $.ajax({
+
+            type: "GET",
+            url: '/api/schedules',
+            dataType: 'json',
+            data: '{}',
+            success: createTable,
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
     }
 
     function filterOnSelectedRow() {
@@ -261,46 +343,21 @@ function ManagementOfTablesAndFunctions(tables1) {
 
             if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 if (window.confirm("Click OK to override maximum load")) {
-                    scheduleTable.row.add([
-                        "<img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>",
-                        instancesData[0].SubjectCode,
-                        instancesData[0].SubjectName,
-                        instancesData[0].StartDate,
-                        instancesData[0].EndDate,
-                        instancesData[0].Load,
-                        lecturerData[0].name,
-                        lecturerData[0].load,
-                        $('#choose-a-lecturer-role option:selected').text(),
-                    ]).draw()
+                    addScheduleToDatabase('true')
 
+                    $('#create-schedule-form').trigger('reset')
                     resetTablesAndForm()
 
                     showToasterMessage()
                 }
             }
 
-
-
             else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
-                scheduleTable.row.add([
-                    "",
-                    instancesData[0].SubjectCode,
-                    instancesData[0].SubjectName,
-                    instancesData[0].StartDate,
-                    instancesData[0].EndDate,
-                    instancesData[0].Load,
-                    lecturerData[0].name,
-                    lecturerData[0].load,
-                    $('#choose-a-lecturer-role option:selected').text(),
-                ]).draw()
-
-                showToasterMessage()
-
+                addScheduleToDatabase('true')
 
                 $('#create-schedule-form').trigger('reset')
-
+                showToasterMessage()
                 resetTablesAndForm()
-
                 errorDisplayCount += 1
             }
         })
@@ -324,6 +381,51 @@ function ManagementOfTablesAndFunctions(tables1) {
             instancesTable.columns().search('').draw()
             lectureTable.rows('.selected').deselect()
         }
+    }
+
+    function addScheduleToDatabase(overloaded) {
+        var tables = $('.dataTable').DataTable();
+        var instancesTable = tables.table( 0 );
+        var lecturerTable = tables.table( 1 );
+        var scheduleTable = tables.table( 2 );
+        var instancesData = instancesTable.rows({ selected: true}).data().toArray()
+        var lecturerData = lecturerTable.rows({ selected: true}).data().toArray()
+
+
+        var newSchedule = {};
+        newSchedule ['Override'] = overloaded
+        newSchedule ['SubjectCode'] = instancesData[0].SubjectCode
+        newSchedule ['SubjectName'] = instancesData[0].SubjectName
+        newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
+        newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
+        newSchedule ['SubjectLoad'] = '1'
+        newSchedule ['LecturerName'] = lecturerData[0].name
+        newSchedule ['LecturerLoad'] = lecturerData[0].load
+        newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
+        var data = JSON.stringify(newSchedule)
+
+        console.log(data)
+
+
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/create',
+            async: true,
+            data: {'data': data},
+            success: function(newdata) {
+                console.log('done');
+                newdata = data
+                scheduleTable.clear()
+                scheduleTable.destroy()
+                loadScheduleTable()
+
+
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
     }
 
     function removeSelected() {
