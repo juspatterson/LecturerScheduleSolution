@@ -360,18 +360,19 @@ function ManagementOfTablesAndFunctions(tables1) {
             }
 
             else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
-                addScheduleToDatabase('true')
+                addScheduleToDatabase('false')
 
                 $('#create-schedule-form').trigger('reset')
-                showToasterMessage()
-                resetTablesAndForm()
+
                 errorDisplayCount += 1
             }
         })
+    }
 
-        function showToasterMessage() {
+    function showToasterMessage(text) {
             var x = document.getElementById("toaster-message");
             x.className = "show";
+        $('#toaster-message').text(text)
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
 
