@@ -6,11 +6,13 @@ $(function () {
 
 function ManagementOfTablesAndFunctions(tables1) {
 
-    var table = null
+    var scheduleTable = null
+    var instancesTable = null
+    var lecturersTable = null
 
     this.init = function () {
         loadInstanceTable()
-        loadLecturesTable()
+        loadLecturersTable()
         loadScheduleTable()
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
@@ -26,59 +28,29 @@ function ManagementOfTablesAndFunctions(tables1) {
             url: '../MockUpData/SubjectsTimeTable.json',
             dataType: 'json',
             data: '{}',
-            success: function (subjectsTimeTable, textStatus) {
-
-
-                $('#instances-table').DataTable({
-                    autoWidth: true,
-                    language: { search: "",searchPlaceholder: "Search..." },
-                    sScrollY: 600,
-                    scrollCollapse: true,
-                    paging: false,
-                    data: subjectsTimeTable.instances,
-                    dataSrc: subjectsTimeTable.instances,
-                    serverSide: false,
-                    processing: true,
-                    fixedHeader: true,
-                    select: true,
-                    "rowCallback": function( row, data, index ) {
-                        if(index%2 == 0){
-                            $(row).removeClass('myodd myeven');
-                            $(row).addClass('myodd');
-                        }else{
-                            $(row).removeClass('myodd myeven');
-                            $(row).addClass('myeven');
-                        }
-                    },
-                    columnDefs: [
-                        { targets: '_all', className: 'dt-left' }
-                    ],
-                    columns: [
-                        {'data': 'SubjectCode'},
-                        {'data': 'SubjectName'},
-                        {'data': 'StartDate'},
-                        {'data': 'EndDate'},
-                        {'data': 'Load'}
-                    ],
-                    stateSave: true,
-                });
-
-            },
+            success: createInstanceTable,
             error: function (obj, textStatus) {
                 alert(obj.msg);
             }
         });
     }
 
-    function loadLecturesTable() {
+    function loadLecturersTable() {
         $.ajax({
 
             type: "GET",
             url: '../MockUpData/lecturerSME.json',
             dataType: 'json',
             data: '{}',
-            success: function (lectureInformation, textStatus) {
-                var table = $('#lecturers-table').DataTable({
+            success: createLecturersTable,
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
+
+    function createLecturersTable(lectureInformation, textStatus) {
+            lecturersTable = $('#lecturers-table').DataTable({
                     autoWidth: true,
                     scrollY: 610,
                     language: { search: "",searchPlaceholder: "Search..." },
@@ -114,15 +86,50 @@ function ManagementOfTablesAndFunctions(tables1) {
 
 
 
-            },
-            error: function (obj, textStatus) {
-                alert(obj.msg);
             }
+
+
+    function createInstanceTable(subjectsTimeTable, textStatus) {
+
+
+        instancesTable = $('#instances-table').DataTable({
+            autoWidth: true,
+            language: { search: "",searchPlaceholder: "Search..." },
+            sScrollY: 600,
+            scrollCollapse: true,
+            paging: false,
+            data: subjectsTimeTable.instances,
+            dataSrc: subjectsTimeTable.instances,
+            serverSide: false,
+            processing: true,
+            fixedHeader: true,
+            select: true,
+            "rowCallback": function( row, data, index ) {
+                if(index%2 == 0){
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myodd');
+                }else{
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myeven');
+                }
+            },
+            columnDefs: [
+                { targets: '_all', className: 'dt-left' }
+            ],
+            columns: [
+                {'data': 'SubjectCode'},
+                {'data': 'SubjectName'},
+                {'data': 'StartDate'},
+                {'data': 'EndDate'},
+                {'data': 'Load'}
+            ],
+            stateSave: true,
         });
+
     }
 
-    function createTable(schedules, textStatus) {
-        var table = $('#schedule-table').DataTable({
+    function createScheduleTable(schedules, textStatus) {
+        scheduleTable = $('#schedule-table').DataTable({
             dom: 'Bfrtip',
             // ajax: '/api/schedules',
             // ajax: {
@@ -247,7 +254,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             url: '/api/schedules',
             dataType: 'json',
             data: '{}',
-            success: createTable,
+            success: createScheduleTable,
             error: function (obj, textStatus) {
                 alert(obj.msg);
             }
@@ -430,24 +437,18 @@ function ManagementOfTablesAndFunctions(tables1) {
 
     function removeSelected() {
         $('#selected-instance, #close-x-container-instance').on('click',function () {
-            var tables = $('.dataTable').DataTable();
-            var instancesTable = tables.table( 0 );
-            var lectureTable = tables.table( 1 );
             $('#selected-instance').text("Nothing Selected")
             $('#close-x-instance').text("")
-            lectureTable.columns().search('').draw()
+            lecturersTable.columns().search('').draw()
             instancesTable.rows('.selected').deselect().draw()
 
         })
 
         $('#selected-lecturer, #close-x-container-lecturer').on('click',function () {
-            var tables = $('.dataTable').DataTable();
-            var instancesTable = tables.table( 0 );
-            var lectureTable = tables.table( 1 );
             $('#selected-lecturer').text("Nothing Selected")
             $('#close-x-lecturer').text("")
             instancesTable.columns().search('').draw()
-            lectureTable.rows('.selected').deselect()
+            lecturersTable.rows('.selected').deselect()
         })
 
     }
