@@ -223,17 +223,22 @@ function ManagementOfTablesAndFunctions(tables1) {
                     text: "Delete",
                     action: function (e, dt, node, config) {
                         if (window.confirm("Click OK to delete Schedule")) {
-                            table
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            deleteFromDataBase(selectRow[0].id)
+                            scheduleTable
                                 .rows('.selected')
                                 .remove()
                                 .draw();
                         }
+
                     }
                 },
                 {
                     text: "Edit",
                     action: function (e, dt, node, config) {
                         if (window.confirm("Click OK to Edit Schedule")) {
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            editSchedule(selectRow)
                             // table
                             //     .rows( '.selected' )
                             //     .remove()
@@ -353,9 +358,7 @@ function ManagementOfTablesAndFunctions(tables1) {
                     addScheduleToDatabase('true')
 
                     $('#create-schedule-form').trigger('reset')
-                    resetTablesAndForm()
 
-                    showToasterMessage()
                 }
             }
 
@@ -389,7 +392,6 @@ function ManagementOfTablesAndFunctions(tables1) {
             instancesTable.columns().search('').draw()
             lectureTable.rows('.selected').deselect()
         }
-    }
 
     function addScheduleToDatabase(overloaded) {
         var tables = $('.dataTable').DataTable();
@@ -406,7 +408,7 @@ function ManagementOfTablesAndFunctions(tables1) {
         newSchedule ['SubjectName'] = instancesData[0].SubjectName
         newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
         newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
-        newSchedule ['SubjectLoad'] = '1'
+        newSchedule ['SubjectLoad'] = instancesData[0].Load
         newSchedule ['LecturerName'] = lecturerData[0].name
         newSchedule ['LecturerLoad'] = lecturerData[0].load
         newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
@@ -421,14 +423,52 @@ function ManagementOfTablesAndFunctions(tables1) {
             url: '/api/schedules/create',
             async: true,
             data: {'data': data},
-            success: function(newdata) {
+            success: function() {
                 console.log('done');
-                newdata = data
                 scheduleTable.clear()
                 scheduleTable.destroy()
                 loadScheduleTable()
+                showToasterMessage('Schedule Created')
+                resetTablesAndForm()
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
+    }
 
+    function editSchedule(selectRow) {
+        let schedule = JSON.parse(selectRow[0].schedule)
+        let subjectCode = schedule.SubjectCode
+        let startDate = schedule.SubjectStartDate
+        let lecturersName = schedule.LecturerName
+        let lecturersRole = schedule.lecturersRole
 
+        instancesTable.rows(function (idx, data, node) {
+            if (data.SubjectCode === subjectCode && data.StartDate === startDate) {
+                return idx
+            }
+        }).select()
+
+        lecturersTable.rows(function (idx, data, node) {
+            if (data.name === lecturersName) {
+                return idx
+            }
+        }).select()
+
+    }
+
+    function deleteFromDataBase(id) {
+        console.log(id)
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/delete',
+            async: true,
+            data: {'id': id},
+            success: function() {
+                console.log('deleting done');
+                showToasterMessage('Schedule Deleted')
             },
             error: function (obj, textStatus) {
                 console.log(obj.msg);
