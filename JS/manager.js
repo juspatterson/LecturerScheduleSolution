@@ -51,42 +51,42 @@ function ManagementOfTablesAndFunctions(tables1) {
 
     function createLecturersTable(lectureInformation, textStatus) {
             lecturersTable = $('#lecturers-table').DataTable({
-                    autoWidth: true,
-                    scrollY: 610,
-                    language: { search: "",searchPlaceholder: "Search..." },
-                    data: lectureInformation.lectures,
-                    dataSrc: lectureInformation.lectures,
-                    serverSide: false,
-                    processing: true,
-                    responsive: true,
-                    paging: false,
-                    fixedHeader: true,
-                    select: true,
-                    "rowCallback": function( row, data, index ) {
-                        if(index%2 == 0){
-                            $(row).removeClass('myodd myeven');
-                            $(row).addClass('myodd');
-                        }else{
-                            $(row).removeClass('myodd myeven');
-                            $(row).addClass('myeven');
-                        }
-                    },
-                    columnDefs: [
-                        { targets: '_all', className: 'dt-left' }
-                    ],
-                    columns: [
-                        {'data': 'name'},
-                        {'data': 'load'},
-                        {
-                            'data': "subjectsLecturerCanTeach.subjectsCode",
-                            "visible": false
-                        }
-                    ]
-                });
+                autoWidth: true,
+                scrollY: 610,
+                language: { search: "",searchPlaceholder: "Search..." },
+                data: lectureInformation.lectures,
+                dataSrc: lectureInformation.lectures,
+                serverSide: false,
+                processing: true,
+                responsive: true,
+                paging: false,
+                fixedHeader: true,
+                select: true,
+                "rowCallback": function( row, data, index ) {
+                    if(index%2 == 0){
+                        $(row).removeClass('myodd myeven');
+                        $(row).addClass('myodd');
+                    }else{
+                        $(row).removeClass('myodd myeven');
+                        $(row).addClass('myeven');
+                    }
+                },
+                columnDefs: [
+                    { targets: '_all', className: 'dt-left' }
+                ],
+                columns: [
+                    {'data': 'name'},
+                    {'data': 'load'},
+                    {
+                        'data': "subjectsLecturerCanTeach.subjectsCode",
+                        "visible": false
+                    }
+                ]
+            });
 
 
 
-            }
+        }
 
 
     function createInstanceTable(subjectsTimeTable, textStatus) {
@@ -267,14 +267,9 @@ function ManagementOfTablesAndFunctions(tables1) {
     }
 
     function filterOnSelectedRow() {
-        var tables = $('.dataTable').DataTable();
-        var instancesTable = tables.table( 0 );
-        var lectureTable = tables.table( 1 );
+
 
         $('#instances-table, #lecturers-table').on('click', 'tr', function () {
-            tables = $('.dataTable').DataTable();
-            instancesTable = tables.table( 0 );
-            lectureTable = tables.table( 1 );
             selectedRowFromInstancesTable()
             selectedRowFromLecturersTable()
         })
@@ -288,23 +283,23 @@ function ManagementOfTablesAndFunctions(tables1) {
                     $('#close-x-instance').text("X")
                     $('#selected-instance-error-massage').css('visibility', 'hidden')
 
-                    if (instancesData != null && !lectureTable.rows('.selected').any()){
-                        lectureTable.column(2).search(instancesData[0].SubjectCode).draw()
+                    if (instancesData != null && !lecturersTable.rows('.selected').any()){
+                        lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
                     } else {
-                        lectureTable.columns().search('').draw()
+                        lecturersTable.columns().search('').draw()
                     }
                 })
                 .on('deselect', function (e, dt, type, indexes) {
 
                     $('#selected-instance').text("Nothing Selected")
-                    lectureTable.columns().search('').draw()
+                    lecturersTable.columns().search('').draw()
                     $('#close-x-instance').text("")
                 })
         }
         function selectedRowFromLecturersTable() {
-            lectureTable
+            lecturersTable
                 .on('select', function (e, dt, type, indexes) {
-                    var selectedLecturer = lectureTable.rows({ selected: true}).data();
+                    var selectedLecturer = lecturersTable.rows({ selected: true}).data();
                     $('#selected-lecturer').text(selectedLecturer[0].name)
                     $('#close-x-lecturer').text("X")
                     $('#selected-lecturer-error-massage').css('visibility', 'hidden')
@@ -334,12 +329,6 @@ function ManagementOfTablesAndFunctions(tables1) {
         })
 
         $('#create-schedule').on('click', function() {
-            var tables = $('.dataTable').DataTable();
-            var instancesTable = tables.table( 0 );
-            var lecturerTable = tables.table( 1 );
-            var scheduleTable = tables.table( 2 );
-            var instancesData = instancesTable.rows({ selected: true}).data().toArray()
-            var lecturerData = lecturerTable.rows({ selected: true}).data().toArray()
 
             if ($('#selected-instance').text() == "Nothing Selected") {
                 $('#selected-instance-error-massage').css('visibility', 'revert')
@@ -356,7 +345,6 @@ function ManagementOfTablesAndFunctions(tables1) {
             if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 if (window.confirm("Click OK to override maximum load")) {
                     addScheduleToDatabase('true')
-
                     $('#create-schedule-form').trigger('reset')
 
                 }
@@ -364,34 +352,29 @@ function ManagementOfTablesAndFunctions(tables1) {
 
             else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 addScheduleToDatabase('false')
-
                 $('#create-schedule-form').trigger('reset')
-
                 errorDisplayCount += 1
             }
         })
     }
 
     function showToasterMessage(text) {
-            var x = document.getElementById("toaster-message");
-            x.className = "show";
+        var x = document.getElementById("toaster-message");
+        x.className = "show";
         $('#toaster-message').text(text)
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        }
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
 
-        function resetTablesAndForm() {
-            var tables = $('.dataTable').DataTable();
-            var instancesTable = tables.table( 0 );
-            var lectureTable = tables.table( 1 );
-            $('#selected-instance').text("Nothing Selected")
-            $('#close-x-instance').text("")
-            lectureTable.columns().search('').draw()
-            instancesTable.rows('.selected').deselect().draw()
-            $('#selected-lecturer').text("Nothing Selected")
-            $('#close-x-lecturer').text("")
-            instancesTable.columns().search('').draw()
-            lectureTable.rows('.selected').deselect()
-        }
+    function resetTablesAndForm() {
+        $('#selected-instance').text("Nothing Selected")
+        $('#close-x-instance').text("")
+        lecturersTable.columns().search('').draw()
+        instancesTable.rows('.selected').deselect().draw()
+        $('#selected-lecturer').text("Nothing Selected")
+        $('#close-x-lecturer').text("")
+        instancesTable.columns().search('').draw()
+        lecturersTable.rows('.selected').deselect()
+    }
 
     function addScheduleToDatabase(overloaded) {
         var tables = $('.dataTable').DataTable();
@@ -455,6 +438,8 @@ function ManagementOfTablesAndFunctions(tables1) {
                 return idx
             }
         }).select()
+
+
 
     }
 
