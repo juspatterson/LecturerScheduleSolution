@@ -20,20 +20,7 @@ function ManagementOfTablesAndFunctions(tables1) {
 
     }
 
-    function loadInstanceTable() {
-        $.ajax({
 
-            type: "GET",
-            //async: false,
-            url: '../MockUpData/SubjectsTimeTable.json',
-            dataType: 'json',
-            data: '{}',
-            success: createInstanceTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
-    }
 
     function loadLecturersTable() {
         $.ajax({
@@ -83,15 +70,24 @@ function ManagementOfTablesAndFunctions(tables1) {
                     }
                 ]
             });
-
-
-
         }
 
+    function loadInstanceTable() {
+        $.ajax({
+
+            type: "GET",
+            //async: false,
+            url: '../MockUpData/SubjectsTimeTable.json',
+            dataType: 'json',
+            data: '{}',
+            success: createInstanceTable,
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
 
     function createInstanceTable(subjectsTimeTable, textStatus) {
-
-
         instancesTable = $('#instances-table').DataTable({
             autoWidth: true,
             language: { search: "",searchPlaceholder: "Search..." },
@@ -125,7 +121,20 @@ function ManagementOfTablesAndFunctions(tables1) {
             ],
             stateSave: true,
         });
+    }
 
+    function loadScheduleTable() {
+        $.ajax({
+
+            type: "GET",
+            url: '/api/schedules',
+            dataType: 'json',
+            data: '{}',
+            success: createScheduleTable,
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
     }
 
     function createScheduleTable(schedules, textStatus) {
@@ -203,7 +212,6 @@ function ManagementOfTablesAndFunctions(tables1) {
                         let scheduleJson = JSON.parse(schedule)
                         return scheduleJson.LecturersRole
                     }},
-
             ],
             select: true,
             "rowCallback": function (row, data, index) {
@@ -248,27 +256,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                 }
             ]
         })
-
-        // $('#schedule-table').DataTable().ajax.reload();
     }
-
-    function loadScheduleTable() {
-        $.ajax({
-
-            type: "GET",
-            url: '/api/schedules',
-            dataType: 'json',
-            data: '{}',
-            success: createScheduleTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
-    }
-
+    
     function filterOnSelectedRow() {
-
-
         $('#instances-table, #lecturers-table').on('click', 'tr', function () {
             selectedRowFromInstancesTable()
             selectedRowFromLecturersTable()
@@ -318,7 +308,6 @@ function ManagementOfTablesAndFunctions(tables1) {
                     $('#close-x-lecturer').text("")
                 });
         }
-
     }
 
     function createScheduleAndAddToScheduleTable() {
@@ -440,7 +429,6 @@ function ManagementOfTablesAndFunctions(tables1) {
         }).select()
 
 
-
     }
 
     function deleteFromDataBase(id) {
@@ -467,7 +455,6 @@ function ManagementOfTablesAndFunctions(tables1) {
             $('#close-x-instance').text("")
             lecturersTable.columns().search('').draw()
             instancesTable.rows('.selected').deselect().draw()
-
         })
 
         $('#selected-lecturer, #close-x-container-lecturer').on('click',function () {
@@ -476,7 +463,6 @@ function ManagementOfTablesAndFunctions(tables1) {
             instancesTable.columns().search('').draw()
             lecturersTable.rows('.selected').deselect()
         })
-
     }
 
 }
