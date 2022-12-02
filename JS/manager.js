@@ -16,7 +16,7 @@ function ManagementOfTablesAndFunctions(tables1) {
         loadScheduleTable()
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
-        removeSelected()
+        removeSelectedRowsFromTablesResetForm()
 
     }
 
@@ -251,13 +251,13 @@ function ManagementOfTablesAndFunctions(tables1) {
                 {
                     text: "Edit",
                     action: function (e, dt, node, config) {
-                        if (window.confirm("Click OK to Edit Schedule")) {
-                            let selectRow = scheduleTable.rows('.selected').data()
-                            editSchedule(selectRow)
-                            // table
-                            //     .rows( '.selected' )
-                            //     .remove()
-                            //     .draw();
+                        if(scheduleTable.rows('.selected').any()) {
+                            if (window.confirm("Click OK to Edit Schedule")) {
+                                let selectRow = scheduleTable.rows('.selected').data()
+                                loadDataIntoTablesAndFormForEditingSchedule(selectRow)
+                            }
+                        } else {
+                            window.alert('Please select a schedule to edit.')
                         }
                     }
                 }
@@ -340,18 +340,54 @@ function ManagementOfTablesAndFunctions(tables1) {
 
             if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 if (window.confirm("Click OK to override maximum load")) {
-                    addScheduleToDatabase('true')
+                    addOrEditSchedule('true')
                     $('#create-schedule-form').trigger('reset')
 
                 }
             }
 
             else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
-                addScheduleToDatabase('false')
+                addOrEditSchedule('false')
                 $('#create-schedule-form').trigger('reset')
                 errorDisplayCount += 1
             }
         })
+
+        function addOrEditSchedule(override) {
+            if ($('#create-schedule').val() === 'Create Schedule') {
+                addScheduleToDatabase(override)
+            } else  {
+                editScheduleOnDatabase(override)
+            }
+        }
+    }
+
+    function editScheduleOnDatabase(override) {
+        var scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
+        console.log(scheduleData)
+        var id = scheduleData[0].id
+
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/edit',
+            async: true,
+            data: {'id': id, 'data': dataForSchedule(override)},
+            success: function() {
+                console.log('editing done');
+                scheduleTable.clear()
+                scheduleTable.destroy()
+                loadScheduleTable()
+                showToasterMessage('Edited Schedule')
+                resetTablesAndForm()
+                $('#create-schedule').val('Create Schedule')
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
+
+
     }
 
     function showToasterMessage(text) {
@@ -372,17 +408,12 @@ function ManagementOfTablesAndFunctions(tables1) {
         lecturersTable.rows('.selected').deselect()
     }
 
-    function addScheduleToDatabase(overloaded) {
-        var tables = $('.dataTable').DataTable();
-        var instancesTable = tables.table( 0 );
-        var lecturerTable = tables.table( 1 );
-        var scheduleTable = tables.table( 2 );
+    function dataForSchedule(override) {
         var instancesData = instancesTable.rows({ selected: true}).data().toArray()
-        var lecturerData = lecturerTable.rows({ selected: true}).data().toArray()
-
+        var lecturerData = lecturersTable.rows({ selected: true}).data().toArray()
 
         var newSchedule = {};
-        newSchedule ['Override'] = overloaded
+        newSchedule ['Override'] = override
         newSchedule ['SubjectCode'] = instancesData[0].SubjectCode
         newSchedule ['SubjectName'] = instancesData[0].SubjectName
         newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
@@ -393,15 +424,16 @@ function ManagementOfTablesAndFunctions(tables1) {
         newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
         var data = JSON.stringify(newSchedule)
 
-        console.log(data)
+        return data
+    }
 
-
+    function addScheduleToDatabase(override) {
         $.ajax({
             type: 'POST',
             // dataType: 'jsonp',
             url: '/api/schedules/create',
             async: true,
-            data: {'data': data},
+            data: {'data': dataForSchedule(override)},
             success: function() {
                 console.log('done');
                 scheduleTable.clear()
@@ -416,12 +448,12 @@ function ManagementOfTablesAndFunctions(tables1) {
         });
     }
 
-    function editSchedule(selectRow) {
+    function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
         let schedule = JSON.parse(selectRow[0].schedule)
         let subjectCode = schedule.SubjectCode
         let startDate = schedule.SubjectStartDate
         let lecturersName = schedule.LecturerName
-        let lecturersRole = schedule.lecturersRole
+        let lecturersRole = schedule.LecturersRole
 
         instancesTable.rows(function (idx, data, node) {
             if (data.SubjectCode === subjectCode && data.StartDate === startDate) {
@@ -435,7 +467,54 @@ function ManagementOfTablesAndFunctions(tables1) {
             }
         }).select()
 
+        filterLecturersTableFillFormWithInstanceInformation()
+        filterInstancesTableFillFormWithLecturerInformation()
 
+        switch (lecturersRole) {
+            case "Main Lecturer" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 1)
+                break
+            case "Support - Live Demo" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 2)
+                break
+            case "Support - Support" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 3)
+                break
+            case "Support - Marking" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 4)
+                break
+            default:
+                $('#choose-a-lecturer-role').prop('selectedIndex', 0)
+                break
+        }
+
+        $('#create-schedule').val('Edit Schedule')
+
+        $('html, body').animate({
+            'scrollTop' : $(".heading").position().top
+        });
+
+        function filterLecturersTableFillFormWithInstanceInformation() {
+            var instancesData = instancesTable.rows({ selected: true}).data().toArray();
+            var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
+            lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
+
+            $('#selected-instance').text(instancesDataJoin )
+            $('#close-x-instance').text("X")
+            $('#selected-instance-error-massage').css('visibility', 'hidden')
+        }
+
+        function filterInstancesTableFillFormWithLecturerInformation() {
+            var selectedLecturer = lecturersTable.rows({ selected: true}).data();
+            var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
+                return value
+            }).join('|')
+            instancesTable.column(0).search(subjectCodes,true,false,false).draw()
+
+            $('#selected-lecturer').text(selectedLecturer[0].name)
+            $('#close-x-lecturer').text("X")
+            $('#selected-lecturer-error-massage').css('visibility', 'hidden')
+        }
     }
 
     function deleteFromDataBase(id) {
@@ -453,10 +532,10 @@ function ManagementOfTablesAndFunctions(tables1) {
             error: function (obj, textStatus) {
                 console.log(obj.msg);
             }
-        });
+        })
     }
 
-    function removeSelected() {
+    function removeSelectedRowsFromTablesResetForm() {
         $('#selected-instance, #close-x-container-instance').on('click',function () {
             $('#selected-instance').text("Nothing Selected")
             $('#close-x-instance').text("")
