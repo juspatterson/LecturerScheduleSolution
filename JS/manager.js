@@ -20,8 +20,6 @@ function ManagementOfTablesAndFunctions(tables1) {
 
     }
 
-
-
     function loadLecturersTable() {
         $.ajax({
 
@@ -49,6 +47,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                 paging: false,
                 fixedHeader: true,
                 select: true,
+                select: {
+                    style: 'single'
+                },
                 "rowCallback": function( row, data, index ) {
                     if(index%2 == 0){
                         $(row).removeClass('myodd myeven');
@@ -100,6 +101,9 @@ function ManagementOfTablesAndFunctions(tables1) {
             processing: true,
             fixedHeader: true,
             select: true,
+            select: {
+                style: 'single'
+            },
             "rowCallback": function( row, data, index ) {
                 if(index%2 == 0){
                     $(row).removeClass('myodd myeven');
@@ -214,6 +218,9 @@ function ManagementOfTablesAndFunctions(tables1) {
                     }},
             ],
             select: true,
+            select: {
+                style: 'single'
+            },
             "rowCallback": function (row, data, index) {
                 if (index % 2 == 0) {
                     $(row).removeClass('myodd myeven');
@@ -257,7 +264,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             ]
         })
     }
-    
+
     function filterOnSelectedRow() {
         $('#instances-table, #lecturers-table').on('click', 'tr', function () {
             selectedRowFromInstancesTable()
