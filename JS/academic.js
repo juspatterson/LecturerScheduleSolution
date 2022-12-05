@@ -3,37 +3,85 @@ $(function () {
     managementOfTablesAndFunctions.init();
 })
 
-function ManagementOfTablesAndFunctions(tables1) {
+function ManagementOfTablesAndFunctions() {
     this.init = function() {
-        //loadLectureScheduleTable()
-        prototypeData()
+        loadLectureScheduleTable()
         filterByDate()
     }
-    
-    function prototypeData() {
-        var table = $('#lecturers-schedule-table').DataTable({
+
+    var lectureScheduleTable = null
+
+    function loadLectureScheduleTable () {
+        $.ajax({
+
+            type: "GET",
+            url: '/api/lecturer/schedule',
+            dataType: 'json',
+            data: {'LecturerName': 'Cypress'},
+            success: createLectureScheduleTable,
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
+
+    function createLectureScheduleTable(schedules, textStatus) {
+        console.log(schedules)
+        lectureScheduleTable = $('#lecturers-schedule-table').DataTable({
             dom: 'Bfrtip',
             responsive: true,
+            autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
-            //data:
-            //dataSrc:
-            serverSide: false,
+            data: schedules,
+            dataSrc: schedules,
             processing: true,
+            responsive: true,
             paging: false,
             fixedHeader: true,
-            columnDefs: [
-                { targets: '_all', className: 'dt-left' }
+            columns: [
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectCode
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectName
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectStartDate
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.SubjectEndDate
+                    }},
+                {'data': function(row) {
+                        let schedule = row.schedule;
+                        let scheduleJson = JSON.parse(schedule)
+                        return scheduleJson.LecturersRole
+                    }},
             ],
-            "rowCallback": function( row, data, index ) {
-                if(index%2 == 0){
+            select: true,
+            select: {
+                style: 'single'
+            },
+            rowCallback: function (row, data, index) {
+                if (index % 2 == 0) {
                     $(row).removeClass('myodd myeven');
                     $(row).addClass('myodd');
-                }else{
+                } else {
                     $(row).removeClass('myodd myeven');
                     $(row).addClass('myeven');
                 }
             },
+            columnDefs: [
+                {targets: '_all', className: 'dt-left'}
+            ],
             buttons: [
                 {
                     extend: 'print',
@@ -61,116 +109,7 @@ function ManagementOfTablesAndFunctions(tables1) {
 
                 }
             ]
-
-
-
-            //columns: []
-        });
-        addData()
-        //Take the category filter drop down and append it to the datatables_filter div.
-        //You can use this same idea to move the filter anywhere withing the datatable that you want.
-
-        function addData() {
-            var mainLecturer = "Main Lecturer"
-            var supportLiveDemo = "Support - Live Demo"
-            var supportSupport = "Support - Support"
-            var supportMarking = "Support - Marking"
-
-            addRow("CSE3CSX",
-                "Cybersecurity Fundamentals (Elective)",
-                "2023-01",
-                "2023-03",
-                mainLecturer)
-
-            addRow("CSE1ITX",
-                "Information Technology Fundamentals",
-                "2023-01",
-                "2023-03",
-                supportSupport)
-
-            addRow("CSE1ITX",
-                "Big Data on the Cloud",
-                "2023-02",
-                "2023-04",
-                supportLiveDemo)
-
-            addRow("CSE1ITX",
-                "System Operations on the Cloud",
-                "2023-03",
-                "2023-05",
-                supportSupport)
-
-            addRow("CSE1ITX",
-                "Architecting on the Cloud",
-                "2023-04",
-                "2023-06",
-                mainLecturer)
-
-            addRow("CSE1ITX",
-                "Profesional Environment",
-                "2023-05",
-                "2023-07",
-                supportMarking)
-
-            addRow("CSE1ITX",
-                "Industry Project 3B",
-                "2023-06",
-                "2023-08",
-                supportLiveDemo)
-
-            addRow("CSE1ITX",
-                "Industry Project 3A",
-                "2023-07",
-                "2023-09",
-                supportSupport)
-
-            addRow("CSE1ITX",
-                "Wireless Network Engineering (Elective)",
-                "2023-08",
-                "2023-10",
-                mainLecturer)
-
-            addRow("CSE1ITX",
-                "Internet of Things (Elective)",
-                "2023-09",
-                "2023-11",
-                supportMarking)
-
-
-            addRow("CSE1ITX",
-                "Web Development",
-                "2023-10",
-                "2023-12",
-                supportLiveDemo)
-
-            addRow("CSE1ITX",
-                "Operating Systems Administration",
-                "2023-11",
-                "2024-01",
-                supportSupport)
-
-            addRow("CSE1ITX",
-                "Managing Projects in the Cloud",
-                "2023-12",
-                "2024-02",
-                mainLecturer)
-
-            addRow("CSE1ITX",
-                "Operating Systems Administration",
-                "2024-01",
-                "2024-03",
-                supportSupport)
-
-            function addRow(code,name,start,end,roll) {
-                table.row.add([
-                    code,
-                    name,
-                    start,
-                    end,
-                    roll
-                ]).draw()
-            }
-        }
+        })
     }
 
     function filterByDate() {
@@ -209,38 +148,6 @@ function ManagementOfTablesAndFunctions(tables1) {
             }
 
         })
-    }
-
-    //this needed to be updated once we have our database set up
-    function loadLectureScheduleTable () {
-        //this needed to be updated once we have our database set up
-        $.ajax({
-
-            type: "GET",
-            url: '../MockUpData/SubjectsTimeTable.json',
-            dataType: 'json',
-            data: '{}',
-            success: function (subjectsTimeTable, textStatus) {
-
-
-                $('#lecturers-schedule-table').DataTable({
-                    data: subjectsTimeTable.instances,
-                    dataSrc: subjectsTimeTable.instances,
-                    serverSide: false,
-                    processing: true,
-                    responsive: true,
-                    paging: false,
-                    fixedHeader: true,
-
-                    //columns: []
-                });
-
-
-            },
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
     }
 }
 
