@@ -263,16 +263,21 @@ function ManagementOfTablesAndFunctions(tables1) {
                 {
                     text: "Delete",
                     action: function (e, dt, node, config) {
-                        if (window.confirm("Click OK to delete Schedule")) {
-                            let selectRow = scheduleTable.rows('.selected').data()
-                            deleteFromDataBase(selectRow[0].id)
-                            scheduleTable
-                                .rows('.selected')
-                                .remove()
-                                .draw();
+                        if (scheduleTable.rows('.selected').any()) {
+                            if (window.confirm("Click OK to delete Schedule")) {
+                                let selectRow = scheduleTable.rows('.selected').data()
+                                deleteFromDataBase(selectRow[0].id)
+                                scheduleTable
+                                    .rows('.selected')
+                                    .remove()
+                                    .draw();
+                            }
+                        } else {
+                            window.alert('Please select a schedule to delete.')
                         }
-
                     }
+
+
                 },
                 {
                     text: "Edit",
