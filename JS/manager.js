@@ -17,7 +17,14 @@ function ManagementOfTablesAndFunctions(tables1) {
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
         removeSelectedRowsFromTablesResetForm()
+        logout()
 
+    }
+
+    function logout() {
+        $('.logout-link').on('click', function () {
+            window.location.replace('https://stick-dream.bnr.la')
+        })
     }
 
     function loadLecturersTable() {

@@ -149,5 +149,12 @@ function ManagementOfTablesAndFunctions() {
 
         })
     }
+
+    function logout() {
+        $('.logout-link').on('click', function () {
+            window.location.replace('https://stick-dream.bnr.la')
+        })
+    }
+
 }
 
