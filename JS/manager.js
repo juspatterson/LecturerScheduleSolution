@@ -1,5 +1,6 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
+    managementOfTablesAndFunctions.confirmLogin();
     managementOfTablesAndFunctions.init();
 
 })
@@ -9,6 +10,24 @@ function ManagementOfTablesAndFunctions(tables1) {
     var scheduleTable = null
     var instancesTable = null
     var lecturersTable = null
+
+    this.confirmLogin = function () {
+        $.ajax({
+            type: "POST",
+            url: '/api/login/confirm',
+            dataType: '',
+            data: {},
+            success: function (confirm) {
+                if (confirm === 'true') {
+                } else {
+                    window.location.replace('https://stick-dream.bnr.la')
+                }
+            },
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
 
     this.init = function () {
         loadInstanceTable()
