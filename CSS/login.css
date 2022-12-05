@@ -54,7 +54,7 @@ input[type="password"]{
     border-radius: 25px;
 }
 
-input[type="submit"]{
+#login-button{
     width: 100px;
     height: 45px;
     border: none;
