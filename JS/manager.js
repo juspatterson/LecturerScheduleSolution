@@ -31,6 +31,7 @@ function ManagementOfTablesAndFunctions() {
     this.init = function () {
         loadInstanceTable()
         loadLecturersTable()
+        createScheduleTable()
         loadScheduleTable()
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
@@ -60,43 +61,43 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function createLecturersTable(lectureInformation, textStatus) {
-            lecturersTable = $('#lecturers-table').DataTable({
-                autoWidth: true,
-                scrollY: 610,
-                language: { search: "",searchPlaceholder: "Search..." },
-                data: lectureInformation.lectures,
-                dataSrc: lectureInformation.lectures,
-                serverSide: false,
-                processing: true,
-                responsive: true,
-                paging: false,
-                fixedHeader: true,
-                select: true,
-                select: {
-                    style: 'single'
-                },
-                "rowCallback": function( row, data, index ) {
-                    if(index%2 == 0){
-                        $(row).removeClass('myodd myeven');
-                        $(row).addClass('myodd');
-                    }else{
-                        $(row).removeClass('myodd myeven');
-                        $(row).addClass('myeven');
-                    }
-                },
-                columnDefs: [
-                    { targets: '_all', className: 'dt-left' }
-                ],
-                columns: [
-                    {'data': 'name'},
-                    {'data': 'load'},
-                    {
-                        'data': "subjectsLecturerCanTeach.subjectsCode",
-                        "visible": false
-                    }
-                ]
-            });
-        }
+        lecturersTable = $('#lecturers-table').DataTable({
+            autoWidth: true,
+            scrollY: 610,
+            language: { search: "",searchPlaceholder: "Search..." },
+            data: lectureInformation.lectures,
+            dataSrc: lectureInformation.lectures,
+            serverSide: false,
+            processing: true,
+            responsive: true,
+            paging: false,
+            fixedHeader: true,
+            select: true,
+            select: {
+                style: 'single'
+            },
+            "rowCallback": function( row, data, index ) {
+                if(index%2 == 0){
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myodd');
+                }else{
+                    $(row).removeClass('myodd myeven');
+                    $(row).addClass('myeven');
+                }
+            },
+            columnDefs: [
+                { targets: '_all', className: 'dt-left' }
+            ],
+            columns: [
+                {'data': 'name'},
+                {'data': 'load'},
+                {
+                    'data': "subjectsLecturerCanTeach.subjectsCode",
+                    "visible": false
+                }
+            ]
+        });
+    }
 
     function loadInstanceTable() {
         $.ajax({
@@ -155,17 +156,7 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function loadScheduleTable() {
-        $.ajax({
-
-            type: "GET",
-            url: '/api/schedules',
-            dataType: 'json',
-            data: '{}',
-            success: createScheduleTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
+        scheduleTable.ajax.url('/api/schedules').load();
     }
 
     function scheduleGetter(key) {
@@ -176,8 +167,9 @@ function ManagementOfTablesAndFunctions() {
         }
     }
 
-    function createScheduleTable(schedules, textStatus) {
+    function createScheduleTable() {
         scheduleTable = $('#schedule-table').DataTable({
+            ajax: {dataSrc: ''},
             dom: 'Bfrtip',
             // ajax: '/api/schedules',
             // ajax: {
@@ -190,8 +182,6 @@ function ManagementOfTablesAndFunctions() {
             autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
-            data: schedules,
-            dataSrc: schedules,
             // serverSide: false,
             processing: true,
             responsive: true,
@@ -273,8 +263,10 @@ function ManagementOfTablesAndFunctions() {
                 }
             ]
         })
+        scheduleTable.on('xhr', function(event, settings, json, xhr) {
+            filterByDate('#schedule-filter', scheduleTable, 4);
+        });
 
-        filterByDate('#schedule-filter', scheduleTable, 4)
     }
 
     function filterOnSelectedRow() {
@@ -392,9 +384,7 @@ function ManagementOfTablesAndFunctions() {
             data: {'id': id, 'data': dataForSchedule(override)},
             success: function() {
                 console.log('editing done');
-                scheduleTable.clear()
-                scheduleTable.destroy()
-                loadScheduleTable()
+                scheduleTable.ajax.reload();
                 showToasterMessage('Edited Schedule')
                 resetTablesAndForm()
                 $('#create-schedule').val('Create Schedule')
@@ -453,9 +443,7 @@ function ManagementOfTablesAndFunctions() {
             data: {'data': dataForSchedule(override)},
             success: function() {
                 console.log('done');
-                scheduleTable.clear()
-                scheduleTable.destroy()
-                loadScheduleTable()
+                scheduleTable.ajax.reload();
                 showToasterMessage('Schedule Created')
                 resetTablesAndForm()
             },
