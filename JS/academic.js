@@ -2,14 +2,7 @@ $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
     managementOfTablesAndFunctions.confirmLogin()
     managementOfTablesAndFunctions.init();
-
-
-
-
-
 })
-
-
 
 function ManagementOfTablesAndFunctions() {
     this.confirmLogin = function () {
@@ -92,10 +85,6 @@ function ManagementOfTablesAndFunctions() {
                         return scheduleJson.LecturersRole
                     }},
             ],
-            select: true,
-            select: {
-                style: 'single'
-            },
             rowCallback: function (row, data, index) {
                 if (index % 2 == 0) {
                     $(row).removeClass('myodd myeven');
