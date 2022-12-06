@@ -5,7 +5,7 @@ $(function () {
 
 })
 
-function ManagementOfTablesAndFunctions(tables1) {
+function ManagementOfTablesAndFunctions() {
 
     var scheduleTable = null
     var instancesTable = null
@@ -18,8 +18,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             dataType: '',
             data: {},
             success: function (confirm) {
-                if (confirm === 'true') {
-                } else {
+                if (confirm === 'false') {
                     window.location.replace('https://stick-dream.bnr.la')
                 }
             },
@@ -169,6 +168,14 @@ function ManagementOfTablesAndFunctions(tables1) {
         });
     }
 
+    function scheduleGetter(key) {
+        return function(row) {
+            let schedule = row.schedule;
+            let scheduleJson = JSON.parse(schedule)
+            return scheduleJson[key]
+        }
+    }
+
     function createScheduleTable(schedules, textStatus) {
         scheduleTable = $('#schedule-table').DataTable({
             dom: 'Bfrtip',
@@ -204,46 +211,14 @@ function ManagementOfTablesAndFunctions(tables1) {
                             return ""
                         }
                     }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectCode
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectName
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectStartDate
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectEndDate
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectLoad
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.LecturerName
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.LecturerLoad
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.LecturersRole
-                    }},
+                {'data': scheduleGetter("SubjectCode")},
+                {'data': scheduleGetter("SubjectName")},
+                {'data': scheduleGetter("SubjectStartDate")},
+                {'data': scheduleGetter("SubjectEndDate")},
+                {'data': scheduleGetter("SubjectLoad")},
+                {'data': scheduleGetter("LecturerName")},
+                {'data': scheduleGetter("LecturerLoad")},
+                {'data': scheduleGetter("LecturersRole")},
             ],
             select: true,
             select: {
@@ -288,6 +263,8 @@ function ManagementOfTablesAndFunctions(tables1) {
                             if (window.confirm("Click OK to Edit Schedule")) {
                                 let selectRow = scheduleTable.rows('.selected').data()
                                 loadDataIntoTablesAndFormForEditingSchedule(selectRow)
+
+
                             }
                         } else {
                             window.alert('Please select a schedule to edit.')
@@ -376,14 +353,18 @@ function ManagementOfTablesAndFunctions(tables1) {
             if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 if (window.confirm("Click OK to override maximum load")) {
                     addOrEditSchedule('true')
+
                     $('#create-schedule-form').trigger('reset')
+                    $('#schedule-filter').trigger("change")
 
                 }
             }
 
             else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
                 addOrEditSchedule('false')
+
                 $('#create-schedule-form').trigger('reset')
+                $('#schedule-filter').trigger("change")
                 errorDisplayCount += 1
             }
         })
@@ -394,6 +375,7 @@ function ManagementOfTablesAndFunctions(tables1) {
             } else  {
                 editScheduleOnDatabase(override)
             }
+            $('#schedule-filter').trigger("change")
         }
     }
 
