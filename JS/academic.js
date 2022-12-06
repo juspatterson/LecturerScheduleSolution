@@ -6,7 +6,10 @@ $(function () {
 
 
 
+
 })
+
+
 
 function ManagementOfTablesAndFunctions() {
     this.confirmLogin = function () {
@@ -33,7 +36,7 @@ function ManagementOfTablesAndFunctions() {
         logout()
     }
 
-    var lectureScheduleTable = null
+    var lecturerScheduleTable = null
 
     function loadLectureScheduleTable () {
         $.ajax({
@@ -50,8 +53,7 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function createLectureScheduleTable(schedules, textStatus) {
-        console.log(schedules)
-        lectureScheduleTable = $('#lecturers-schedule-table').DataTable({
+        lecturerScheduleTable = $('#lecturers-schedule-table').DataTable({
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
@@ -138,40 +140,48 @@ function ManagementOfTablesAndFunctions() {
 
     function filterByDate() {
         $('#category-filter').on('change', function () {
-            var tables = $('.dataTable').DataTable();
-            var lecturesScheduleTable = tables.table( 0 );
 
             var selectedValue = $('#category-filter').val()
-            console.log(selectedValue)
-            console.log(lecturesScheduleTable.rows(0).data())
+            let  threeMonths = createDateRangeForFilter(3)
+            let  sixMonths = createDateRangeForFilter(6)
+            let  twelveMonths = createDateRangeForFilter(12)
 
-            if (selectedValue == "") {
-                lecturesScheduleTable.columns().search('').draw()
-
+            switch (selectedValue) {
+                case "":
+                    lecturerScheduleTable.columns().search('').draw()
+                    break
+                case "3 Months":
+                    lecturerScheduleTable.columns(2).search(threeMonths,true,false,false).draw()
+                    break
+                case "6 Months":
+                    lecturerScheduleTable.columns(2).search(sixMonths,true,false,false).draw()
+                    break
+                case "12 Months":
+                    lecturerScheduleTable.columns(2).search(twelveMonths,true,false,false).draw()
             }
-
-            if (selectedValue == "3 Months") {
-                var dates = ['2023-01','2023-02','2023-03']
-                console.log(dates.join('|'))
-                lecturesScheduleTable.columns(2).search(dates.join('|'),true,false,false).draw()
-
-            }
-
-            if (selectedValue == "6 Months") {
-                var dates = ['2023-01','2023-02','2023-03','2023-04','2023-05','2023-06']
-                console.log(dates.join('|'))
-                lecturesScheduleTable.columns(2).search(dates.join('|'),true,false,false).draw()
-
-            }
-
-            if (selectedValue == "12 Months") {
-                var dates = ['2023-01','2023-02','2023-03','2023-04','2023-05','2023-06','2023-07','2023-08','2023-09','2023-10','2023-11','2023-12']
-                console.log(dates.join('|'))
-                lecturesScheduleTable.columns(2).search(dates.join('|'),true,false,false).draw()
-
-            }
-
         })
+
+        function createDateRangeForFilter(numberOfMonths) {
+            var date = new Date();
+            var startDate = date.getFullYear() + "-" + (date.getMonth()+1);
+            var year = date.getFullYear()
+            var month = (date.getMonth()+1)
+            var dateRange = [startDate]
+
+            for (let i = 1; i < numberOfMonths; i++) {
+                month = month + 1
+                if (month === 13) {
+                    month = month - 12
+                    year = year + 1
+                }
+                dateRange.push(year + '-' + leftPad(month, 2))
+            }
+            return dateRange.join('|')
+        }
+
+        function leftPad(value, length) {
+            return ('0'.repeat(length) + value).slice(-length);
+        }
     }
 
     function logout() {
