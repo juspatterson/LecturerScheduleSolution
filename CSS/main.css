@@ -48,6 +48,18 @@
     button.dt-button > span {
         color: white !important;
     }
+
+    .form-filter, select, select option {
+        background-color: #2b2b2b !important;
+        color: white;
+    }
+
+    .form-filter {
+        background-image:
+                linear-gradient(rgba(170, 170, 170, 40),rgba(61, 61, 61, 100));
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0);
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -78,6 +90,17 @@
     /*for dataTables*/
     table.fixedHeader-floating {
         background-color: #4d9ee3 !important;
+    }
+
+    .form-filter {
+        color: black;
+    }
+
+    .form-filter {
+        background-image:
+                linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.32);
     }
 }
 
@@ -153,4 +176,8 @@ a.dt-button, input.dt-button {
 #dataTableContainer>tbody>tr,
 #dataTableContainer>tbody>tr>td {
     display: block !important;
+}
+
+.form-filter {
+    border: none;
 }

@@ -3,37 +3,12 @@
         background: rgba(2,74,178,0.2);
     }
 
-    #category-filter {
-        color: white;
-    }
-
-    #category-filter {
-        background-image:
-                linear-gradient(rgba(170, 170, 170, 40),rgba(61, 61, 61, 100));
-        border-radius: 5px;
-        border: 1px solid rgb(170,170,170);
-        background-color: rgba(0, 0, 0, 0);
-    }
-
 }
 
 @media (prefers-color-scheme: light) {
     #lecturers-schedule-table-div {
         background: rgba(2,74,178,0.6);
     }
-
-    #category-filter {
-        color: black;
-    }
-
-    #category-filter {
-        background-image:
-                linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
-        border-radius: 5px;
-        border: 1px solid rgb(170,170,170);
-        background-color: rgba(0, 0, 0, 0.32);
-    }
-
 }
 
 h2 {
@@ -88,7 +63,7 @@ form {
     position:relative;
 }
 
-#category-filter {
+.form-filter {
     position: absolute;
     right: 218px;
     top:0px;
