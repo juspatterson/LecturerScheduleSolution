@@ -151,6 +151,8 @@ function ManagementOfTablesAndFunctions(tables1) {
             ],
             stateSave: true,
         });
+
+        filterByDate('#instances-filter', instancesTable, 2)
     }
 
     function loadScheduleTable() {
@@ -294,6 +296,8 @@ function ManagementOfTablesAndFunctions(tables1) {
                 }
             ]
         })
+
+        filterByDate('#schedule-filter', scheduleTable, 4)
     }
 
     function filterOnSelectedRow() {
@@ -582,7 +586,50 @@ function ManagementOfTablesAndFunctions(tables1) {
         })
     }
 
+    function filterByDate(filterID, table, columnIndex) {
+        $(filterID).on('change', function () {
+
+            var selectedValue = $(filterID).val()
+            let  threeMonths = createDateRangeForFilter(3)
+            let  sixMonths = createDateRangeForFilter(6)
+            let  twelveMonths = createDateRangeForFilter(12)
+
+            switch (selectedValue) {
+                case "":
+                    table.columns().search('').draw()
+                    break
+                case "3 Months":
+                    table.columns(columnIndex).search(threeMonths,true,false,false).draw()
+                    break
+                case "6 Months":
+                    table.columns(columnIndex).search(sixMonths,true,false,false).draw()
+                    break
+                case "12 Months":
+                    table.columns(columnIndex).search(twelveMonths,true,false,false).draw()
+            }
+        })
+
+        function createDateRangeForFilter(numberOfMonths) {
+            var date = new Date();
+            var startDate = date.getFullYear() + "-" + (date.getMonth()+1);
+            var year = date.getFullYear()
+            var month = (date.getMonth()+1)
+            var dateRange = [startDate]
+
+            for (let i = 1; i < numberOfMonths; i++) {
+                month = month + 1
+                if (month === 13) {
+                    month = month - 12
+                    year = year + 1
+                }
+                dateRange.push(year + '-' + leftPad(month, 2))
+            }
+            return dateRange.join('|')
+        }
+
+        function leftPad(value, length) {
+            return ('0'.repeat(length) + value).slice(-length);
+        }
+    }
+
 }
-
-
-

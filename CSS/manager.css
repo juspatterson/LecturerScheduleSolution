@@ -301,3 +301,16 @@ select {
     to {top: 0; opacity: 0;}
 }
 
+.category-filter-container {
+    position:relative;
+}
+
+.form-filter {
+    position: absolute;
+    right: 230px;
+    top:0px;
+    height: 32px;
+    z-index: 997;
+    width: 111px;
+}
+
