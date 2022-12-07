@@ -23,6 +23,7 @@ function ManagementOfTablesAndFunctions() {
     }
 
     this.init = function() {
+        createLectureScheduleTable()
         loadLectureScheduleTable()
         filterByDate()
         logout()
@@ -31,28 +32,17 @@ function ManagementOfTablesAndFunctions() {
     var lecturerScheduleTable = null
 
     function loadLectureScheduleTable () {
-        $.ajax({
-
-            type: "GET",
-            url: '/api/lecturer/schedule',
-            dataType: 'json',
-            data: {'LecturerName': 'Cypress'},
-            success: createLectureScheduleTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
+        lecturerScheduleTable.ajax.url('/api/lecturer/schedule').load()
     }
 
-    function createLectureScheduleTable(schedules, textStatus) {
+    function createLectureScheduleTable() {
         lecturerScheduleTable = $('#lecturers-schedule-table').DataTable({
+            ajax: {dataSrc: ''},
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
-            data: schedules,
-            dataSrc: schedules,
             processing: true,
             responsive: true,
             paging: false,
