@@ -29,7 +29,9 @@ function ManagementOfTablesAndFunctions() {
     }
 
     this.init = function () {
+        createInstanceTable()
         loadInstanceTable()
+        createLecturersTable()
         loadLecturersTable()
         createScheduleTable()
         loadScheduleTable()
@@ -47,27 +49,15 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function loadLecturersTable() {
-        $.ajax({
-
-            type: "GET",
-            url: '../MockUpData/lecturerSME.json',
-            dataType: 'json',
-            data: '{}',
-            success: createLecturersTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
+        lecturersTable.ajax.url('MockUpData/lecturerSME.json').load()
     }
 
-    function createLecturersTable(lectureInformation, textStatus) {
+    function createLecturersTable() {
         lecturersTable = $('#lecturers-table').DataTable({
+            ajax: {dataSrc: ''},
             autoWidth: true,
             scrollY: 610,
             language: { search: "",searchPlaceholder: "Search..." },
-            data: lectureInformation.lectures,
-            dataSrc: lectureInformation.lectures,
-            serverSide: false,
             processing: true,
             responsive: true,
             paging: false,
@@ -100,30 +90,18 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function loadInstanceTable() {
-        $.ajax({
-
-            type: "GET",
-            //async: false,
-            url: '../MockUpData/SubjectsTimeTable.json',
-            dataType: 'json',
-            data: '{}',
-            success: createInstanceTable,
-            error: function (obj, textStatus) {
-                alert(obj.msg);
-            }
-        });
+        instancesTable.ajax.url('/MockUpData/SubjectsTimeTable.json').load()
     }
 
-    function createInstanceTable(subjectsTimeTable, textStatus) {
+
+    function createInstanceTable() {
         instancesTable = $('#instances-table').DataTable({
+            ajax: {dataSrc: ''},
             autoWidth: true,
             language: { search: "",searchPlaceholder: "Search..." },
             sScrollY: 600,
             scrollCollapse: true,
             paging: false,
-            data: subjectsTimeTable.instances,
-            dataSrc: subjectsTimeTable.instances,
-            serverSide: false,
             processing: true,
             fixedHeader: true,
             select: true,
@@ -152,7 +130,10 @@ function ManagementOfTablesAndFunctions() {
             stateSave: true,
         });
 
-        filterByDate('#instances-filter', instancesTable, 2)
+        instancesTable.on('xhr', function(event, settings, json, xhr) {
+            filterByDate('#instances-filter', instancesTable, 2);
+        });
+
     }
 
     function loadScheduleTable() {
