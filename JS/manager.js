@@ -66,15 +66,7 @@ function ManagementOfTablesAndFunctions() {
             select: {
                 style: 'single'
             },
-            "rowCallback": function( row, data, index ) {
-                if(index%2 == 0){
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myodd');
-                }else{
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myeven');
-                }
-            },
+            "rowCallback": updateRowColour(),
             columnDefs: [
                 { targets: '_all', className: 'dt-left' }
             ],
@@ -108,15 +100,7 @@ function ManagementOfTablesAndFunctions() {
             select: {
                 style: 'single'
             },
-            "rowCallback": function( row, data, index ) {
-                if(index%2 == 0){
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myodd');
-                }else{
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myeven');
-                }
-            },
+            "rowCallback": updateRowColour(),
             columnDefs: [
                 { targets: '_all', className: 'dt-left' }
             ],
@@ -152,18 +136,10 @@ function ManagementOfTablesAndFunctions() {
         scheduleTable = $('#schedule-table').DataTable({
             ajax: {dataSrc: ''},
             dom: 'Bfrtip',
-            // ajax: '/api/schedules',
-            // ajax: {
-            //     type: "GET",
-            //     url: '/api/schedules',
-            //     dataType: 'json',
-            //     data: '{}',
-            // },
             responsive: true,
             autoWidth: true,
             sScrollY: 600,
             language: {search: "", searchPlaceholder: "Search..."},
-            // serverSide: false,
             processing: true,
             responsive: true,
             paging: false,
@@ -173,15 +149,7 @@ function ManagementOfTablesAndFunctions() {
                     'data': 'id',
                     // "visible": false
                 },
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        if (scheduleJson.Override === 'true') {
-                            return "<img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>"
-                        } else {
-                            return ""
-                        }
-                    }},
+                {'data': overrideColumn('Override')},
                 {'data': scheduleGetter("SubjectCode")},
                 {'data': scheduleGetter("SubjectName")},
                 {'data': scheduleGetter("SubjectStartDate")},
@@ -195,59 +163,82 @@ function ManagementOfTablesAndFunctions() {
             select: {
                 style: 'single'
             },
-            "rowCallback": function (row, data, index) {
-                if (index % 2 == 0) {
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myodd');
-                } else {
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myeven');
-                }
-            },
+            "rowCallback": updateRowColour(),
             columnDefs: [
                 {targets: '_all', className: 'dt-left'}
             ],
-            buttons: [
-                {
-                    text: "Delete",
-                    action: function (e, dt, node, config) {
-                        if (scheduleTable.rows('.selected').any()) {
-                            if (window.confirm("Click OK to delete Schedule")) {
-                                let selectRow = scheduleTable.rows('.selected').data()
-                                deleteFromDataBase(selectRow[0].id)
-                                scheduleTable
-                                    .rows('.selected')
-                                    .remove()
-                                    .draw();
-                            }
-                        } else {
-                            window.alert('Please select a schedule to delete.')
-                        }
-                    }
-
-
-                },
-                {
-                    text: "Edit",
-                    action: function (e, dt, node, config) {
-                        if(scheduleTable.rows('.selected').any()) {
-                            if (window.confirm("Click OK to Edit Schedule")) {
-                                let selectRow = scheduleTable.rows('.selected').data()
-                                loadDataIntoTablesAndFormForEditingSchedule(selectRow)
-
-
-                            }
-                        } else {
-                            window.alert('Please select a schedule to edit.')
-                        }
-                    }
-                }
-            ]
+            buttons: [ deleteButton(), editButton() ]
         })
         scheduleTable.on('xhr', function(event, settings, json, xhr) {
             filterByDate('#schedule-filter', scheduleTable, 4);
         });
 
+        function deleteButton() {
+            return {
+                text: "Delete",
+                action: function (e, dt, node, config) {
+                    if (scheduleTable.rows('.selected').any()) {
+                        if (window.confirm("Click OK to delete Schedule")) {
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            deleteFromDataBase(selectRow[0].id)
+                            scheduleTable
+                                .rows('.selected')
+                                .remove()
+                                .draw();
+                        }
+                    } else {
+                        window.alert('Please select a schedule to delete.')
+                    }
+                }
+
+
+            }
+        }
+
+        function editButton() {
+            return {
+                text: "Edit",
+                action: function (e, dt, node, config) {
+                    if(scheduleTable.rows('.selected').any()) {
+                        if (window.confirm("Click OK to Edit Schedule")) {
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            loadDataIntoTablesAndFormForEditingSchedule(selectRow)
+
+
+                        }
+                    } else {
+                        window.alert('Please select a schedule to edit.')
+                    }
+                }
+            }
+        }
+
+
+
+        function overrideColumn(key) {
+            return function(row) {
+                let schedule = row.schedule;
+                let scheduleJson = JSON.parse(schedule)
+                if (scheduleJson[key] === 'true') {
+                    return "<img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>"
+                } else {
+                    return ""
+                }
+            }
+        }
+
+    }
+
+    function updateRowColour() {
+        return function (row, data, index) {
+            if (index % 2 == 0) {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myodd');
+            } else {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myeven');
+            }
+        }
     }
 
     function filterOnSelectedRow() {
@@ -348,7 +339,7 @@ function ManagementOfTablesAndFunctions() {
             } else  {
                 editScheduleOnDatabase(override)
             }
-            $('#schedule-filter').trigger("change")
+
         }
     }
 
