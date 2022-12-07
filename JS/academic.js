@@ -35,6 +35,26 @@ function ManagementOfTablesAndFunctions() {
         lecturerScheduleTable.ajax.url('/api/lecturer/schedule').load()
     }
 
+    function scheduleGetter(key) {
+        return function(row) {
+            let schedule = row.schedule;
+            let scheduleJson = JSON.parse(schedule)
+            return scheduleJson[key]
+        }
+    }
+
+    function updateRowColour() {
+        return function (row, data, index) {
+            if (index % 2 == 0) {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myodd');
+            } else {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myeven');
+            }
+        }
+    }
+
     function createLectureScheduleTable() {
         lecturerScheduleTable = $('#lecturers-schedule-table').DataTable({
             ajax: {dataSrc: ''},
@@ -48,65 +68,18 @@ function ManagementOfTablesAndFunctions() {
             paging: false,
             fixedHeader: true,
             columns: [
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectCode
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectName
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectStartDate
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.SubjectEndDate
-                    }},
-                {'data': function(row) {
-                        let schedule = row.schedule;
-                        let scheduleJson = JSON.parse(schedule)
-                        return scheduleJson.LecturersRole
-                    }},
+                {'data': scheduleGetter('SubjectCode')},
+                {'data': scheduleGetter('SubjectName')},
+                {'data': scheduleGetter('SubjectStartDate')},
+                {'data': scheduleGetter('SubjectEndDate')},
+                {'data': scheduleGetter('LecturersRole')},
             ],
-            rowCallback: function (row, data, index) {
-                if (index % 2 == 0) {
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myodd');
-                } else {
-                    $(row).removeClass('myodd myeven');
-                    $(row).addClass('myeven');
-                }
-            },
+            rowCallback: updateRowColour(),
             columnDefs: [
                 {targets: '_all', className: 'dt-left'}
             ],
             buttons: [
-                {
-                    extend: 'print',
-                    text: 'Print',
-                    autoPrint: true,
-                    customize: function (win) {
-                        $(win.document.body)
-                            .css('font-size', '10pt')
-
-                            .prepend(
-                                '<img src="" style="position:absolute; top:0; left:0;" />'
-                            );
-
-                        $(win.document.body).find('table')
-                            .addClass('compact')
-                            .css('font-size', 'inherit');
-                        $(win.document.body).find('h1').remove()
-                        $(win.document.body).find('.dt-left').css('padding-left', '0px')
-
-                    }
-                },
+                printButton(),
                 {
                     extend: 'pdf',
                     text: 'Export as PDF'
@@ -114,6 +87,29 @@ function ManagementOfTablesAndFunctions() {
                 }
             ]
         })
+
+        function printButton() {
+            return {
+                extend: 'print',
+                text: 'Print',
+                autoPrint: true,
+                customize: function (win) {
+                    $(win.document.body)
+                        .css('font-size', '10pt')
+
+                        .prepend(
+                            '<img src="" style="position:absolute; top:0; left:0;" />'
+                        );
+
+                    $(win.document.body).find('table')
+                        .addClass('compact')
+                        .css('font-size', 'inherit');
+                    $(win.document.body).find('h1').remove()
+                    $(win.document.body).find('.dt-left').css('padding-left', '0px')
+
+                }
+            }
+        }
     }
 
     function filterByDate() {
