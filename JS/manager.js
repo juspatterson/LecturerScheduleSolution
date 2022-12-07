@@ -85,7 +85,6 @@ function ManagementOfTablesAndFunctions() {
         instancesTable.ajax.url('/MockUpData/SubjectsTimeTable.json').load()
     }
 
-
     function createInstanceTable() {
         instancesTable = $('#instances-table').DataTable({
             ajax: {dataSrc: ''},
@@ -102,14 +101,20 @@ function ManagementOfTablesAndFunctions() {
             },
             "rowCallback": updateRowColour(),
             columnDefs: [
-                { targets: '_all', className: 'dt-left' }
+                { targets: '_all', className: 'dt-left' },
+                {
+                    "targets": [ 5 ],
+                    "data": null,
+                    "defaultContent":
+                        '0.0'
+                },
             ],
             columns: [
                 {'data': 'SubjectCode'},
                 {'data': 'SubjectName'},
                 {'data': 'StartDate'},
                 {'data': 'EndDate'},
-                {'data': 'Load'}
+                {'data': 'Load'},
             ],
             stateSave: true,
         });
