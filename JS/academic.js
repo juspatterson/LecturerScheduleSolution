@@ -12,8 +12,7 @@ function ManagementOfTablesAndFunctions() {
             dataType: '',
             data: {},
             success: function (confirm) {
-                if (confirm === 'true') {
-                } else {
+                if (confirm === 'false') {
                     window.location.replace('https://stick-dream.bnr.la')
                 }
             },
