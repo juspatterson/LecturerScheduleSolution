@@ -1,6 +1,6 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
-    managementOfTablesAndFunctions.confirmLogin();
+    //managementOfTablesAndFunctions.confirmLogin();
     managementOfTablesAndFunctions.init();
 
 })
@@ -102,12 +102,6 @@ function ManagementOfTablesAndFunctions() {
             "rowCallback": updateRowColour(),
             columnDefs: [
                 { targets: '_all', className: 'dt-left' },
-                {
-                    "targets": [ 5 ],
-                    "data": null,
-                    "defaultContent":
-                        '0.0'
-                },
             ],
             columns: [
                 {'data': 'SubjectCode'},
@@ -115,8 +109,12 @@ function ManagementOfTablesAndFunctions() {
                 {'data': 'StartDate'},
                 {'data': 'EndDate'},
                 {'data': 'Load'},
+                {'data': 'CurrentLoad'}
+
+
             ],
             stateSave: true,
+
         });
 
         instancesTable.on('xhr', function(event, settings, json, xhr) {
@@ -172,7 +170,23 @@ function ManagementOfTablesAndFunctions() {
             columnDefs: [
                 {targets: '_all', className: 'dt-left'}
             ],
-            buttons: [ deleteButton(), editButton() ]
+            buttons: [ deleteButton(), editButton() ],
+            "fnCreatedRow": function(nRow, aData, iDataIndex) {
+
+                let subjectCode = getScheduleDataObject('SubjectCode', aData)
+                let subjectStartDate = getScheduleDataObject('SubjectStartDate', aData)
+                let lecturerLoad = getScheduleDataObject('LecturerLoad', aData)
+
+                instancesTable.rows( function ( idx, data, node ) {
+                    if(data['SubjectCode'] === subjectCode && data['StartDate'] === subjectStartDate){
+                        console.log('true')
+                        let currentLoad = instancesTable.cell({row:idx, column:5}).data()
+                        let newcrurrentLoad = parseFloat(currentLoad) + parseFloat(lecturerLoad)
+                        instancesTable.cell({row:idx, column:5}).data(newcrurrentLoad)
+                    }
+                })
+
+            }
         })
         scheduleTable.on('xhr', function(event, settings, json, xhr) {
             filterByDate('#schedule-filter', scheduleTable, 4);
@@ -186,10 +200,7 @@ function ManagementOfTablesAndFunctions() {
                         if (window.confirm("Click OK to delete Schedule")) {
                             let selectRow = scheduleTable.rows('.selected').data()
                             deleteFromDataBase(selectRow[0].id)
-                            scheduleTable
-                                .rows('.selected')
-                                .remove()
-                                .draw();
+
                         }
                     } else {
                         window.alert('Please select a schedule to delete.')
@@ -198,6 +209,12 @@ function ManagementOfTablesAndFunctions() {
 
 
             }
+        }
+
+        function getScheduleDataObject(key, data) {
+            let schedule = data.schedule;
+            let scheduleJson = JSON.parse(schedule)
+            return (scheduleJson[key])
         }
 
         function editButton() {
@@ -510,6 +527,7 @@ function ManagementOfTablesAndFunctions() {
             success: function() {
                 console.log('deleting done');
                 showToasterMessage('Schedule Deleted')
+                scheduleTable.ajax.reload()
             },
             error: function (obj, textStatus) {
                 console.log(obj.msg);
