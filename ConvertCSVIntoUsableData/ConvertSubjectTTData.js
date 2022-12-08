@@ -102,7 +102,8 @@ function processLine(data, years, subjectCode ,subjectName) {
         "SubjectName": subjectName,
         "StartDate": startDate,
         "EndDate": endDate,
-        "Load": 1.0
+        "Load": 1.0,
+        "CurrentLoad": 0.0
     };
 
     var instances = []
@@ -240,7 +241,8 @@ function processLine(data, years, subjectCode ,subjectName) {
             "SubjectName": subjectName,
             "StartDate": startDate,
             "EndDate": endDate,
-            "Load": 1.0
+            "Load": 1.0,
+            "CurrentLoad": 0.0
         };
 
         if (startDate !== ''){
