@@ -30,11 +30,8 @@ function ManagementOfTablesAndFunctions() {
 
     this.init = function () {
         createInstanceTable()
-        loadInstanceTable()
         createLecturersTable()
-        loadLecturersTable()
         createScheduleTable()
-        loadScheduleTable()
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
         removeSelectedRowsFromTablesResetForm()
@@ -48,13 +45,12 @@ function ManagementOfTablesAndFunctions() {
         })
     }
 
-    function loadLecturersTable() {
-        lecturersTable.ajax.url('MockUpData/lecturerSME.json').load()
-    }
-
     function createLecturersTable() {
         lecturersTable = $('#lecturers-table').DataTable({
-            ajax: {dataSrc: ''},
+            ajax: {
+                dataSrc: '',
+                url: 'MockUpData/lecturerSME.json',
+            },
             autoWidth: true,
             scrollY: 610,
             language: { search: "",searchPlaceholder: "Search..." },
@@ -81,13 +77,12 @@ function ManagementOfTablesAndFunctions() {
         });
     }
 
-    function loadInstanceTable() {
-        instancesTable.ajax.url('/MockUpData/SubjectsTimeTable.json').load()
-    }
-
     function createInstanceTable() {
         instancesTable = $('#instances-table').DataTable({
-            ajax: {dataSrc: ''},
+            ajax: {
+                dataSrc: '',
+                url: '/MockUpData/SubjectsTimeTable.json',
+            },
             autoWidth: true,
             language: { search: "",searchPlaceholder: "Search..." },
             sScrollY: 600,
@@ -123,10 +118,6 @@ function ManagementOfTablesAndFunctions() {
 
     }
 
-    function loadScheduleTable() {
-        scheduleTable.ajax.url('/api/schedules').load();
-    }
-
     function scheduleGetter(key) {
         return function(row) {
             let schedule = row.schedule;
@@ -136,8 +127,11 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function createScheduleTable() {
-        scheduleTable = $('#schedule-table').DataTable({
-            ajax: {dataSrc: ''},
+        scheduleTable = $('#schedule-table').DataTable( {
+            ajax: {
+                dataSrc: '',
+                url: '/api/schedules',
+            },
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
@@ -170,27 +164,54 @@ function ManagementOfTablesAndFunctions() {
             columnDefs: [
                 {targets: '_all', className: 'dt-left'}
             ],
-            buttons: [ deleteButton(), editButton() ],
-            "fnCreatedRow": function(nRow, aData, iDataIndex) {
+            buttons: [ deleteButton(), editButton() ]
 
-                let subjectCode = getScheduleDataObject('SubjectCode', aData)
-                let subjectStartDate = getScheduleDataObject('SubjectStartDate', aData)
-                let lecturerLoad = getScheduleDataObject('LecturerLoad', aData)
+        } )
 
-                instancesTable.rows( function ( idx, data, node ) {
-                    if(data['SubjectCode'] === subjectCode && data['StartDate'] === subjectStartDate){
-                        console.log('true')
-                        let currentLoad = instancesTable.cell({row:idx, column:5}).data()
-                        let newcrurrentLoad = parseFloat(currentLoad) + parseFloat(lecturerLoad)
-                        instancesTable.cell({row:idx, column:5}).data(newcrurrentLoad)
-                    }
-                })
-
-            }
-        })
+        //do things once table and data are loaded
         scheduleTable.on('xhr', function(event, settings, json, xhr) {
             filterByDate('#schedule-filter', scheduleTable, 4);
+            updateCurrentLoadOnInstancesTable(json)
         });
+
+        function updateCurrentLoadOnInstancesTable(allScheduleData) {
+
+            let keyValuePairsArray = []
+            allScheduleData.forEach(function(value, _) {
+                let code = getScheduleDataObject('SubjectCode', value)
+                let startDate = getScheduleDataObject('SubjectStartDate', value)
+                let load = getScheduleDataObject('LecturerLoad', value)
+
+                keyValuePairsArray.push([[code, startDate].join(","), load])
+            })
+
+            let combinedLoads = {}
+            keyValuePairsArray.forEach(function(keyValuePairArray, _) {
+                let key = keyValuePairArray[0]
+                let newLoad = keyValuePairArray[1]
+                let existingLoad = combinedLoads[key]
+
+                if (existingLoad === undefined) {
+                    combinedLoads[key] = newLoad
+                } else {
+                    combinedLoads[key] = parseFloat(existingLoad) + parseFloat(newLoad)
+                }
+            })
+
+            Object.keys(combinedLoads).forEach(function(key) {
+                let splitKey = key.split(',')
+
+                instancesTable.rows( function ( idx, data, node ) {
+                    if(data['SubjectCode'] === splitKey[0] && data['StartDate'] === splitKey[1]){
+                        instancesTable
+                            .cell({row:idx, column:5})
+                            .data((parseFloat(combinedLoads[key])).toFixed(1))
+                    }
+                })
+            })
+
+
+        }
 
         function deleteButton() {
             return {
@@ -234,8 +255,6 @@ function ManagementOfTablesAndFunctions() {
                 }
             }
         }
-
-
 
         function overrideColumn(key) {
             return function(row) {
