@@ -1,5 +1,4 @@
-[{
-  "lectures": [
+[
     {
       "name": "Acacia",
       "load": "1.0",
@@ -61,7 +60,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Beech",
@@ -123,7 +124,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Cypress",
@@ -186,7 +189,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Douglas",
@@ -248,7 +253,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "4.8",
+      "CurrentLoad": 0
     },
     {
       "name": "Eucalypt",
@@ -298,7 +305,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "2.4",
+      "CurrentLoad": 0
     },
     {
       "name": "Flame",
@@ -352,7 +361,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Guava",
@@ -407,7 +418,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "3.6",
+      "CurrentLoad": 0
     },
     {
       "name": "Hickory",
@@ -462,7 +475,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "4.8",
+      "CurrentLoad": 0
     },
     {
       "name": "Ironbark",
@@ -517,7 +532,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Jacaranda",
@@ -567,7 +584,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "2.4",
+      "CurrentLoad": 0
     },
     {
       "name": "Karri",
@@ -632,7 +651,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Laurel",
@@ -692,7 +713,9 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     },
     {
       "name": "Maple",
@@ -752,7 +775,8 @@
           "Private Cloud Solutions",
           "Industry Project for Cloud Technology 3A"
         ]
-      }
+      },
+      "MaximumLoad": "6.0",
+      "CurrentLoad": 0
     }
   ]
-}]
