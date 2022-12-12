@@ -502,11 +502,8 @@ function ManagementOfTablesAndFunctions() {
             }
         }).select()
 
-        lecturersTable.rows(function (idx, data, node) {
-            if (data.name === lecturersName) {
-                return idx
-            }
-        }).select()
+        lecturersTable.search(lecturersName).row().select()
+
 
         filterLecturersTableFillFormWithInstanceInformation()
         filterInstancesTableFillFormWithLecturerInformation()
@@ -536,7 +533,7 @@ function ManagementOfTablesAndFunctions() {
         });
 
         function filterLecturersTableFillFormWithInstanceInformation() {
-            var instancesData = instancesTable.rows({ selected: true}).data().toArray();
+            var instancesData = instancesTable.rows({ selected: true }).data().toArray();
             var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
             lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
 
