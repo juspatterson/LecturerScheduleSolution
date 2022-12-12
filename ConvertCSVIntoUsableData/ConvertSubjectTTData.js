@@ -84,6 +84,8 @@ function findYears(data) {
 
 }
 
+var index = 0
+
 function processLine(data, years, subjectCode ,subjectName) {
 
     data = data.split(',')
@@ -97,13 +99,15 @@ function processLine(data, years, subjectCode ,subjectName) {
     var startDate = ""
     var endDate = ""
 
+
     var instance = {
         "SubjectCode": subjectCode,
         "SubjectName": subjectName,
         "StartDate": startDate,
         "EndDate": endDate,
         "Load": 1.0,
-        "CurrentLoad": 0.0
+        "CurrentLoad": 0.0,
+        "index": index
     };
 
     var instances = []
@@ -236,13 +240,16 @@ function processLine(data, years, subjectCode ,subjectName) {
                 break;
         }
 
+        index = index + 1
+
         instance = {
             "SubjectCode": subjectCode,
             "SubjectName": subjectName,
             "StartDate": startDate,
             "EndDate": endDate,
             "Load": 1.0,
-            "CurrentLoad": 0.0
+            "CurrentLoad": 0.0,
+            "index": index
         };
 
         if (startDate !== ''){

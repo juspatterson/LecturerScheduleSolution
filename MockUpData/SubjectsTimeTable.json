@@ -5,7 +5,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 1
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -13,7 +14,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 2
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -21,7 +23,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 3
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -29,7 +32,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 4
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -37,7 +41,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 5
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -45,7 +50,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 6
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -53,7 +59,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 7
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -61,7 +68,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 8
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -69,7 +77,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 9
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -77,7 +86,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 10
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -85,7 +95,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 11
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -93,7 +104,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 12
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -101,7 +113,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 13
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -109,7 +122,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 14
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -117,7 +131,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 15
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -125,7 +140,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 16
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -133,7 +149,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 17
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -141,7 +158,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 18
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -149,7 +167,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 19
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -157,7 +176,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 20
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -165,7 +185,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 21
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -173,7 +194,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 22
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -181,7 +203,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 23
     },
     {
       "SubjectCode": "CSE1ITX",
@@ -189,7 +212,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 24
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -197,7 +221,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 25
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -205,7 +230,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 26
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -213,7 +239,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 27
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -221,7 +248,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 31
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -229,7 +257,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 32
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -237,7 +266,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 33
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -245,7 +275,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 37
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -253,7 +284,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 38
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -261,7 +293,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 39
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -269,7 +302,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 43
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -277,7 +311,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 44
     },
     {
       "SubjectCode": "CSE1PGX",
@@ -285,7 +320,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 45
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -293,7 +329,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 49
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -301,7 +338,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 50
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -309,7 +347,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 51
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -317,7 +356,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 52
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -325,7 +365,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 53
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -333,7 +374,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 54
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -341,7 +383,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 55
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -349,7 +392,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 56
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -357,7 +401,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 57
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -365,7 +410,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 58
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -373,7 +419,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 59
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -381,7 +428,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 60
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -389,7 +437,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 61
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -397,7 +446,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 62
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -405,7 +455,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 63
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -413,7 +464,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 64
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -421,7 +473,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 65
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -429,7 +482,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 66
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -437,7 +491,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 67
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -445,7 +500,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 68
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -453,7 +509,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 69
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -461,7 +518,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 70
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -469,7 +527,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 71
     },
     {
       "SubjectCode": "CSE1CFX",
@@ -477,7 +536,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 72
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -485,7 +545,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 73
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -493,7 +554,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 74
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -501,7 +563,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 75
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -509,7 +572,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 79
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -517,7 +581,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 80
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -525,7 +590,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 81
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -533,7 +599,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 85
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -541,7 +608,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 86
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -549,7 +617,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 87
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -557,7 +626,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 91
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -565,7 +635,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 92
     },
     {
       "SubjectCode": "CSE1OFX",
@@ -573,7 +644,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 93
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -581,7 +653,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 97
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -589,7 +662,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 100
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -597,7 +671,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 101
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -605,7 +680,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 102
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -613,7 +689,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 106
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -621,7 +698,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 107
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -629,7 +707,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 108
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -637,7 +716,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 112
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -645,7 +725,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 113
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -653,7 +734,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 114
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -661,7 +743,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 118
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -669,7 +752,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 119
     },
     {
       "SubjectCode": "CSE1ISX",
@@ -677,7 +761,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 120
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -685,7 +770,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 121
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -693,7 +779,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 122
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -701,7 +788,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 123
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -709,7 +797,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 124
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -717,7 +806,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 125
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -725,7 +815,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 126
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -733,7 +824,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 127
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -741,7 +833,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 128
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -749,7 +842,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 129
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -757,7 +851,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 130
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -765,7 +860,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 131
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -773,7 +869,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 132
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -781,7 +878,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 133
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -789,7 +887,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 134
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -797,7 +896,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 135
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -805,7 +905,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 136
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -813,7 +914,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 137
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -821,7 +923,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 138
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -829,7 +932,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 139
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -837,7 +941,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 140
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -845,7 +950,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 141
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -853,7 +959,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 142
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -861,7 +968,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 143
     },
     {
       "SubjectCode": "CSE2NFX",
@@ -869,7 +977,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 144
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -877,7 +986,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 146
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -885,7 +995,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 148
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -893,7 +1004,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 149
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -901,7 +1013,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 150
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -909,7 +1022,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 154
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -917,7 +1031,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 155
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -925,7 +1040,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 156
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -933,7 +1049,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 160
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -941,7 +1058,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 161
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -949,7 +1067,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 162
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -957,7 +1076,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 166
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -965,7 +1085,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 167
     },
     {
       "SubjectCode": "CSE2DCX",
@@ -973,7 +1094,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 168
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -981,7 +1103,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 169
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -989,7 +1112,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 170
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -997,7 +1121,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 171
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1005,7 +1130,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 172
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1013,7 +1139,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 173
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1021,7 +1148,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 174
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1029,7 +1157,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 175
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1037,7 +1166,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 176
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1045,7 +1175,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 177
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1053,7 +1184,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 178
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1061,7 +1193,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 179
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1069,7 +1202,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 180
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1077,7 +1211,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 181
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1085,7 +1220,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 182
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1093,7 +1229,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 183
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1101,7 +1238,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 184
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1109,7 +1247,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 185
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1117,7 +1256,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 186
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1125,7 +1265,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 187
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1133,7 +1274,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 188
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1141,7 +1283,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 189
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1149,7 +1292,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 190
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1157,7 +1301,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 191
     },
     {
       "SubjectCode": "CSE1SPX",
@@ -1165,7 +1310,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 192
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1173,7 +1319,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 193
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1181,7 +1328,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 194
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1189,7 +1337,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 195
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1197,7 +1346,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 196
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1205,7 +1355,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 197
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1213,7 +1364,8 @@
       "StartDate": "2023-06",
       "EndDate": "2023-08",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 198
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1221,7 +1373,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 199
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1229,7 +1382,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 200
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1237,7 +1391,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 201
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1245,7 +1400,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 202
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1253,7 +1409,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 203
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1261,7 +1418,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 204
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1269,7 +1427,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 205
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1277,7 +1436,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 206
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1285,7 +1445,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 207
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1293,7 +1454,8 @@
       "StartDate": "2024-04",
       "EndDate": "2024-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 208
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1301,7 +1463,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 209
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1309,7 +1472,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 210
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1317,7 +1481,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 211
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1325,7 +1490,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 212
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1333,7 +1499,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 213
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1341,7 +1508,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 214
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1349,7 +1517,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 215
     },
     {
       "SubjectCode": "CSE1SIX",
@@ -1357,7 +1526,8 @@
       "StartDate": "2024-12",
       "EndDate": "2025-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 216
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1365,7 +1535,8 @@
       "StartDate": "2023-01",
       "EndDate": "2023-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 217
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1373,7 +1544,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 218
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1381,7 +1553,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 219
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1389,7 +1562,8 @@
       "StartDate": "2023-07",
       "EndDate": "2023-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 223
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1397,7 +1571,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 224
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1405,7 +1580,8 @@
       "StartDate": "2023-09",
       "EndDate": "2023-11",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 225
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1413,7 +1589,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 229
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1421,7 +1598,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 230
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1429,7 +1607,8 @@
       "StartDate": "2024-03",
       "EndDate": "2024-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 231
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1437,7 +1616,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 235
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1445,7 +1625,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 236
     },
     {
       "SubjectCode": "CSE1IOX",
@@ -1453,7 +1634,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 237
     },
     {
       "SubjectCode": "CSE2ICX",
@@ -1461,7 +1643,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 242
     },
     {
       "SubjectCode": "CSE2ICX",
@@ -1469,7 +1652,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 243
     },
     {
       "SubjectCode": "CSE2ICX",
@@ -1477,7 +1661,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 248
     },
     {
       "SubjectCode": "CSE2ICX",
@@ -1485,7 +1670,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 254
     },
     {
       "SubjectCode": "CSE2ICX",
@@ -1493,7 +1679,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 260
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1501,7 +1688,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 269
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1509,7 +1697,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 272
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1517,7 +1706,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 275
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1525,7 +1715,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 278
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1533,7 +1724,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 281
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1541,7 +1733,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 284
     },
     {
       "SubjectCode": "CSE2CNX",
@@ -1549,7 +1742,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 287
     },
     {
       "SubjectCode": "CSE2SDX",
@@ -1557,7 +1751,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 293
     },
     {
       "SubjectCode": "CSE2SDX",
@@ -1565,7 +1760,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 296
     },
     {
       "SubjectCode": "CSE2SDX",
@@ -1573,7 +1769,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 299
     },
     {
       "SubjectCode": "CSE2SDX",
@@ -1581,7 +1778,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 305
     },
     {
       "SubjectCode": "CSE2SDX",
@@ -1589,7 +1787,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 311
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1597,7 +1796,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 314
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1605,7 +1805,8 @@
       "StartDate": "2023-03",
       "EndDate": "2023-05",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 315
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1613,7 +1814,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 316
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1621,7 +1823,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 317
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1629,7 +1832,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 320
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1637,7 +1841,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 323
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1645,7 +1850,8 @@
       "StartDate": "2023-12",
       "EndDate": "2024-02",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 324
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1653,7 +1859,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 325
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1661,7 +1868,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 329
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1669,7 +1877,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 333
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1677,7 +1886,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 334
     },
     {
       "SubjectCode": "BUS2PMX",
@@ -1685,7 +1895,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 335
     },
     {
       "SubjectCode": "CSE2VVX",
@@ -1693,7 +1904,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 338
     },
     {
       "SubjectCode": "CSE2VVX",
@@ -1701,7 +1913,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 341
     },
     {
       "SubjectCode": "CSE2VVX",
@@ -1709,7 +1922,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 347
     },
     {
       "SubjectCode": "CSE2VVX",
@@ -1717,7 +1931,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 353
     },
     {
       "SubjectCode": "CSE2VVX",
@@ -1725,7 +1940,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 359
     },
     {
       "SubjectCode": "MAT2DMX",
@@ -1733,7 +1949,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 362
     },
     {
       "SubjectCode": "MAT2DMX",
@@ -1741,7 +1958,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 365
     },
     {
       "SubjectCode": "MAT2DMX",
@@ -1749,7 +1967,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 368
     },
     {
       "SubjectCode": "MAT2DMX",
@@ -1757,7 +1976,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 374
     },
     {
       "SubjectCode": "MAT2DMX",
@@ -1765,7 +1985,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 380
     },
     {
       "SubjectCode": "CSE2MAX",
@@ -1773,7 +1994,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 386
     },
     {
       "SubjectCode": "CSE2MAX",
@@ -1781,7 +2003,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 389
     },
     {
       "SubjectCode": "CSE2MAX",
@@ -1789,7 +2012,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 395
     },
     {
       "SubjectCode": "CSE2MAX",
@@ -1797,7 +2021,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 401
     },
     {
       "SubjectCode": "CSE2MAX",
@@ -1805,7 +2030,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 407
     },
     {
       "SubjectCode": "CSE2OSX",
@@ -1813,7 +2039,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 410
     },
     {
       "SubjectCode": "CSE2OSX",
@@ -1821,7 +2048,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 413
     },
     {
       "SubjectCode": "CSE2OSX",
@@ -1829,7 +2057,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 419
     },
     {
       "SubjectCode": "CSE2OSX",
@@ -1837,7 +2066,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 425
     },
     {
       "SubjectCode": "CSE2OSX",
@@ -1845,7 +2075,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 431
     },
     {
       "SubjectCode": "CSE2ADX",
@@ -1853,7 +2084,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 437
     },
     {
       "SubjectCode": "CSE2ADX",
@@ -1861,7 +2093,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 443
     },
     {
       "SubjectCode": "CSE2ADX",
@@ -1869,7 +2102,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 449
     },
     {
       "SubjectCode": "CSE2ADX",
@@ -1877,7 +2111,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 455
     },
     {
       "SubjectCode": "CSE2CPX",
@@ -1885,7 +2120,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 458
     },
     {
       "SubjectCode": "CSE2CPX",
@@ -1893,7 +2129,8 @@
       "StartDate": "2023-10",
       "EndDate": "2023-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 466
     },
     {
       "SubjectCode": "CSE2CPX",
@@ -1901,7 +2138,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 470
     },
     {
       "SubjectCode": "CSE2CPX",
@@ -1909,7 +2147,8 @@
       "StartDate": "2024-07",
       "EndDate": "2024-09",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 475
     },
     {
       "SubjectCode": "CSE2MLX",
@@ -1917,7 +2156,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 482
     },
     {
       "SubjectCode": "CSE2MLX",
@@ -1925,7 +2165,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 485
     },
     {
       "SubjectCode": "CSE2MLX",
@@ -1933,7 +2174,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 494
     },
     {
       "SubjectCode": "CSE2MLX",
@@ -1941,7 +2183,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 497
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1949,7 +2192,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 506
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1957,7 +2201,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 509
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1965,7 +2210,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 512
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1973,7 +2219,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 515
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1981,7 +2228,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 518
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1989,7 +2237,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 521
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -1997,7 +2246,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 524
     },
     {
       "SubjectCode": "CSE2SAX",
@@ -2005,7 +2255,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 527
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2013,7 +2264,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 530
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2021,7 +2273,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 533
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2029,7 +2282,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 536
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2037,7 +2291,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 539
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2045,7 +2300,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 542
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2053,7 +2309,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 545
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2061,7 +2318,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 548
     },
     {
       "SubjectCode": "CSE2ANX",
@@ -2069,7 +2327,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 551
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2077,7 +2336,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 554
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2085,7 +2345,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 557
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2093,7 +2354,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 560
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2101,7 +2363,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 563
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2109,7 +2372,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 566
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2117,7 +2381,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 569
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2125,7 +2390,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 572
     },
     {
       "SubjectCode": "CSE2WDX",
@@ -2133,7 +2399,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 575
     },
     {
       "SubjectCode": "CSE3BGX",
@@ -2141,7 +2408,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 578
     },
     {
       "SubjectCode": "CSE3BGX",
@@ -2149,7 +2417,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 584
     },
     {
       "SubjectCode": "CSE3BGX",
@@ -2157,7 +2426,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 590
     },
     {
       "SubjectCode": "CSE3BGX",
@@ -2165,7 +2435,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 596
     },
     {
       "SubjectCode": "CSE3CIX",
@@ -2173,7 +2444,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 608
     },
     {
       "SubjectCode": "CSE3CIX",
@@ -2181,7 +2453,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 617
     },
     {
       "SubjectCode": "CSE3CSX",
@@ -2189,7 +2462,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 626
     },
     {
       "SubjectCode": "CSE3CSX",
@@ -2197,7 +2471,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 635
     },
     {
       "SubjectCode": "CSE3CSX",
@@ -2205,7 +2480,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 641
     },
     {
       "SubjectCode": "CSE3CSX",
@@ -2213,7 +2489,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 647
     },
     {
       "SubjectCode": "CSE3NWX",
@@ -2221,7 +2498,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 653
     },
     {
       "SubjectCode": "CSE3NWX",
@@ -2229,7 +2507,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 659
     },
     {
       "SubjectCode": "CSE3NWX",
@@ -2237,7 +2516,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 668
     },
     {
       "SubjectCode": "CSE3OTX",
@@ -2245,7 +2525,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 674
     },
     {
       "SubjectCode": "CSE3OTX",
@@ -2253,7 +2534,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 680
     },
     {
       "SubjectCode": "CSE3OTX",
@@ -2261,7 +2543,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 686
     },
     {
       "SubjectCode": "CSE3OTX",
@@ -2269,7 +2552,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 692
     },
     {
       "SubjectCode": "CSE3WSX",
@@ -2277,7 +2561,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 701
     },
     {
       "SubjectCode": "CSE3WSX",
@@ -2285,7 +2570,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 710
     },
     {
       "SubjectCode": "CSE3WSX",
@@ -2293,7 +2579,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 719
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2301,7 +2588,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 722
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2309,7 +2597,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 725
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2317,7 +2606,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 728
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2325,7 +2615,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 731
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2333,7 +2624,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 734
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2341,7 +2633,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 737
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2349,7 +2642,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 740
     },
     {
       "SubjectCode": "CSE3PAX",
@@ -2357,7 +2651,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 743
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2365,7 +2660,8 @@
       "StartDate": "2023-02",
       "EndDate": "2023-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 746
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2373,7 +2669,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 749
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2381,7 +2678,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 752
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2389,7 +2687,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 755
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2397,7 +2696,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 758
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2405,7 +2705,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 761
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2413,7 +2714,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 764
     },
     {
       "SubjectCode": "CSE3PBX",
@@ -2421,7 +2723,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 767
     },
     {
       "SubjectCode": "CSE3PEX",
@@ -2429,7 +2732,8 @@
       "StartDate": "2023-05",
       "EndDate": "2023-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 773
     },
     {
       "SubjectCode": "CSE3PEX",
@@ -2437,7 +2741,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 779
     },
     {
       "SubjectCode": "CSE3PEX",
@@ -2445,7 +2750,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 785
     },
     {
       "SubjectCode": "CSE3PEX",
@@ -2453,7 +2759,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 791
     },
     {
       "SubjectCode": "CSE3ACX",
@@ -2461,7 +2768,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 800
     },
     {
       "SubjectCode": "CSE3ACX",
@@ -2469,7 +2777,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 806
     },
     {
       "SubjectCode": "CSE3ACX",
@@ -2477,7 +2786,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 812
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2485,7 +2795,8 @@
       "StartDate": "2023-04",
       "EndDate": "2023-06",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 820
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2493,7 +2804,8 @@
       "StartDate": "2023-11",
       "EndDate": "2024-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 827
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2501,7 +2813,8 @@
       "StartDate": "2024-01",
       "EndDate": "2024-03",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 829
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2509,7 +2822,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 833
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2517,7 +2831,8 @@
       "StartDate": "2024-10",
       "EndDate": "2024-12",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 838
     },
     {
       "SubjectCode": "CSE3SOX",
@@ -2525,7 +2840,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 839
     },
     {
       "SubjectCode": "CSE3BDX",
@@ -2533,7 +2849,8 @@
       "StartDate": "2023-08",
       "EndDate": "2023-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 848
     },
     {
       "SubjectCode": "CSE3BDX",
@@ -2541,7 +2858,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 854
     },
     {
       "SubjectCode": "CSE3BDX",
@@ -2549,7 +2867,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 860
     },
     {
       "SubjectCode": "CSE3PCX",
@@ -2557,7 +2876,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 878
     },
     {
       "SubjectCode": "CSE3PCX",
@@ -2565,7 +2885,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 884
     },
     {
       "SubjectCode": "CSE3CAX",
@@ -2573,7 +2894,8 @@
       "StartDate": "2024-02",
       "EndDate": "2024-04",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 902
     },
     {
       "SubjectCode": "CSE3CAX",
@@ -2581,7 +2903,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 905
     },
     {
       "SubjectCode": "CSE3CAX",
@@ -2589,7 +2912,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 908
     },
     {
       "SubjectCode": "CSE3CAX",
@@ -2597,7 +2921,8 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 911
     },
     {
       "SubjectCode": "CSE3CBX",
@@ -2605,7 +2930,8 @@
       "StartDate": "2024-05",
       "EndDate": "2024-07",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 929
     },
     {
       "SubjectCode": "CSE3CBX",
@@ -2613,7 +2939,8 @@
       "StartDate": "2024-08",
       "EndDate": "2024-10",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 932
     },
     {
       "SubjectCode": "CSE3CBX",
@@ -2621,6 +2948,7 @@
       "StartDate": "2024-11",
       "EndDate": "2025-01",
       "Load": 1,
-      "CurrentLoad": 0
+      "CurrentLoad": 0,
+      "index": 935
     }
   ]
