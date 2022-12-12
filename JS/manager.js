@@ -104,9 +104,8 @@ function ManagementOfTablesAndFunctions() {
                 {'data': 'StartDate'},
                 {'data': 'EndDate'},
                 {'data': 'Load'},
-                {'data': 'CurrentLoad'}
-
-
+                {'data': 'CurrentLoad'},
+                {'data': 'index', "visible": false}
             ],
             stateSave: true,
 
@@ -176,6 +175,12 @@ function ManagementOfTablesAndFunctions() {
 
         function updateCurrentLoadOnInstancesTable(allScheduleData) {
 
+            instancesTable.rows( function ( idx, data, node ) {
+                instancesTable
+                    .cell({row:idx, column:5})
+                    .data(0)
+            })
+
             let keyValuePairsArray = []
             allScheduleData.forEach(function(value, _) {
                 let code = getScheduleDataObject('SubjectCode', value)
@@ -210,6 +215,9 @@ function ManagementOfTablesAndFunctions() {
                 })
             })
 
+            filterScheduleLoadsHaveNotBeenMeet()
+
+
 
         }
 
@@ -227,8 +235,6 @@ function ManagementOfTablesAndFunctions() {
                         window.alert('Please select a schedule to delete.')
                     }
                 }
-
-
             }
         }
 
@@ -267,6 +273,23 @@ function ManagementOfTablesAndFunctions() {
                 }
             }
         }
+
+    }
+
+    function filterScheduleLoadsHaveNotBeenMeet() {
+        var scheduleLoadsHaveNotBeenMeet = []
+        instancesTable.data()
+            .filter(function (value, index) {
+                if (parseFloat(value['CurrentLoad']) < parseFloat(value['Load'])) {
+                    scheduleLoadsHaveNotBeenMeet.push('^' + value['index'] + '$')
+                }
+            }).toArray()
+
+        let test = scheduleLoadsHaveNotBeenMeet.join('|')
+        instancesTable
+            .column(6)
+            .search( test,true,false,false )
+            .draw()
 
     }
 
@@ -581,6 +604,7 @@ function ManagementOfTablesAndFunctions() {
             switch (selectedValue) {
                 case "":
                     table.columns().search('').draw()
+                    filterScheduleLoadsHaveNotBeenMeet()
                     break
                 case "3 Months":
                     table.columns(columnIndex).search(threeMonths,true,false,false).draw()
