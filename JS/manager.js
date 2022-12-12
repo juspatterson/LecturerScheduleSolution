@@ -29,13 +29,13 @@ function ManagementOfTablesAndFunctions() {
     }
 
     this.init = function () {
+        logout()
         createInstanceTable()
         createLecturersTable()
         createScheduleTable()
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
         removeSelectedRowsFromTablesResetForm()
-        logout()
 
     }
 
@@ -72,7 +72,9 @@ function ManagementOfTablesAndFunctions() {
                 {
                     'data': "subjectsLecturerCanTeach.subjectsCode",
                     "visible": false
-                }
+                },
+                {'data': 'MaximumLoad'},
+                {'data': 'CurrentLoad'}
             ]
         });
     }
