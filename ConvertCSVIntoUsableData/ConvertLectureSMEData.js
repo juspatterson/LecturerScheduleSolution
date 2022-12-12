@@ -57,7 +57,9 @@ function processLine(line, subjectCodes, subjectName) {
         const lecturer = {
             name: lecturerName,
             load: lecturerLoad,
-            subjectsLecturerCanTeach: subjectsLecturerCanTeach
+            subjectsLecturerCanTeach: subjectsLecturerCanTeach,
+            MaximumLoad: (lecturerLoad * 6).toFixed(1),
+            CurrentLoad: 0
         };
 
         return lecturer;
