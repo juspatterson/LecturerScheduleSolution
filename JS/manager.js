@@ -81,8 +81,8 @@ function ManagementOfTablesAndFunctions() {
                     'data': "subjectsLecturerCanTeach.subjectsCode",
                     "visible": false
                 },
-                {'data': 'MaximumLoad'},
-                {'data': 'CurrentLoad'}
+                {'data': 'MaximumLoad', "width": "10%"},
+                {'data': 'CurrentLoad',"width": "10%"}
             ]
         });
     }
