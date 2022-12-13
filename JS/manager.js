@@ -227,8 +227,6 @@ function ManagementOfTablesAndFunctions() {
 
             filterScheduleLoadsHaveNotBeenMeet()
 
-
-
         }
 
         function deleteButton() {
@@ -433,7 +431,7 @@ function ManagementOfTablesAndFunctions() {
                 scheduleTable.ajax.reload();
                 showToasterMessage('Edited Schedule')
                 resetTablesAndForm()
-                $('#create-schedule').val('Create Schedule')
+
             },
             error: function (obj, textStatus) {
                 console.log(obj.msg);
@@ -459,6 +457,8 @@ function ManagementOfTablesAndFunctions() {
         $('#close-x-lecturer').text("")
         instancesTable.columns().search('').draw()
         lecturersTable.rows('.selected').deselect()
+        $('#choose-a-lecturer-role').val('Nothing Selected')
+        $('#create-schedule').val('Create Schedule')
     }
 
     function dataForSchedule(override) {
@@ -512,8 +512,12 @@ function ManagementOfTablesAndFunctions() {
             }
         }).select()
 
-        lecturersTable.search(lecturersName).row().select()
-
+        lecturersTable
+            .column(0)
+            .search(lecturersName, true, false, false)
+            .row()
+            .select()
+            .column(0).search('')
 
         filterLecturersTableFillFormWithInstanceInformation()
         filterInstancesTableFillFormWithLecturerInformation()
@@ -604,9 +608,9 @@ function ManagementOfTablesAndFunctions() {
         $(filterID).on('change', function () {
 
             var selectedValue = $(filterID).val()
-            let  threeMonths = createDateRangeForFilter(3)
-            let  sixMonths = createDateRangeForFilter(6)
-            let  twelveMonths = createDateRangeForFilter(12)
+            let  threeMonths = createDateRange(3, "string")
+            let  sixMonths = createDateRange(6, "string")
+            let  twelveMonths = createDateRange(12, "string")
 
             switch (selectedValue) {
                 case "":
@@ -624,11 +628,14 @@ function ManagementOfTablesAndFunctions() {
             }
         })
 
-        function createDateRangeForFilter(numberOfMonths) {
+    }
+
+    function createDateRange(numberOfMonths, arrayOrString, startDate) {
             var date = new Date();
-            var startDate = date.getFullYear() + "-" + (date.getMonth()+1);
-            var year = date.getFullYear()
-            var month = (date.getMonth()+1)
+        var startDate = startDate ?? date.getFullYear() + "-" + (date.getMonth());
+        let startDateSpilt = startDate.split('-')
+        var year = parseInt(startDateSpilt[0])
+        var month = parseInt(startDateSpilt[1])
             var dateRange = [startDate]
 
             for (let i = 1; i < numberOfMonths; i++) {
@@ -639,7 +646,11 @@ function ManagementOfTablesAndFunctions() {
                 }
                 dateRange.push(year + '-' + leftPad(month, 2))
             }
+        if (arrayOrString === "string") {
             return dateRange.join('|')
+        }
+        else if (arrayOrString === "array") {
+            return dateRange
         }
 
         function leftPad(value, length) {
