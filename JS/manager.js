@@ -330,7 +330,7 @@ function ManagementOfTablesAndFunctions() {
                     $('#close-x-instance').text("X")
                     $('#selected-instance-error-massage').css('visibility', 'hidden')
 
-                    if (instancesData != null && !lecturersTable.rows('.selected').any()){
+                    if (instancesData != null){
                         lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
                     } else {
                         lecturersTable.columns().search('').draw()
@@ -355,7 +355,7 @@ function ManagementOfTablesAndFunctions() {
                         return value
                     }).join('|')
 
-                    if (selectedLecturer != null && !instancesTable.rows('.selected').any()) {
+                    if (selectedLecturer != null) {
                         instancesTable.column(0).search(subjectCodes,true,false,false).draw()
                     }
                 })
