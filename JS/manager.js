@@ -514,15 +514,14 @@ function ManagementOfTablesAndFunctions() {
             }
         }).select()
 
-        lecturersTable
-            .column(0)
-            .search(lecturersName, true, false, false)
-            .row()
-            .select()
-            .column(0).search('')
+        console.log(lecturersName)
+
+        lecturersTable.row(':contains('+ lecturersName +')').select()
+
 
         filterLecturersTableFillFormWithInstanceInformation()
         filterInstancesTableFillFormWithLecturerInformation()
+        calculateLecturersCurrentLoad()
 
         switch (lecturersRole) {
             case "Main Lecturer" :
