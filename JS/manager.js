@@ -246,11 +246,7 @@ function ManagementOfTablesAndFunctions() {
             }
         }
 
-        function getScheduleDataObject(key, data) {
-            let schedule = data.schedule;
-            let scheduleJson = JSON.parse(schedule)
-            return (scheduleJson[key])
-        }
+
 
         function editButton() {
             return {
@@ -282,6 +278,12 @@ function ManagementOfTablesAndFunctions() {
             }
         }
 
+    }
+
+    function getScheduleDataObject(key, data) {
+        let schedule = data.schedule;
+        let scheduleJson = JSON.parse(schedule)
+        return (scheduleJson[key])
     }
 
     function filterScheduleLoadsHaveNotBeenMeet() {
