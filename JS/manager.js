@@ -295,10 +295,10 @@ function ManagementOfTablesAndFunctions() {
                 }
             }).toArray()
 
-        let test = scheduleLoadsHaveNotBeenMeet.join('|')
+        let scheduleIndex = scheduleLoadsHaveNotBeenMeet.join('|')
         instancesTable
             .column(6)
-            .search( test,true,false,false )
+            .search( scheduleIndex,true,false,false )
             .draw()
 
     }
