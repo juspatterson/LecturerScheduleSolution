@@ -461,6 +461,9 @@ function ManagementOfTablesAndFunctions() {
         lecturersTable.rows('.selected').deselect()
         $('#choose-a-lecturer-role').val('Nothing Selected')
         $('#create-schedule').val('Create Schedule')
+        resetLecturersCurrentLoad()
+        filterScheduleLoadsHaveNotBeenMeet()
+
     }
 
     function dataForSchedule(override) {
