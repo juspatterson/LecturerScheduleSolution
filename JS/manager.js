@@ -389,57 +389,46 @@ function ManagementOfTablesAndFunctions() {
         let instancesStartDate = selectedInstance[0]['StartDate']
         let dateRange = createDateRange(6, "array", instancesStartDate)
 
-        // console.log(scheduleData)
-        // console.log(instancesStartDate)
-
-
         lecturersData.forEach(function(lecturer) {
-            // console.log(lecturer)
             let lecturersName = lecturer['name']
-            // console.log(lecturersName)
-            instancesDates = []
+            instancesDatesAndLoads = []
 
             scheduleData
                 .filter(function (value, index) {
                     let scheduleStartDate = getScheduleDataObject('SubjectStartDate', value)
                     let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
-                    // console.log(scheduleStartDate)
-                    // console.log(scheduleLecturersName)
-                    // console.log(value)
                     if (scheduleLecturersName === lecturersName) {
-                        instancesDates.push( getScheduleDataObject('SubjectStartDate', value) )
+                        let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+                        let lecturersLoad = getScheduleDataObject('LecturerLoad', value)
+                        instancesDatesAndLoads.push( [subjectStartDate, lecturersLoad] )
                     }
                 })
 
-            let numberOfinstancesWithinDateRange = 0
+            let calculatedLoadForLecturer = 0
             dateRange.forEach(function(outterDate) {
-                instancesDates.forEach(function(innerDate) {
-                    if (outterDate === innerDate) {
-                        ++numberOfinstancesWithinDateRange
+                instancesDatesAndLoads.forEach(function(instanceDateAndLoad) {
+                    console.log(instanceDateAndLoad)
+                    if (outterDate === instanceDateAndLoad[0]) {
+                        calculatedLoadForLecturer = parseFloat(calculatedLoadForLecturer) + parseFloat(instanceDateAndLoad[1])
                     }
                 })
             })
 
+            // print out values for testing
             // console.log(dateRange)
-            // console.log(lecturersName, instancesDates)
+            // console.log(lecturersName, instancesDatesAndLoads)
             // console.log(numberOfinstancesWithinDateRange)
 
             lecturersTable.rows( function ( idx, data, node ) {
                 // console.log(data)
                 if (data['name'] === lecturersName) {
-                    let lecturersLoad = data['load']
-                    let newLoad = lecturersLoad * numberOfinstancesWithinDateRange
+                    let newLoad = calculatedLoadForLecturer
                     lecturersTable
                         .cell({row:idx, column:4})
                         .data((newLoad).toFixed(1))
                 }
             })
-
         })
-
-
-
-
     }
 
     function createScheduleAndAddToScheduleTable() {
@@ -605,10 +594,6 @@ function ManagementOfTablesAndFunctions() {
         filterScheduleLoadsHaveNotBeenMeet()
 
     }
-
-
-
-
 
     function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
         let schedule = JSON.parse(selectRow[0].schedule)
