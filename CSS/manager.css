@@ -147,6 +147,11 @@ input[type="submit"] {
     margin-bottom: 25px;
 }
 
+#cancel-button {
+    max-width: 40%;
+    margin: auto;
+}
+
 form {
     margin: 0px auto;
     width: 24%;
