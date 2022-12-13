@@ -367,6 +367,78 @@ function ManagementOfTablesAndFunctions() {
         }
     }
 
+    function resetLecturersCurrentLoad() {
+        lecturersTable.rows( function ( idx, data, node ) {
+            lecturersTable
+                .cell({row:idx, column:4})
+                .data('0.0')
+
+        })
+
+    }
+
+    function calculateLecturersCurrentLoad() {
+        resetLecturersCurrentLoad()
+
+        let lecturersData = lecturersTable.data().toArray()
+        let scheduleData =  scheduleTable.data()
+        let selectedInstance = instancesTable.rows({ selected: true}).data()
+        let instancesStartDate = selectedInstance[0]['StartDate']
+        let dateRange = createDateRange(6, "array", instancesStartDate)
+
+        // console.log(scheduleData)
+        // console.log(instancesStartDate)
+
+
+        lecturersData.forEach(function(lecturer) {
+            // console.log(lecturer)
+            let lecturersName = lecturer['name']
+            // console.log(lecturersName)
+            instancesDates = []
+
+            scheduleData
+                .filter(function (value, index) {
+                    let scheduleStartDate = getScheduleDataObject('SubjectStartDate', value)
+                    let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
+                    // console.log(scheduleStartDate)
+                    // console.log(scheduleLecturersName)
+                    // console.log(value)
+                    if (scheduleLecturersName === lecturersName) {
+                        instancesDates.push( getScheduleDataObject('SubjectStartDate', value) )
+                    }
+                })
+
+            let numberOfinstancesWithinDateRange = 0
+            dateRange.forEach(function(outterDate) {
+                instancesDates.forEach(function(innerDate) {
+                    if (outterDate === innerDate) {
+                        ++numberOfinstancesWithinDateRange
+                    }
+                })
+            })
+
+            // console.log(dateRange)
+            // console.log(lecturersName, instancesDates)
+            // console.log(numberOfinstancesWithinDateRange)
+
+            lecturersTable.rows( function ( idx, data, node ) {
+                // console.log(data)
+                if (data['name'] === lecturersName) {
+                    let lecturersLoad = data['load']
+                    let newLoad = lecturersLoad * numberOfinstancesWithinDateRange
+                    lecturersTable
+                        .cell({row:idx, column:4})
+                        .data((newLoad).toFixed(1))
+                }
+            })
+
+        })
+
+
+
+
+    }
+
     function createScheduleAndAddToScheduleTable() {
         var errorDisplayCount = 0
 
