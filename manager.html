@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <title>Manager</title>
   <script src="packages/jQuery.3.6.0/Content/Scripts/jquery-3.6.0.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
@@ -23,7 +23,7 @@
 
 </head>
 
-<header> 
+<header>
   <h1 class="heading"><span>Didasko</span> Scheduler</h1>
   <nav>
     <ul>
@@ -32,108 +32,108 @@
   </nav>
 </header>
 
-  <body>
-    <h2> Manager</h2>
-    <div id="instances-table-div">
-      <div class="category-filter-container">
-        <select id="instances-filter" class="form-filter">
-          <option value="">Filter By Date</option>
-          <option value="3 Months">3 Months</option>
-          <option value="6 Months">6 Months</option>
-          <option value="12 Months">12 Months</option>
-        </select>
-      </div>
-      <table id="instances-table" class="display">
-        <thead>
-        <tr class="row-1">
-          <th class="column-1">Subject Code</th>
-          <th class="column-2">Subject Name</th>
-          <th class="column-3">Start Date</th>
-          <th class="column-4">End Date</th>
-          <th class="column-5">Load</th>
-          <th class="column-6">Current Load</th>
-          <th class="column-7">index</th>
-        </tr>
-        </thead>
-      </table>
+<body>
+<h2> Manager</h2>
+<div id="instances-table-div">
+  <div class="category-filter-container">
+    <select id="instances-filter" class="form-filter">
+      <option value="">Filter By Date</option>
+      <option value="3 Months">3 Months</option>
+      <option value="6 Months">6 Months</option>
+      <option value="12 Months">12 Months</option>
+    </select>
+  </div>
+  <table id="instances-table" class="display">
+    <thead>
+    <tr class="row-1">
+      <th class="column-1">Subject Code</th>
+      <th class="column-2">Subject Name</th>
+      <th class="column-3">Start Date</th>
+      <th class="column-4">End Date</th>
+      <th class="column-5">Load</th>
+      <th class="column-6">Current Load</th>
+      <th class="column-7">index</th>
+    </tr>
+    </thead>
+  </table>
 
+</div>
+
+<div id="lecturers-table-div">
+  <table id="lecturers-table" class="display">
+    <thead>
+    <tr class="row-1">
+      <th class="column-1">Name</th>
+      <th class="column-2">Load</th>
+      <th class="column-3">hide</th>
+      <th class="column-4">Maximum Load</th>
+      <th class="column-5">Current Load</th>
+    </tr>
+    </thead>
+  </table>
+</div>
+
+<div id="form-div">
+  <form id="create-schedule-form">
+    <label class="form-label" for="selected-instance"> Selected Instance:</label>
+    <div id="close-x-container-instance" class="close-x-container">
+      <button id="selected-instance" type="button">Nothing Selected</button>
+      <label id="close-x-instance" class="close-x"></label>
     </div>
+    <label id="selected-instance-error-massage" class="error-massage">* Please select an instance.</label>
 
-    <div id="lecturers-table-div">
-      <table id="lecturers-table" class="display">
-        <thead>
-        <tr class="row-1">
-          <th class="column-1">Name</th>
-          <th class="column-2">Load</th>
-          <th class="column-3">hide</th>
-          <th class="column-4">Maximum Load</th>
-          <th class="column-5">Current Load</th>
-        </tr>
-        </thead>
-      </table>
+    <label class="form-label" for="selected-lecturer"> Selected Lecturer:</label>
+    <div id="close-x-container-lecturer" class="close-x-container">
+      <button id="selected-lecturer" type="button">Nothing Selected</button>
+      <label id="close-x-lecturer" class="close-x"></label>
     </div>
+    <label id="selected-lecturer-error-massage" class="error-massage">* Please select a lecturer.</label>
 
-    <div id="form-div">
-        <form id="create-schedule-form">
-          <label class="form-label" for="selected-instance"> Selected Instance:</label>
-          <div id="close-x-container-instance" class="close-x-container">
-            <button id="selected-instance" type="button">Nothing Selected</button>
-            <label id="close-x-instance" class="close-x"></label>
-          </div>
-          <label id="selected-instance-error-massage" class="error-massage">* Please select an instance.</label>
-
-          <label class="form-label" for="selected-lecturer"> Selected Lecturer:</label>
-          <div id="close-x-container-lecturer" class="close-x-container">
-            <button id="selected-lecturer" type="button">Nothing Selected</button>
-            <label id="close-x-lecturer" class="close-x"></label>
-          </div>
-          <label id="selected-lecturer-error-massage" class="error-massage">* Please select a lecturer.</label>
-
-          <label class="form-label" for="choose-a-lecturer-role"> Choose a Lecturer Role:</label>
-          <select id="choose-a-lecturer-role">
-            <option value="Nothing Selected" selected disabled>Nothing Selected</option>
-            <option value="Main Lecturer">Main Lecturer</option>
-            <option value="Support - Live Demo">Support - Live Demo</option>
-            <option value="Support - support">Support - Support</option>
-            <option value="Support - Marking">Support - Marking</option>
-          </select>
-          <label id="choose-a-lecturer-role-error-massage" class="error-massage">* Please select a role.</label>
-          <input id="create-schedule" type="button" value="Create Schedule">
+    <label class="form-label" for="choose-a-lecturer-role"> Choose a Lecturer Role:</label>
+    <select id="choose-a-lecturer-role">
+      <option value="Nothing Selected" selected disabled>Nothing Selected</option>
+      <option value="Main Lecturer">Main Lecturer</option>
+      <option value="Support - Live Demo">Support - Live Demo</option>
+      <option value="Support - support">Support - Support</option>
+      <option value="Support - Marking">Support - Marking</option>
+    </select>
+    <label id="choose-a-lecturer-role-error-massage" class="error-massage">* Please select a role.</label>
+    <input id="create-schedule" type="button" value="Create Schedule">
     <input id="cancel-button" type="button" value="cancel">
-          <br>
-        </form>
-    </div>
+    <br>
+  </form>
+</div>
 
-    <div id="schedule-table-div">
-      <div class="category-filter-container">
-        <select id="schedule-filter" class="form-filter">
-          <option value="">Filter By Date</option>
-          <option value="3 Months">3 Months</option>
-          <option value="6 Months">6 Months</option>
-          <option value="12 Months">12 Months</option>
-        </select>
-      </div>
-      <table id="schedule-table" class="display">
-        <thead>
-        <tr class="row-1">
-          <th class="column-1">ID</th>
-          <th class="column-2">O.R</th>
-          <th class="column-3">Subject Code</th>
-          <th class="column-4">Subject Name</th>
-          <th class="column-5">Start Date</th>
-          <th class="column-6">End Date</th>
-          <th class="column-7">Subject Load</th>
-          <th class="column-8">Lecturers Name</th>
-          <th class="column-9">Lecturers Load</th>
-          <th class="column-10">Lecturers Role</th>
-        </tr>
-        </thead>
-      </table>
-    </div>
+<div id="schedule-table-div">
+  <div class="category-filter-container">
+    <select id="schedule-filter" class="form-filter">
+      <option value="">Filter By Date</option>
+      <option value="3 Months">3 Months</option>
+      <option value="6 Months">6 Months</option>
+      <option value="12 Months">12 Months</option>
+    </select>
+  </div>
+  <table id="schedule-table" class="display">
+    <thead>
+    <tr class="row-1">
+      <th class="column-1">ID</th>
+      <th class="column-2">O.R</th>
+      <th class="column-3">Subject Code</th>
+      <th class="column-4">Subject Name</th>
+      <th class="column-5">Start Date</th>
+      <th class="column-6">End Date</th>
+      <th class="column-7">Subject Load</th>
+      <th class="column-8">Lecturers Name</th>
+      <th class="column-9">Lecturers Load</th>
+      <th class="column-10">Lecturers Role</th>
+    </tr>
+    </thead>
+  </table>
+</div>
 
 
-    <div id="toaster-message"></div>
+<div id="toaster-message"></div>
 
-    
-  </body>
+
+</body>
 </html>
