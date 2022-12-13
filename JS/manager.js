@@ -492,6 +492,25 @@ function ManagementOfTablesAndFunctions() {
         }
     }
 
+    function addScheduleToDatabase(override) {
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/create',
+            async: true,
+            data: {'data': dataForSchedule(override, false)},
+            success: function() {
+                console.log('done');
+                scheduleTable.ajax.reload();
+                showToasterMessage('Schedule Created')
+                resetTablesAndForm()
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
+    }
+
     function editScheduleOnDatabase(override) {
         var scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
         console.log(scheduleData)
@@ -502,7 +521,7 @@ function ManagementOfTablesAndFunctions() {
             // dataType: 'jsonp',
             url: '/api/schedules/edit',
             async: true,
-            data: {'id': id, 'data': dataForSchedule(override)},
+            data: {'id': id, 'data': dataForSchedule(override, true)},
             success: function() {
                 console.log('editing done');
                 scheduleTable.ajax.reload();
@@ -516,6 +535,52 @@ function ManagementOfTablesAndFunctions() {
         });
 
 
+    }
+
+    function dataForSchedule(override, editing) {
+        var instancesData = instancesTable.rows({ selected: true}).data().toArray()
+        var lecturerData = lecturersTable.rows({ selected: true}).data().toArray()
+
+        let assignedLoad = calulateLoadNeededForSchedule()
+
+        var newSchedule = {};
+        newSchedule ['Override'] = override
+        newSchedule ['SubjectCode'] = instancesData[0].SubjectCode
+        newSchedule ['SubjectName'] = instancesData[0].SubjectName
+        newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
+        newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
+        newSchedule ['SubjectLoad'] = instancesData[0].Load
+        newSchedule ['LecturerName'] = lecturerData[0].name
+        newSchedule ['LecturerLoad'] = assignedLoad
+        newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
+        var data = JSON.stringify(newSchedule)
+
+        return data
+
+        function calulateLoadNeededForSchedule() {
+            let currentLoad = instancesData[0]['CurrentLoad']
+
+            //if editing remove the current lectures load from the instances current load.
+            if (editing) {
+                let scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
+                let scheduleDataLecturerLoad = getScheduleDataObject('LecturerLoad', scheduleData[0])
+                currentLoad = currentLoad - scheduleDataLecturerLoad
+            }
+
+
+            let instancesLoad = instancesData[0]['Load']
+            let neededLoad = (instancesLoad - currentLoad).toFixed(1)
+            let lecturersLoad = lecturerData[0]['load']
+            let assignedLoad = 0
+
+            if (neededLoad >= lecturersLoad) {
+                assignedLoad = lecturersLoad
+            } else {
+                assignedLoad = neededLoad
+            }
+
+            return assignedLoad
+        }
     }
 
     function showToasterMessage(text) {
@@ -541,43 +606,9 @@ function ManagementOfTablesAndFunctions() {
 
     }
 
-    function dataForSchedule(override) {
-        var instancesData = instancesTable.rows({ selected: true}).data().toArray()
-        var lecturerData = lecturersTable.rows({ selected: true}).data().toArray()
 
-        var newSchedule = {};
-        newSchedule ['Override'] = override
-        newSchedule ['SubjectCode'] = instancesData[0].SubjectCode
-        newSchedule ['SubjectName'] = instancesData[0].SubjectName
-        newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
-        newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
-        newSchedule ['SubjectLoad'] = instancesData[0].Load
-        newSchedule ['LecturerName'] = lecturerData[0].name
-        newSchedule ['LecturerLoad'] = lecturerData[0].load
-        newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
-        var data = JSON.stringify(newSchedule)
 
-        return data
-    }
 
-    function addScheduleToDatabase(override) {
-        $.ajax({
-            type: 'POST',
-            // dataType: 'jsonp',
-            url: '/api/schedules/create',
-            async: true,
-            data: {'data': dataForSchedule(override)},
-            success: function() {
-                console.log('done');
-                scheduleTable.ajax.reload();
-                showToasterMessage('Schedule Created')
-                resetTablesAndForm()
-            },
-            error: function (obj, textStatus) {
-                console.log(obj.msg);
-            }
-        });
-    }
 
     function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
         let schedule = JSON.parse(selectRow[0].schedule)
