@@ -335,12 +335,15 @@ function ManagementOfTablesAndFunctions() {
                     } else {
                         lecturersTable.columns().search('').draw()
                     }
+
+                    calculateLecturersCurrentLoad()
                 })
                 .on('deselect', function (e, dt, type, indexes) {
 
                     $('#selected-instance').text("Nothing Selected")
                     lecturersTable.columns().search('').draw()
                     $('#close-x-instance').text("")
+                    resetLecturersCurrentLoad()
                 })
         }
         function selectedRowFromLecturersTable() {
@@ -707,21 +710,21 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function createDateRange(numberOfMonths, arrayOrString, startDate) {
-            var date = new Date();
+        var date = new Date();
         var startDate = startDate ?? date.getFullYear() + "-" + (date.getMonth());
         let startDateSpilt = startDate.split('-')
         var year = parseInt(startDateSpilt[0])
         var month = parseInt(startDateSpilt[1])
-            var dateRange = [startDate]
+        var dateRange = [startDate]
 
-            for (let i = 1; i < numberOfMonths; i++) {
-                month = month + 1
-                if (month === 13) {
-                    month = month - 12
-                    year = year + 1
-                }
-                dateRange.push(year + '-' + leftPad(month, 2))
+        for (let i = 1; i < numberOfMonths; i++) {
+            month = month + 1
+            if (month === 13) {
+                month = month - 12
+                year = year + 1
             }
+            dateRange.push(year + '-' + leftPad(month, 2))
+        }
         if (arrayOrString === "string") {
             return dateRange.join('|')
         }
