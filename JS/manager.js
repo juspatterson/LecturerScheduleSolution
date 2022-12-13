@@ -36,7 +36,15 @@ function ManagementOfTablesAndFunctions() {
         filterOnSelectedRow()
         createScheduleAndAddToScheduleTable()
         removeSelectedRowsFromTablesResetForm()
+        cancelButton()
 
+    }
+
+    function cancelButton() {
+        $('#cancel-button').on('click', function() {
+            resetTablesAndForm()
+
+        })
     }
 
     function logout() {

@@ -38,12 +38,17 @@
         color: whitesmoke;
     }
 
-    #create-schedule:hover {
+    #cancel-button {
+        background: rgb(128, 2, 2);
+        color: whitesmoke;
+    }
+
+    #create-schedule:hover, #cancel-button:hover {
         background-color: #2b2b2b;
     }
 
 
-    #create-schedule:active {
+    #create-schedule:active, #cancel-button:hover {
         background-color: #424242;
     }
 }
@@ -91,12 +96,17 @@
         color: whitesmoke;
     }
 
-    #create-schedule:hover {
+    #cancel-button {
+        background: rgb(128, 2, 2);
+        color: whitesmoke;
+    }
+
+    #create-schedule:hover, #cancel-button:hover {
         background-color: #2b2b2b;
     }
 
 
-    #create-schedule:active {
+    #create-schedule:active, #cancel-button:active {
         background-color: #424242;
     }
 }
@@ -125,15 +135,16 @@ input[type="submit"] {
     border-radius: 25px;
 }
 
-#create-schedule  {
+#create-schedule,
+#cancel-button  {
     width: 100%;
     display: block;
     height: 45px;
     border: none;
     margin-top: 25px;
-
     text-align: center;
     border-radius: 25px;
+    margin-bottom: 25px;
 }
 
 form {
@@ -209,7 +220,8 @@ select {
     margin-top: 560px;
 }
 
-#schedule-table, #schedule-table_wrapper {
+#schedule-table,
+#schedule-table_wrapper {
     width: 100%;
     display: block;
 }
