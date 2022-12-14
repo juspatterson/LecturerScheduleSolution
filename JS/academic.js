@@ -23,17 +23,13 @@ function ManagementOfTablesAndFunctions() {
     }
 
     this.init = function() {
-        createLectureScheduleTable()
-        loadLectureScheduleTable()
-        filterByDate()
         logout()
+        createLectureScheduleTable()
+        filterByDate()
+
     }
 
     var lecturerScheduleTable = null
-
-    function loadLectureScheduleTable () {
-        lecturerScheduleTable.ajax.url('/api/lecturer/schedule').load()
-    }
 
     function scheduleGetter(key) {
         return function(row) {
@@ -57,7 +53,10 @@ function ManagementOfTablesAndFunctions() {
 
     function createLectureScheduleTable() {
         lecturerScheduleTable = $('#lecturers-schedule-table').DataTable({
-            ajax: {dataSrc: ''},
+            ajax: {
+                url: '/api/lecturer/schedule',
+                dataSrc: ''
+            },
             dom: 'Bfrtip',
             responsive: true,
             autoWidth: true,
@@ -165,4 +164,3 @@ function ManagementOfTablesAndFunctions() {
     }
 
 }
-
