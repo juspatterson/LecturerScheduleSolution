@@ -1,6 +1,6 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
-    //managementOfTablesAndFunctions.confirmLogin();
+    managementOfTablesAndFunctions.confirmLogin();
     managementOfTablesAndFunctions.init();
 
 })
@@ -463,7 +463,6 @@ function ManagementOfTablesAndFunctions() {
 
         $('#create-schedule').on('click', function() {
 
-
             if ($('#selected-instance').text() == "Nothing Selected") {
                 $('#selected-instance-error-massage').css('visibility', 'revert')
             }
@@ -480,23 +479,58 @@ function ManagementOfTablesAndFunctions() {
                 $('#selected-lecturer').text() != "Nothing Selected" &&
                 $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected")
             {
-                var lecturersData = lecturersTable.rows({ selected: true}).data().toArray()
-                let CurrentLoad = lecturersData[0]['CurrentLoad']
-                let maximumLoad = lecturersData[0]['MaximumLoad']
-
-                if (CurrentLoad >= maximumLoad) {
-                    if (window.confirm("Click OK to override maximum load")) {
-                        addOrEditSchedule('true')
-                    }
-                } else {
-                    addOrEditSchedule('false')
-                }
-
-                $('#create-schedule-form').trigger('reset')
-                $('#schedule-filter').trigger("change")
+                ValidationAndCreateSchedule()
             }
 
         })
+
+        function ValidationAndCreateSchedule() {
+            let selectedInstanceData = instancesTable.rows({ selected: true}).data().toArray()
+            let instanceSubjectCode = selectedInstanceData[0]['SubjectCode']
+            let instanceSubjectStartDate = selectedInstanceData[0]['StartDate']
+            let instanceCurrentLoad = selectedInstanceData[0]['CurrentLoad']
+
+            let lecturersData = lecturersTable.rows({ selected: true}).data().toArray()
+            let lecturerCurrentLoad = lecturersData[0]['CurrentLoad']
+            let lecturerMaximumLoad = lecturersData[0]['MaximumLoad']
+            let lecturerLoad = lecturersData[0]['load']
+
+            let potentialNewCurrentLoad = ((parseFloat(lecturerCurrentLoad) + parseFloat(lecturerLoad)) - parseFloat(instanceCurrentLoad)).toFixed(1)
+
+            var roleValidation = checkRoll(instanceSubjectCode, instanceSubjectStartDate)
+
+
+            if (potentialNewCurrentLoad >= lecturerMaximumLoad && roleValidation) {
+                if (window.confirm("Click OK to override maximum load")) {
+                    addOrEditSchedule('true')
+                }
+            }
+            else if(potentialNewCurrentLoad <= lecturerMaximumLoad && roleValidation) {
+                addOrEditSchedule('false')
+            }
+        }
+
+        function checkRoll(instanceSubjectCode, instanceSubjectStartDate) {
+            let roleValidation = true
+            let scheduleData = scheduleTable.rows().data().toArray()
+            scheduleData.forEach(function(schedule) {
+                let subjectCode = getScheduleDataObject('SubjectCode', schedule)
+                let subjectStartDate = getScheduleDataObject('SubjectStartDate', schedule)
+                let lecturersRole = getScheduleDataObject('LecturersRole',schedule)
+
+                if( subjectCode === instanceSubjectCode &&
+                    subjectStartDate === instanceSubjectStartDate &&
+                    lecturersRole === 'Main Lecturer' &&
+                    $('#choose-a-lecturer-role option:selected').text() === 'Main Lecturer') {
+
+                    roleValidation = false
+
+                    window.alert('This instance already has a \'Main Lecturer\' \n please select a different role')
+                }
+
+            })
+            return roleValidation
+        }
 
         function addOrEditSchedule(override) {
             if ($('#create-schedule').val() === 'Create Schedule') {
@@ -620,6 +654,8 @@ function ManagementOfTablesAndFunctions() {
         editingSchdule = false
         resetLecturersCurrentLoad()
         filterScheduleLoadsHaveNotBeenMeet()
+        $('#create-schedule-form').trigger('reset')
+        $('#schedule-filter').trigger("change")
 
     }
 
