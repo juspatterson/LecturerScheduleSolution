@@ -155,7 +155,7 @@ input[type="submit"] {
 form {
     margin: 0px auto;
     width: 24%;
-    display: block;
+    display: flow-root;
 }
 
 select {
@@ -201,7 +201,7 @@ select {
 
 
 #instances-table-div {
-    width: 36%;
+    width: 40%;
     float:left;
     display: block;
     float: left;
@@ -331,3 +331,11 @@ select {
     width: 111px;
 }
 
+table.dataTable td {
+    padding-right: 0px !important;
+    font-size: 14px;
+}
+
+table.dataTable th {
+    font-size: 14px;
+}
