@@ -16,8 +16,9 @@
   <link rel="stylesheet" type="text/css" href="packages/DataTables/datatables.min.css"/>
   <script type="text/javascript" src="packages/DataTables/datatables.min.js"></script>
 
-<!--  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">-->
-<!--  <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>-->
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.1/af-2.5.1/b-2.3.3/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/sr-1.2.0/datatables.css"/>
+   
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.1/af-2.5.1/b-2.3.3/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/sr-1.2.0/datatables.js"></script> -->
 
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
@@ -27,13 +28,14 @@
   <h1 class="heading"><span>Didasko</span> Scheduler</h1>
   <nav>
     <ul>
+      <li id='user-name'>Manager :</li>
       <li><a class="logout-link" >Log out</a></li>
     </ul>
   </nav>
 </header>
 
 <body>
-<h2> Manager</h2>
+
 <div id="instances-table-div">
   <div class="category-filter-container">
     <select id="instances-filter" class="form-filter">
@@ -131,9 +133,7 @@
   </table>
 </div>
 
-
 <div id="toaster-message"></div>
-
 
 </body>
 </html>
