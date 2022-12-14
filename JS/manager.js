@@ -10,6 +10,7 @@ function ManagementOfTablesAndFunctions() {
     var scheduleTable = null
     var instancesTable = null
     var lecturersTable = null
+    var editingSchdule = false
 
     this.confirmLogin = function () {
         $.ajax({
@@ -43,6 +44,7 @@ function ManagementOfTablesAndFunctions() {
     function cancelButton() {
         $('#cancel-button').on('click', function() {
             resetTablesAndForm()
+            editingSchdule = false
 
         })
     }
@@ -93,6 +95,8 @@ function ManagementOfTablesAndFunctions() {
                 dataSrc: '',
                 url: '/MockUpData/SubjectsTimeTable.json',
             },
+            processing: true,
+            responsive: true,
             autoWidth: true,
             language: { search: "",searchPlaceholder: "Search..." },
             sScrollY: 600,
@@ -105,16 +109,17 @@ function ManagementOfTablesAndFunctions() {
                 style: 'single'
             },
             "rowCallback": updateRowColour(),
-            columnDefs: [
-                { targets: '_all', className: 'dt-left' },
-            ],
+            columnDefs: [{
+                targets: '_all',
+                className: 'dt-left',
+            }],
             columns: [
-                {'data': 'SubjectCode'},
-                {'data': 'SubjectName'},
-                {'data': 'StartDate'},
-                {'data': 'EndDate'},
-                {'data': 'Load'},
-                {'data': 'CurrentLoad'},
+                {'data': 'SubjectCode', "width": "10%"},
+                {'data': 'SubjectName', "width": "10%"},
+                {'data': 'StartDate', "width": "10%"},
+                {'data': 'EndDate', "width": "10%"},
+                {'data': 'Load',"width": "8%"},
+                {'data': 'CurrentLoad',"width": "8%"},
                 {'data': 'index', "visible": false}
             ],
             stateSave: true,
@@ -197,6 +202,7 @@ function ManagementOfTablesAndFunctions() {
                 let startDate = getScheduleDataObject('SubjectStartDate', value)
                 let load = getScheduleDataObject('LecturerLoad', value)
 
+
                 keyValuePairsArray.push([[code, startDate].join(","), load])
             })
 
@@ -221,6 +227,7 @@ function ManagementOfTablesAndFunctions() {
                         instancesTable
                             .cell({row:idx, column:5})
                             .data((parseFloat(combinedLoads[key])).toFixed(1))
+                            
                     }
                 })
             })
@@ -256,8 +263,7 @@ function ManagementOfTablesAndFunctions() {
                         if (window.confirm("Click OK to Edit Schedule")) {
                             let selectRow = scheduleTable.rows('.selected').data()
                             loadDataIntoTablesAndFormForEditingSchedule(selectRow)
-
-
+                            editingSchdule = true
                         }
                     } else {
                         window.alert('Please select a schedule to edit.')
@@ -290,7 +296,7 @@ function ManagementOfTablesAndFunctions() {
         var scheduleLoadsHaveNotBeenMeet = []
         instancesTable.data()
             .filter(function (value, index) {
-                if (parseFloat(value['CurrentLoad']) < parseFloat(value['Load'])) {
+                if (parseFloat(value['CurrentLoad']) != parseFloat(value['Load'])) {
                     scheduleLoadsHaveNotBeenMeet.push('^' + value['index'] + '$')
                 }
             }).toArray()
@@ -332,6 +338,11 @@ function ManagementOfTablesAndFunctions() {
 
                     if (instancesData != null){
                         lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
+                        if (!editingSchdule) {
+                            removeLecturesThatAreAssingedToInstance(instancesData)
+                        }
+
+
                     } else {
                         lecturersTable.columns().search('').draw()
                     }
@@ -367,6 +378,22 @@ function ManagementOfTablesAndFunctions() {
                     $('#selected-lecturer').text("Nothing Selected")
                     $('#close-x-lecturer').text("")
                 });
+        }
+
+        function removeLecturesThatAreAssingedToInstance(instancesData) {
+            let excludeLeturers = []
+            scheduleTable.data().filter(function (value, index) {
+                let SubjectCode = getScheduleDataObject('SubjectCode', value)
+                let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+
+                if (instancesData[0].SubjectCode === SubjectCode && instancesData[0].StartDate === subjectStartDate) {
+                    let lecturersName = getScheduleDataObject('LecturerName', value)
+                    excludeLeturers.push('^(?!' + lecturersName + '$)')
+                }
+            })
+            //test to see which lecturers should be excluded
+            // console.log(excludeLeturers)
+            lecturersTable.column(0).search(excludeLeturers.join('|'), true, false).draw()
         }
     }
 
@@ -407,7 +434,7 @@ function ManagementOfTablesAndFunctions() {
             let calculatedLoadForLecturer = 0
             dateRange.forEach(function(outterDate) {
                 instancesDatesAndLoads.forEach(function(instanceDateAndLoad) {
-                    console.log(instanceDateAndLoad)
+                    // console.log(instanceDateAndLoad)
                     if (outterDate === instanceDateAndLoad[0]) {
                         calculatedLoadForLecturer = parseFloat(calculatedLoadForLecturer) + parseFloat(instanceDateAndLoad[1])
                     }
@@ -590,6 +617,7 @@ function ManagementOfTablesAndFunctions() {
         lecturersTable.rows('.selected').deselect()
         $('#choose-a-lecturer-role').val('Nothing Selected')
         $('#create-schedule').val('Create Schedule')
+        editingSchdule = false
         resetLecturersCurrentLoad()
         filterScheduleLoadsHaveNotBeenMeet()
 
