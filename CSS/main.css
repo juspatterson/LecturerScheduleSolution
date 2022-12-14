@@ -118,6 +118,10 @@ span {
     color: #ADD8E6;
 }
 
+#user-name {
+    font-size: 25px;
+}
+
 ul {
     width: auto;
     float: right;
