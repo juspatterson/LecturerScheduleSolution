@@ -142,6 +142,7 @@ a {
 
 a:hover {
     color: #ADD8E6;
+    cursor: pointer;
     transition: 0.4s;
 }
 
