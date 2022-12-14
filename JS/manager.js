@@ -320,8 +320,8 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function filterOnSelectedRow() {
-            selectedRowFromInstancesTable()
-            selectedRowFromLecturersTable()
+        selectedRowFromInstancesTable()
+        selectedRowFromLecturersTable()
 
         function selectedRowFromInstancesTable() {
             instancesTable
@@ -456,13 +456,13 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function createScheduleAndAddToScheduleTable() {
-        var errorDisplayCount = 0
 
         $('#choose-a-lecturer-role').on('change', function () {
             $('#choose-a-lecturer-role-error-massage').css('visibility', 'hidden')
         })
 
         $('#create-schedule').on('click', function() {
+
 
             if ($('#selected-instance').text() == "Nothing Selected") {
                 $('#selected-instance-error-massage').css('visibility', 'revert')
@@ -476,23 +476,26 @@ function ManagementOfTablesAndFunctions() {
                 $('#choose-a-lecturer-role-error-massage').css('visibility', 'revert')
             }
 
-            if (errorDisplayCount == 5 && $('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
-                if (window.confirm("Click OK to override maximum load")) {
-                    addOrEditSchedule('true')
+            if ($('#selected-instance').text() != "Nothing Selected" &&
+                $('#selected-lecturer').text() != "Nothing Selected" &&
+                $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected")
+            {
+                var lecturersData = lecturersTable.rows({ selected: true}).data().toArray()
+                let CurrentLoad = lecturersData[0]['CurrentLoad']
+                let maximumLoad = lecturersData[0]['MaximumLoad']
 
-                    $('#create-schedule-form').trigger('reset')
-                    $('#schedule-filter').trigger("change")
-
+                if (CurrentLoad >= maximumLoad) {
+                    if (window.confirm("Click OK to override maximum load")) {
+                        addOrEditSchedule('true')
+                    }
+                } else {
+                    addOrEditSchedule('false')
                 }
-            }
-
-            else if ($('#selected-instance').text() != "Nothing Selected" && $('#selected-lecturer').text() != "Nothing Selected" && $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected") {
-                addOrEditSchedule('false')
 
                 $('#create-schedule-form').trigger('reset')
                 $('#schedule-filter').trigger("change")
-                errorDisplayCount += 1
             }
+
         })
 
         function addOrEditSchedule(override) {
