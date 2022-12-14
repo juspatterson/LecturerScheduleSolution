@@ -227,7 +227,6 @@ function ManagementOfTablesAndFunctions() {
                         instancesTable
                             .cell({row:idx, column:5})
                             .data((parseFloat(combinedLoads[key])).toFixed(1))
-                            
                     }
                 })
             })
@@ -253,17 +252,16 @@ function ManagementOfTablesAndFunctions() {
             }
         }
 
-
-
         function editButton() {
             return {
                 text: "Edit",
                 action: function (e, dt, node, config) {
                     if(scheduleTable.rows('.selected').any()) {
                         if (window.confirm("Click OK to Edit Schedule")) {
+                            editingSchdule = true
                             let selectRow = scheduleTable.rows('.selected').data()
                             loadDataIntoTablesAndFormForEditingSchedule(selectRow)
-                            editingSchdule = true
+
                         }
                     } else {
                         window.alert('Please select a schedule to edit.')
@@ -322,10 +320,8 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function filterOnSelectedRow() {
-        $('#instances-table, #lecturers-table').on('click', 'tr', function () {
             selectedRowFromInstancesTable()
             selectedRowFromLecturersTable()
-        })
 
         function selectedRowFromInstancesTable() {
             instancesTable
@@ -349,6 +345,7 @@ function ManagementOfTablesAndFunctions() {
 
                     calculateLecturersCurrentLoad()
                 })
+
                 .on('deselect', function (e, dt, type, indexes) {
 
                     $('#selected-instance').text("Nothing Selected")
