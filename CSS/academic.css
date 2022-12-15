@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: light) {
     #lecturers-schedule-table-div {
-        background: rgba(2,74,178,0.6);
+        background: rgba(2,74,178,0.3);
     }
 }
 
@@ -20,25 +20,25 @@ input {
     padding: 10px;
     font-size: inherit;
     width: 100%;
-     
+
 }
 
-input[type="submit"]{ 
-     width: 100%;
-     display: block;
-     height: 45px;
-     border: none;
-     background: black;
-     color: white;
-     text-align: center;
+input[type="submit"]{
+    width: 100%;
+    display: block;
+    height: 45px;
+    border: none;
+    background: black;
+    color: white;
+    text-align: center;
 }
 
-     
+
 form {
-     margin: 20px auto;
-     width: 320px;
-     color: black;
-     
+    margin: 20px auto;
+    width: 320px;
+    color: black;
+
 }
 
 #lecturers-schedule-table,
@@ -70,5 +70,3 @@ form {
     height: 32px;
     z-index: 997;
 }
-
-

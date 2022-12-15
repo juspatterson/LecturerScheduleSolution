@@ -57,7 +57,7 @@
     #lecturers-table-div,
     #instances-table-div,
     #schedule-table-div {
-        background: rgba(2,74,178,0.6);
+        background: rgba(2,74,178,0.3);
     }
 
     #selected-instance,
@@ -85,7 +85,7 @@
 
     #choose-a-lecturer-role {
         background-image:
-                linear-gradient(rgba(2,74,178,0.6),rgba(2,74,178,0.4));
+                linear-gradient(rgba(2,74,178,0.19),rgba(2,74,178,0.4));
         border-radius: 5px;
         border: 1px solid rgb(170,170,170);
         background-color: rgba(0, 0, 0, 0);

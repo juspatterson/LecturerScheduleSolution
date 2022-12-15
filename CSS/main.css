@@ -65,7 +65,7 @@
 @media (prefers-color-scheme: light) {
     body {
         color: #1F2022;
-        background-color: white;
+        background-color: #fff;
     }
 
     h1 {
@@ -98,7 +98,7 @@
 
     .form-filter {
         background-image:
-                linear-gradient(rgba(170, 170, 170, 80),rgba(61, 61, 61, 0));
+                linear-gradient(rgba(255, 251, 251, 0.9),rgba(61, 61, 61, 0));
         border-radius: 5px;
         background-color: rgba(0, 0, 0, 0.32);
     }
@@ -106,6 +106,15 @@
     #user-name {
         color: whitesmoke;
     }
+
+    /*test different text colour for tables in light mode*/
+    /*    table.dataTable td {
+            color: white;
+        }
+
+        table.dataTable th {
+            color: white;
+        }*/
 }
 
 body {
