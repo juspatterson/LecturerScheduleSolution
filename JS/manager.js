@@ -309,6 +309,8 @@ function ManagementOfTablesAndFunctions() {
             .search( scheduleIndex,true,false,false )
             .draw()
 
+        return scheduleLoadsHaveNotBeenMeet
+
     }
 
     function updateRowColour() {
@@ -339,7 +341,7 @@ function ManagementOfTablesAndFunctions() {
                     if (instancesData != null){
                         lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
                         if (!editingSchdule) {
-                            removeLecturesThatAreAssingedToInstance(instancesData)
+                            removeLecturersThatAreAssingedToInstance(instancesData)
                         }
 
 
@@ -362,7 +364,7 @@ function ManagementOfTablesAndFunctions() {
             lecturersTable
                 .on('select', function (e, dt, type, indexes) {
                     var selectedLecturer = lecturersTable.rows({ selected: true}).data();
-                    $('#selected-lecturer').text(selectedLecturer[0].name)
+                    $('#selected-lecturer').text(selectedLecturer[0]['name'])
                     $('#close-x-lecturer').text("X")
                     $('#selected-lecturer-error-massage').css('visibility', 'hidden')
 
@@ -372,16 +374,55 @@ function ManagementOfTablesAndFunctions() {
 
                     if (selectedLecturer != null) {
                         instancesTable.column(0).search(subjectCodes,true,false,false).draw()
+                        removeInstanceThatAreAssingedToLecturer(selectedLecturer)
                     }
                 })
                 .on('deselect', function (e, dt, type, indexes) {
                     instancesTable.column(0).search('').draw()
                     $('#selected-lecturer').text("Nothing Selected")
                     $('#close-x-lecturer').text("")
+                    filterScheduleLoadsHaveNotBeenMeet()
                 });
         }
 
-        function removeLecturesThatAreAssingedToInstance(instancesData) {
+        function removeInstanceThatAreAssingedToLecturer(selectedLecturer) {
+            let selectedLecturerName = selectedLecturer[0]['name']
+            let lecturersInstancesDatesAndCodes = []
+            var avalableIstances = filterScheduleLoadsHaveNotBeenMeet()
+
+            scheduleTable
+                .data()
+                .filter(function (value, index) {
+                    let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
+                    if (scheduleLecturersName === selectedLecturerName) {
+                        let subjectcode = getScheduleDataObject('SubjectCode', value)
+                        let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+                        lecturersInstancesDatesAndCodes.push( [subjectStartDate, subjectcode] )
+                    }
+                })
+
+            instancesTable
+                .data()
+                .filter(function (value, index) {
+                    lecturersInstancesDatesAndCodes.forEach(function(lecturersInstancesDateAndCode) {
+                        if(lecturersInstancesDateAndCode[0] === value['StartDate'] &&
+                            lecturersInstancesDateAndCode[1] === value['SubjectCode']) {
+                            let removeIndex = '^' + value['index'] + '$'
+                            avalableIstances = jQuery.grep(avalableIstances, function(value) {
+                                return removeIndex != value
+                            })
+                        }
+                    })
+                })
+
+            instancesTable
+                .column(6)
+                .search(avalableIstances.join('|'), true, false, false)
+                .draw()
+
+        }
+
+        function removeLecturersThatAreAssingedToInstance(instancesData) {
             let excludeLeturers = []
             scheduleTable.data().filter(function (value, index) {
                 let SubjectCode = getScheduleDataObject('SubjectCode', value)
@@ -423,7 +464,6 @@ function ManagementOfTablesAndFunctions() {
 
             scheduleData
                 .filter(function (value, index) {
-                    let scheduleStartDate = getScheduleDataObject('SubjectStartDate', value)
                     let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
                     if (scheduleLecturersName === lecturersName) {
                         let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
@@ -645,26 +685,27 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function resetTablesAndForm() {
-        $('#schedule-filter').find(":selected").val();
         $('#selected-instance').text("Nothing Selected")
         $('#close-x-instance').text("")
         lecturersTable.columns().search('').draw()
         instancesTable.rows('.selected').deselect().draw()
+
         $('#selected-lecturer').text("Nothing Selected")
         $('#close-x-lecturer').text("")
         instancesTable.columns().search('').draw()
         lecturersTable.rows('.selected').deselect()
+
         $('#choose-a-lecturer-role').val('Nothing Selected')
         $('#create-schedule').val('Create Schedule')
+
         editingSchdule = false
+
         resetLecturersCurrentLoad()
         filterScheduleLoadsHaveNotBeenMeet()
+
         $('#create-schedule-form').trigger('reset')
         $('#instances-filter').trigger('change')
         $('#schedule-filter').trigger('change')
-
-
-
     }
 
     function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
