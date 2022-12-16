@@ -127,8 +127,10 @@ function ManagementOfTablesAndFunctions() {
         });
 
         instancesTable.on('xhr', function(event, settings, json, xhr) {
-            filterByDate('#instances-filter', instancesTable, 2);
+
         });
+
+        filterByDate('#instances-filter', instancesTable, 2);
 
     }
 
@@ -184,9 +186,11 @@ function ManagementOfTablesAndFunctions() {
 
         //do things once table and data are loaded
         scheduleTable.on('xhr', function(event, settings, json, xhr) {
-            filterByDate('#schedule-filter', scheduleTable, 4);
+
             updateCurrentLoadOnInstancesTable(json)
         });
+
+        filterByDate('#schedule-filter', scheduleTable, 4);
 
         function updateCurrentLoadOnInstancesTable(allScheduleData) {
 
@@ -641,6 +645,7 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function resetTablesAndForm() {
+        $('#schedule-filter').find(":selected").val();
         $('#selected-instance').text("Nothing Selected")
         $('#close-x-instance').text("")
         lecturersTable.columns().search('').draw()
@@ -655,7 +660,10 @@ function ManagementOfTablesAndFunctions() {
         resetLecturersCurrentLoad()
         filterScheduleLoadsHaveNotBeenMeet()
         $('#create-schedule-form').trigger('reset')
-        $('#schedule-filter').trigger("change")
+        $('#instances-filter').trigger('change')
+        $('#schedule-filter').trigger('change')
+
+
 
     }
 
