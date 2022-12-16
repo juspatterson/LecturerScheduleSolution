@@ -500,7 +500,7 @@ function ManagementOfTablesAndFunctions() {
             var roleValidation = checkRoll(instanceSubjectCode, instanceSubjectStartDate)
 
 
-            if (potentialNewCurrentLoad >= lecturerMaximumLoad && roleValidation) {
+            if (potentialNewCurrentLoad > lecturerMaximumLoad && roleValidation) {
                 if (window.confirm("Click OK to override maximum load")) {
                     addOrEditSchedule('true')
                 }
