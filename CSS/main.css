@@ -60,6 +60,10 @@
         border-radius: 5px;
         background-color: rgba(0, 0, 0, 0);
     }
+
+    span {
+        color: #ADD8E6;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -107,6 +111,10 @@
         color: whitesmoke;
     }
 
+    span {
+        color: #0a0080;
+    }
+
     /*test different text colour for tables in light mode*/
     /*    table.dataTable td {
             color: white;
@@ -127,7 +135,7 @@ body {
     margin-right: 5px;
 }
 
-span {
+#logout-link span {
     color: #ADD8E6;
 }
 
