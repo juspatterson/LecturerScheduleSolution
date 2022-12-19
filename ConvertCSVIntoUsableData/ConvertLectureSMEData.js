@@ -46,13 +46,13 @@ function processLine(line, subjectCodes, subjectName) {
             if (data[j].toLowerCase() == "x")
                 subjectsCodeLecturerCanTeach
                     .push(subjectCodes[j - 2]);
-                subjectsNameLecturerCanTeach
-                    .push(subjectName[j - 2]);
+                // subjectsNameLecturerCanTeach
+                //     .push(subjectName[j - 2]);
         }
 
         const subjectsLecturerCanTeach = {
             subjectsCode: subjectsCodeLecturerCanTeach,
-            subjectsName: subjectsNameLecturerCanTeach,
+            // subjectsName: subjectsNameLecturerCanTeach,
         }
         const lecturer = {
             name: lecturerName,
