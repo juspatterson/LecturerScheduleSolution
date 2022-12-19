@@ -135,7 +135,7 @@ body {
     margin-right: 5px;
 }
 
-#logout-link span {
+#logout-link span, .heading span {
     color: #ADD8E6;
 }
 
