@@ -99,7 +99,7 @@ function ManagementOfTablesAndFunctions() {
             responsive: true,
             autoWidth: true,
             language: { search: "",searchPlaceholder: "Search..." },
-            sScrollY: 600,
+            sScrollY: 610,
             scrollCollapse: true,
             paging: false,
             processing: true,
@@ -557,6 +557,8 @@ function ManagementOfTablesAndFunctions() {
         function checkRoll(instanceSubjectCode, instanceSubjectStartDate) {
             let roleValidation = true
             let scheduleData = scheduleTable.rows().data().toArray()
+            let selectedRollEqualsMainLetcurer = $('#choose-a-lecturer-role option:selected').text() === 'Main Lecturer'
+
             scheduleData.forEach(function(schedule) {
                 let subjectCode = getScheduleDataObject('SubjectCode', schedule)
                 let subjectStartDate = getScheduleDataObject('SubjectStartDate', schedule)
@@ -564,15 +566,28 @@ function ManagementOfTablesAndFunctions() {
 
                 if( subjectCode === instanceSubjectCode &&
                     subjectStartDate === instanceSubjectStartDate &&
-                    lecturersRole === 'Main Lecturer' &&
-                    $('#choose-a-lecturer-role option:selected').text() === 'Main Lecturer') {
-
+                    lecturersRole === 'Main Lecturer' && selectedRollEqualsMainLetcurer
+                ) {
                     roleValidation = false
 
-                    window.alert('This instance already has a \'Main Lecturer\' \n please select a different role')
                 }
 
             })
+
+            if (editingSchdule) {
+                let scheduleData = scheduleTable.rows( { selected: true} ).data()
+                console.log(scheduleData)
+                let lecturersRole = getScheduleDataObject('LecturersRole', scheduleData[0])
+                console.log(lecturersRole)
+
+                if (lecturersRole === 'Main Lecturer' && selectedRollEqualsMainLetcurer) {
+                    roleValidation = true
+                }
+            }
+
+            if (!roleValidation) {
+                window.alert('This instance already has a \'Main Lecturer\' \n please select a different role')
+            }
             return roleValidation
         }
 
