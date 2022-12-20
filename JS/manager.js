@@ -265,7 +265,9 @@ function ManagementOfTablesAndFunctions() {
                             editingSchdule = true
                             let selectRow = scheduleTable.rows('.selected').data()
                             loadDataIntoTablesAndFormForEditingSchedule(selectRow)
-
+                            $('#selected-instance').disableClick(true)
+                            $('#close-x-container-instance').disableClick(true)
+                            instancesTable.select.style('api')
                         }
                     } else {
                         window.alert('Please select a schedule to edit.')
@@ -286,6 +288,25 @@ function ManagementOfTablesAndFunctions() {
             }
         }
 
+    }
+
+    $.fn.disableClick = function (disable){
+        this.each(function() {
+            if(disable){
+                if(this.onclick)
+                    $(this).data('onclick', this.onclick).removeAttr('onclick');
+                if($._data(this, 'events') && $._data(this, 'events').click)
+                    $(this).data('click', $.extend(true, {}, $._data(this, 'events').click)).off('click');
+            }
+            else{
+                if($(this).data('onclick'))
+                    this.onclick = $(this).data('onclick');
+                if($(this).data('click'))
+                    for(var i in $(this).data('click'))
+                        $(this).on('click', $(this).data('click')[i].handler);
+            }
+        });
+        return this;
     }
 
     function getScheduleDataObject(key, data) {
@@ -721,6 +742,10 @@ function ManagementOfTablesAndFunctions() {
         $('#create-schedule-form').trigger('reset')
         $('#instances-filter').trigger('change')
         $('#schedule-filter').trigger('change')
+
+        $('#selected-instance').disableClick(false)
+        $('#close-x-container-instance').disableClick(false)
+        instancesTable.select.style('single')
     }
 
     function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
