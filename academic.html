@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Academic</title>
-    <script src="packages/jQuery.3.6.0/Content/Scripts/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8">
+  <title>Academic</title>
+  <script src="packages/jQuery.3.6.0/Content/Scripts/jquery-3.6.0.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="JS/DataStore.js"></script>
-    <script src="JS/academic.js"></script>
-    <link rel="stylesheet" href="CSS/main.css" type="text/css">
-    <link rel="stylesheet" href="CSS/academic.css" type="text/css"/>
+  <script src="JS/DataStore.js"></script>
+  <script src="JS/academic.js"></script>
+  <link rel="stylesheet" href="CSS/main.css" type="text/css">
+  <link rel="stylesheet" href="CSS/academic.css" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" href="packages/DataTables/datatables.min.css"/>
-    <script type="text/javascript" src="packages/DataTables/datatables.min.js"></script>
-    <script src="packages/DataTables/Buttons-2.2.3/js/buttons.print.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="packages/DataTables/datatables.min.css"/>
+  <script type="text/javascript" src="packages/DataTables/datatables.min.js"></script>
+  <script src="packages/DataTables/Buttons-2.2.3/js/buttons.print.min.js"></script>
 
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
-  </head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <header>
-    <h1 class="heading"><span>Didasko</span> Scheduler</h1>
-    <nav>
-      <ul>
-        <li id='user-name'>Academic Staff :</li>
-        <li><a class="logout-link" >Log out</a></li>
-      </ul>
-    </nav>
-  </header>
+</head>
 
-  <body>
-    <div id="lecturers-schedule-table-div">
-      <div class="category-filter-container">
-        <select id="category-filter" class="form-filter">
-          <option value="">Filter By Date</option>
-          <option value="3 Months">3 Months</option>
-          <option value="6 Months">6 Months</option>
-          <option value="12 Months">12 Months</option>
-        </select>
-      </div>
-      <table id="lecturers-schedule-table" class="display">
-        <thead>
-        <tr class="row-1">
-          <th class="column-1">Subject Code</th>
-          <th class="column-2">Subject Name</th>
-          <th class="column-3">Start Date</th>
-          <th class="column-4">End Date</th>
-          <th class="column-5">Role</th>
-        </tr>
-        </thead>
-      </table>
+<header>
+  <h1 class="heading"><span>Didasko</span> Scheduler</h1>
+  <nav>
+    <ul>
+      <li id='user-name'>Academic Staff :</li>
+      <li><a class="logout-link" >Log out</a></li>
+    </ul>
+  </nav>
+</header>
 
-    </div>
- 
+<body>
+<div id="lecturers-schedule-table-div">
+  <div class="category-filter-container">
+    <select id="category-filter" class="form-filter">
+      <option value="">Filter By Date</option>
+      <option value="3 Months">3 Months</option>
+      <option value="6 Months">6 Months</option>
+      <option value="12 Months">12 Months</option>
+    </select>
+  </div>
+  <table id="lecturers-schedule-table" class="display">
+    <thead>
+    <tr class="row-1">
+      <th class="column-1">Subject Code</th>
+      <th class="column-2">Subject Name</th>
+      <th class="column-3">Start Date</th>
+      <th class="column-4">End Date</th>
+      <th class="column-5">Role</th>
+      <th class="column-6">Load</th>
+    </tr>
+    </thead>
+  </table>
 
-    
-  </body>
+</div>
+
+<div id="chart-container">
+  <div id="chart_div"></div>
+  <!-- <div id="timeline-tooltip" style="height: 180px;"></div> -->
+</div>
+
+
+
+</body>
 </html>
