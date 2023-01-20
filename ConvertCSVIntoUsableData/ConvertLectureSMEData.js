@@ -1,5 +1,5 @@
 // after `cd`ing into the `ConvertCSVIntoUsableData` directory,
-// run `node ConvertLectureSMEData.js` and it will generate
+// run `js ConvertLectureSMEData.js` and it will generate
 // `../MockUpData/lecturerSME.json` from the CSV in `lecturerSME.csv`
 
 function loadDataFromCSVFileAndLoadIntoJsonFile() {
@@ -12,57 +12,75 @@ function loadDataFromCSVFileAndLoadIntoJsonFile() {
             return console.log(err);
         }
         var output = convertCSV(data)
-        var jsonString = JSON.stringify({lectures: output}, null, 2)
-        fs.writeFile(outfileJson, jsonString, () => {})
+        var jsonString = JSON.stringify(output)
+        updateDatabase(jsonString)
+
+        // for creating a json file
+        // var jsonString = JSON.stringify({instances: output}, null, 2)
+        // fs.writeFile(outfileJson, jsonString, () => {})
+
     });
+}
+
+function updateDatabase(data) {
+    const axios = require('axios');
+
+    axios({
+        method: 'post',
+        url: "https://stick-dream.bnr.la/api/schedules/lecturers/update",
+        async: true,
+        data: 'data=' + data
+    })
+        .then(function (response) {
+            console.log(response);
+            console.log("data has been added to the database.");
+            console.log(response.data);
+        })
+        .catch(function (error) {
+            console.log("error!!!!!!!");
+            console.log(error);
+        });
 }
 
 function convertCSV(data) {
     var allTextLines = data.split(/\r\n|\n/);
     var datalines = allTextLines.slice(2)
     var regex = /([A-Za-z]+, [a-zA-z\s]* \([A-Za-z]+\))|,/
-    var subjectName = allTextLines[0].split(regex).slice(2);
-    //remove undefined
-    subjectName = subjectName.filter(Boolean)
-    //remove "
-    subjectName = subjectName.filter(item => item != "\"")
-
     var subjectCodes = allTextLines[1].split(',').slice(2);
     var output = []
     for (var i = 0; i < datalines.length; i++) {
-        output.push(processLine(datalines[i], subjectCodes,subjectName))
+        output.push(processLine(datalines[i], subjectCodes))
     }
     return output
 }
 
-function processLine(line, subjectCodes, subjectName) {
-        var data = line.split(',');
-        var lecturerName = data[0]
-        var lecturerLoad = data[1]
-        var subjectsCodeLecturerCanTeach = [];
-        var subjectsNameLecturerCanTeach = [];
+const formatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+});
 
-        for (var j = 2; j < data.length; j++) {
-            if (data[j].toLowerCase() == "x")
-                subjectsCodeLecturerCanTeach
-                    .push(subjectCodes[j - 2]);
-                // subjectsNameLecturerCanTeach
-                //     .push(subjectName[j - 2]);
-        }
+function processLine(line, subjectCodes) {
+    var data = line.split(',');
+    var lecturerName = data[0]
+    var lecturerLoad = data[1]
+    var subjectsCodeLecturerCanTeach = [];
+    var subjectsNameLecturerCanTeach = [];
 
-        const subjectsLecturerCanTeach = {
-            subjectsCode: subjectsCodeLecturerCanTeach,
-            // subjectsName: subjectsNameLecturerCanTeach,
-        }
-        const lecturer = {
-            name: lecturerName,
-            load: lecturerLoad,
-            subjectsLecturerCanTeach: subjectsLecturerCanTeach,
-            MaximumLoad: (lecturerLoad * 6).toFixed(1),
-            CurrentLoad: 0
-        };
+    for (var j = 2; j < data.length; j++) {
+        if (data[j].toLowerCase() == "x")
+            subjectsCodeLecturerCanTeach
+                .push(subjectCodes[j - 2]);
+    }
 
-        return lecturer;
+    const lecturer = {
+        Name: lecturerName,
+        BaseLoad: lecturerLoad,
+        SubjectsCodesLecturerCanTeach: subjectsCodeLecturerCanTeach,
+        MaximumLoad: formatter.format(lecturerLoad * 6),
+        CurrentLoad: 0
+    };
+
+    return lecturer;
 }
 
 loadDataFromCSVFileAndLoadIntoJsonFile()
