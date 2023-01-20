@@ -1,8 +1,20 @@
 $(function () {
     var managementOfTablesAndFunctions = new ManagementOfTablesAndFunctions();
-    managementOfTablesAndFunctions.confirmLogin();
+    //managementOfTablesAndFunctions.confirmLogin();
     managementOfTablesAndFunctions.init();
 
+    // $.ajax({
+    //         type: "GET",
+    //         url: '/api/lecturers',
+    //         dataType: '',
+    //         data: {},
+    //         success: function (lecturers) {
+    //             console.log(lecturers)
+    //         },
+    //         error: function (obj, textStatus) {
+    //             alert(obj.msg);
+    //         }
+    //     });
 })
 
 function ManagementOfTablesAndFunctions() {
@@ -59,7 +71,7 @@ function ManagementOfTablesAndFunctions() {
         lecturersTable = $('#lecturers-table').DataTable({
             ajax: {
                 dataSrc: '',
-                url: 'MockUpData/lecturerSME.json',
+                url: '/api/lecturers',
             },
             autoWidth: true,
             scrollY: 610,
@@ -77,23 +89,26 @@ function ManagementOfTablesAndFunctions() {
                 { targets: '_all', className: 'dt-left' }
             ],
             columns: [
-                {'data': 'name'},
-                {'data': 'load'},
+                {'data': 'Name'},
+                {'data': 'BaseLoad'},
                 {
-                    'data': "subjectsLecturerCanTeach.subjectsCode",
+                    'data': "SubjectsCodesLecturerCanTeach",
                     "visible": false
                 },
                 {'data': 'MaximumLoad', "width": "10%"},
                 {'data': 'CurrentLoad',"width": "10%"}
             ]
         });
+        // lecturersTable.on('xhr', function(event, settings, json, xhr) {
+        //     console.log(json)
+        // });
     }
 
     function createInstanceTable() {
         instancesTable = $('#instances-table').DataTable({
             ajax: {
                 dataSrc: '',
-                url: '/MockUpData/SubjectsTimeTable.json',
+                url: '/api/instances',
             },
             processing: true,
             responsive: true,
@@ -115,12 +130,12 @@ function ManagementOfTablesAndFunctions() {
             }],
             columns: [
                 {'data': 'SubjectCode', "width": "10%"},
-                {'data': 'SubjectName', "width": "10%"},
+                {'data': 'SubjectName', "width": "20%"},
                 {'data': 'StartDate', "width": "10%"},
                 {'data': 'EndDate', "width": "10%"},
-                {'data': 'Load',"width": "8%"},
+                {'data': 'NeededLoad',"width": "8%"},
                 {'data': 'CurrentLoad',"width": "8%"},
-                {'data': 'index', "visible": false}
+                {'data': 'id', "visible": false}
             ],
             stateSave: true,
 
@@ -139,6 +154,14 @@ function ManagementOfTablesAndFunctions() {
             let schedule = row.schedule;
             let scheduleJson = JSON.parse(schedule)
             return scheduleJson[key]
+        }
+    }
+
+    function instacesGetter(key) {
+        return function(row) {
+            let instance = row.instance;
+            let instanceJson = JSON.parse(instance)
+            return instanceJson[key]
         }
     }
 
@@ -186,8 +209,9 @@ function ManagementOfTablesAndFunctions() {
 
         //do things once table and data are loaded
         scheduleTable.on('xhr', function(event, settings, json, xhr) {
-
-            updateCurrentLoadOnInstancesTable(json)
+            if (json != null) {
+                updateCurrentLoadOnInstancesTable(json)
+            }
         });
 
         filterByDate('#schedule-filter', scheduleTable, 4);
@@ -227,7 +251,9 @@ function ManagementOfTablesAndFunctions() {
                 let splitKey = key.split(',')
 
                 instancesTable.rows( function ( idx, data, node ) {
-                    if(data['SubjectCode'] === splitKey[0] && data['StartDate'] === splitKey[1]){
+                    let subjectCode = data['SubjectCode']
+                    let startDate = data['StartDate']
+                    if(subjectCode === splitKey[0] && startDate === splitKey[1]){
                         instancesTable
                             .cell({row:idx, column:5})
                             .data((parseFloat(combinedLoads[key])).toFixed(1))
@@ -319,8 +345,10 @@ function ManagementOfTablesAndFunctions() {
         var scheduleLoadsHaveNotBeenMeet = []
         instancesTable.data()
             .filter(function (value, index) {
-                if (parseFloat(value['CurrentLoad']) != parseFloat(value['Load'])) {
-                    scheduleLoadsHaveNotBeenMeet.push('^' + value['index'] + '$')
+                //console.log(value)
+
+                if (parseFloat(value['CurrentLoad']) != parseFloat(value['NeededLoad'])) {
+                    scheduleLoadsHaveNotBeenMeet.push('^' + value['id'] + '$')
                 }
             }).toArray()
 
@@ -385,11 +413,11 @@ function ManagementOfTablesAndFunctions() {
             lecturersTable
                 .on('select', function (e, dt, type, indexes) {
                     var selectedLecturer = lecturersTable.rows({ selected: true}).data();
-                    $('#selected-lecturer').text(selectedLecturer[0]['name'])
+                    $('#selected-lecturer').text(selectedLecturer[0]['Name'])
                     $('#close-x-lecturer').text("X")
                     $('#selected-lecturer-error-massage').css('visibility', 'hidden')
 
-                    var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
+                    var subjectCodes = $.map(JSON.parse(selectedLecturer[0]['SubjectsCodesLecturerCanTeach']),function (value) {
                         return value
                     }).join('|')
 
@@ -407,7 +435,7 @@ function ManagementOfTablesAndFunctions() {
         }
 
         function removeInstanceThatAreAssingedToLecturer(selectedLecturer) {
-            let selectedLecturerName = selectedLecturer[0]['name']
+            let selectedLecturerName = selectedLecturer[0]['Name']
             let lecturersInstancesDatesAndCodes = []
             var avalableIstances = filterScheduleLoadsHaveNotBeenMeet()
 
@@ -428,7 +456,7 @@ function ManagementOfTablesAndFunctions() {
                     lecturersInstancesDatesAndCodes.forEach(function(lecturersInstancesDateAndCode) {
                         if(lecturersInstancesDateAndCode[0] === value['StartDate'] &&
                             lecturersInstancesDateAndCode[1] === value['SubjectCode']) {
-                            let removeIndex = '^' + value['index'] + '$'
+                            let removeIndex = '^' + value['id'] + '$'
                             avalableIstances = jQuery.grep(avalableIstances, function(value) {
                                 return removeIndex != value
                             })
@@ -480,7 +508,7 @@ function ManagementOfTablesAndFunctions() {
         let dateRange = createDateRange(6, "array", instancesStartDate)
 
         lecturersData.forEach(function(lecturer) {
-            let lecturersName = lecturer['name']
+            let lecturersName = lecturer['Name']
             instancesDatesAndLoads = []
 
             scheduleData
@@ -510,7 +538,7 @@ function ManagementOfTablesAndFunctions() {
 
             lecturersTable.rows( function ( idx, data, node ) {
                 // console.log(data)
-                if (data['name'] === lecturersName) {
+                if (data['Name'] === lecturersName) {
                     let newLoad = calculatedLoadForLecturer
                     lecturersTable
                         .cell({row:idx, column:4})
@@ -558,7 +586,7 @@ function ManagementOfTablesAndFunctions() {
             let lecturersData = lecturersTable.rows({ selected: true}).data().toArray()
             let lecturerCurrentLoad = lecturersData[0]['CurrentLoad']
             let lecturerMaximumLoad = lecturersData[0]['MaximumLoad']
-            let lecturerLoad = lecturersData[0]['load']
+            let lecturerLoad = lecturersData[0]['BaseLoad']
 
             let potentialNewCurrentLoad = ((parseFloat(lecturerCurrentLoad) + parseFloat(lecturerLoad)) - parseFloat(instanceCurrentLoad)).toFixed(1)
 
@@ -597,9 +625,9 @@ function ManagementOfTablesAndFunctions() {
 
             if (editingSchdule) {
                 let scheduleData = scheduleTable.rows( { selected: true} ).data()
-                console.log(scheduleData)
+                //console.log(scheduleData)
                 let lecturersRole = getScheduleDataObject('LecturersRole', scheduleData[0])
-                console.log(lecturersRole)
+                //console.log(lecturersRole)
 
                 if (lecturersRole === 'Main Lecturer' && selectedRollEqualsMainLetcurer) {
                     roleValidation = true
@@ -643,7 +671,7 @@ function ManagementOfTablesAndFunctions() {
 
     function editScheduleOnDatabase(override) {
         var scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
-        console.log(scheduleData)
+        //console.log(scheduleData)
         var id = scheduleData[0].id
 
         $.ajax({
@@ -679,8 +707,8 @@ function ManagementOfTablesAndFunctions() {
         newSchedule ['SubjectName'] = instancesData[0].SubjectName
         newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
         newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
-        newSchedule ['SubjectLoad'] = instancesData[0].Load
-        newSchedule ['LecturerName'] = lecturerData[0].name
+        newSchedule ['SubjectLoad'] = instancesData[0].NeededLoad
+        newSchedule ['LecturerName'] = lecturerData[0].Name
         newSchedule ['LecturerLoad'] = assignedLoad
         newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
         var data = JSON.stringify(newSchedule)
@@ -698,9 +726,9 @@ function ManagementOfTablesAndFunctions() {
             }
 
 
-            let instancesLoad = instancesData[0]['Load']
+            let instancesLoad = instancesData[0]['NeededLoad']
             let neededLoad = (instancesLoad - currentLoad).toFixed(1)
-            let lecturersLoad = lecturerData[0]['load']
+            let lecturersLoad = lecturerData[0]['BaseLoad']
             let assignedLoad = 0
 
             if (neededLoad >= lecturersLoad) {
@@ -756,12 +784,12 @@ function ManagementOfTablesAndFunctions() {
         let lecturersRole = schedule.LecturersRole
 
         instancesTable.rows(function (idx, data, node) {
-            if (data.SubjectCode === subjectCode && data.StartDate === startDate) {
+            if (data['SubjectCode'] === subjectCode && data['StartDate'] === startDate) {
                 return idx
             }
         }).select()
 
-        console.log(lecturersName)
+        //console.log(lecturersName)
 
         lecturersTable.row(':contains('+ lecturersName +')').select()
 
@@ -796,7 +824,7 @@ function ManagementOfTablesAndFunctions() {
 
         function filterLecturersTableFillFormWithInstanceInformation() {
             var instancesData = instancesTable.rows({ selected: true }).data().toArray();
-            var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
+            var instancesDataJoin = instancesData[0]['SubjectCode'] + " " + instancesData[0]['SubjectName'] + " " + instancesData[0]['StartDate'] + " " + instancesData[0]['EndDate']
             lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
 
             $('#selected-instance').text(instancesDataJoin )
@@ -806,7 +834,7 @@ function ManagementOfTablesAndFunctions() {
 
         function filterInstancesTableFillFormWithLecturerInformation() {
             var selectedLecturer = lecturersTable.rows({ selected: true}).data();
-            var subjectCodes = $.map(selectedLecturer[0].subjectsLecturerCanTeach.subjectsCode,function (value) {
+            var subjectCodes = $.map(JSON.parse(selectedLecturer[0]['SubjectsCodesLecturerCanTeach']),function (value) {
                 return value
             }).join('|')
             instancesTable.column(0).search(subjectCodes,true,false,false).draw()
@@ -818,7 +846,7 @@ function ManagementOfTablesAndFunctions() {
     }
 
     function deleteFromDataBase(id) {
-        console.log(id)
+        //console.log(id)
         $.ajax({
             type: 'POST',
             // dataType: 'jsonp',
@@ -857,6 +885,7 @@ function ManagementOfTablesAndFunctions() {
 
             var selectedValue = $(filterID).val()
             let  threeMonths = createDateRange(3, "string")
+            console.log(threeMonths)
             let  sixMonths = createDateRange(6, "string")
             let  twelveMonths = createDateRange(12, "string")
 
@@ -880,7 +909,7 @@ function ManagementOfTablesAndFunctions() {
 
     function createDateRange(numberOfMonths, arrayOrString, startDate) {
         var date = new Date();
-        var startDate = startDate ?? date.getFullYear() + "-" + (date.getMonth());
+        var startDate = startDate ?? date.getFullYear() + "-" + leftPad((date.getMonth() + 1), 2);
         let startDateSpilt = startDate.split('-')
         var year = parseInt(startDateSpilt[0])
         var month = parseInt(startDateSpilt[1])
