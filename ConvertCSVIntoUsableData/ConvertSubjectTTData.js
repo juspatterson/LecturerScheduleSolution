@@ -1,6 +1,11 @@
 // after `cd`ing into the `ConvertCSVIntoUsableData` directory,
-// run `node ConvertSubjectTTData.js` and it will generate
+// run `js ConvertSubjectTTData.js` and it will generate
 // `../MockUpData/SubjectsTimeTable.json` from the CSV in `SubjectTT.csv`
+
+const formatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+});
 
 function loadDataFromCSVFileAndLoadIntoJsonFile() {
     var infileCSV = 'SubjectTT.csv'
@@ -13,10 +18,33 @@ function loadDataFromCSVFileAndLoadIntoJsonFile() {
         }
         var output = convertCSV(data)
         output = output.flat(1)
-        var jsonString = JSON.stringify({instances: output}, null, 2)
-        fs.writeFile(outfileJson, jsonString, () => {})
+        var jsonString = JSON.stringify(output)
+        //console.log(jsonString)
+        // fs.writeFile(outfileJson, jsonString, () => {})
+        updateDatabase(jsonString)
     });
 }
+
+function updateDatabase(data) {
+    const axios = require('axios');
+
+    axios({
+        method: 'post',
+        url: "https://stick-dream.bnr.la/api/schedules/instances/update",
+        async: true,
+        data: 'data=' + data
+    })
+        .then(function (response) {
+            console.log(response);
+            console.log("all good!!!!!");
+            console.log(response.data);
+        })
+        .catch(function (error) {
+            console.log("error!!!!!!!");
+            console.log(error);
+        });
+}
+
 
 function convertCSV(data) {
     var allTextLines = data.split(/\r\n|\n/);
@@ -84,8 +112,6 @@ function findYears(data) {
 
 }
 
-var index = 0
-
 function processLine(data, years, subjectCode ,subjectName) {
 
     data = data.split(',')
@@ -106,8 +132,7 @@ function processLine(data, years, subjectCode ,subjectName) {
         "StartDate": startDate,
         "EndDate": endDate,
         "Load": 1.0,
-        "CurrentLoad": 0.0,
-        "index": index
+        "CurrentLoad": 0.0
     };
 
     var instances = []
@@ -240,16 +265,17 @@ function processLine(data, years, subjectCode ,subjectName) {
                 break;
         }
 
-        index = index + 1
+        let numberOfStudents = getRandomArbitrary(5, 300)
+
+        let load = calculateLoad(numberOfStudents)
 
         instance = {
             "SubjectCode": subjectCode,
             "SubjectName": subjectName,
             "StartDate": startDate,
             "EndDate": endDate,
-            "Load": 1.0,
-            "CurrentLoad": 0.0,
-            "index": index
+            "NeededLoad": load,
+            "CurrentLoad": formatter.format(0.0),
         };
 
         if (startDate !== ''){
@@ -257,6 +283,22 @@ function processLine(data, years, subjectCode ,subjectName) {
         }
     }
     return instances;
+}
+
+function calculateLoad(numberOfStudents) {
+    let load = 1.0
+    if (numberOfStudents > 20) {
+        numberOfStudents = numberOfStudents - 20
+        while (numberOfStudents > 0) {
+            load = load + 0.15
+            numberOfStudents = numberOfStudents - 20
+        }
+    }
+    return load.toFixed(2)
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
 
