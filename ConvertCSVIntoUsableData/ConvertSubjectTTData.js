@@ -1,5 +1,5 @@
 // after `cd`ing into the `ConvertCSVIntoUsableData` directory,
-// run `js ConvertSubjectTTData.js` and it will generate
+// run `node ConvertSubjectTTData.js` and it will generate
 // `../MockUpData/SubjectsTimeTable.json` from the CSV in `SubjectTT.csv`
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -30,7 +30,7 @@ function updateDatabase(data) {
 
     axios({
         method: 'post',
-        url: "/api/schedules/instances/update",
+        url: "http://localhost:4567/api/schedules/instances/update",
         async: true,
         data: 'data=' + data
     })

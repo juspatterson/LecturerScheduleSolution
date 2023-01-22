@@ -1,5 +1,5 @@
 // after `cd`ing into the `ConvertCSVIntoUsableData` directory,
-// run `js ConvertLectureSMEData.js` and it will generate
+// run `node ConvertLectureSMEData.js` and it will generate
 // `../MockUpData/lecturerSME.json` from the CSV in `lecturerSME.csv`
 
 function loadDataFromCSVFileAndLoadIntoJsonFile() {
@@ -27,7 +27,7 @@ function updateDatabase(data) {
 
     axios({
         method: 'post',
-        url: "/api/schedules/lecturers/update",
+        url: "http://localhost:4567/api/schedules/lecturers/update",
         async: true,
         data: 'data=' + data
     })
