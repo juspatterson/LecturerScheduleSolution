@@ -17,10 +17,10 @@ function login() {
                     alert("Username or Password are incorrect.")
                 }
                 else if (ojb.position == "manager") {
-                    window.location.assign('https://stick-dream.bnr.la/manager.html');
+                  window.location.assign('/manager.html');
                 }
                 else if (ojb.position == "academic") {
-                    window.location.assign('https://stick-dream.bnr.la/academic.html');
+                  window.location.assign('/academic.html');
                 }
             },
             error: function (obj, textStatus) {

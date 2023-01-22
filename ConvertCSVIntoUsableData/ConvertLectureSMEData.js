@@ -27,7 +27,7 @@ function updateDatabase(data) {
 
     axios({
         method: 'post',
-        url: "https://stick-dream.bnr.la/api/schedules/lecturers/update",
+        url: "/api/schedules/lecturers/update",
         async: true,
         data: 'data=' + data
     })

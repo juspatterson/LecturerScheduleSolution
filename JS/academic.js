@@ -13,7 +13,7 @@ function ManagementOfTablesAndFunctions() {
             data: {},
             success: function (confirm) {
                 if (confirm === 'false') {
-                    window.location.replace('https://stick-dream.bnr.la')
+                  window.location.replace('/')
                 }
             },
             error: function (obj, textStatus) {
@@ -170,7 +170,7 @@ function ManagementOfTablesAndFunctions() {
 
     function logout() {
         $('.logout-link').on('click', function () {
-            window.location.replace('https://stick-dream.bnr.la')
+          window.location.replace('/')
         })
     }
 
