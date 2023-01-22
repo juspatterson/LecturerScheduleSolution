@@ -30,7 +30,7 @@ function updateDatabase(data) {
 
     axios({
         method: 'post',
-        url: "http://localhost:4567/api/schedules/instances/update",
+        url: "http://localhost:4567/schedules/instances/update",
         async: true,
         data: 'data=' + data
     })

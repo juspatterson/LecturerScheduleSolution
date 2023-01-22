@@ -27,7 +27,7 @@ function updateDatabase(data) {
 
     axios({
         method: 'post',
-        url: "http://localhost:4567/api/schedules/lecturers/update",
+        url: "http://localhost:4567/schedules/lecturers/update",
         async: true,
         data: 'data=' + data
     })
