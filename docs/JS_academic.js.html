@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: JS/academic.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: JS/academic.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module
+ */
+$(function () {
+    var managementOfTablesAndFunctions = new AcademicPageManagementOfTablesAndFunctions();
+    managementOfTablesAndFunctions.confirmLogin()
+    managementOfTablesAndFunctions.init();
+})
+/**
+ * @property {Class} AcademicPageManagementOfTablesAndFunctions Main class
+ * @constructor
+ */
+function AcademicPageManagementOfTablesAndFunctions() {
+
+    /**
+     * To initialise the Class.
+     */
+    this.init = function() {
+        logout()
+        createLectureScheduleTable()
+        filterByDate()
+    }
+
+    /**
+     * To confirm login.
+     */
+    this.confirmLogin = function () {
+        $.ajax({
+            type: "POST",
+            url: '/api/login/confirm',
+            dataType: '',
+            data: {},
+            success: function (confirm) {
+                if (confirm === 'false') {
+                  window.location.replace('/')
+                }
+            },
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
+
+    var lecturerScheduleTable = null
+
+    /**
+     * For getting the schedule data for the instance table.
+     * @param key The json object key
+     * @returns {function} A function for getting the data for the instance table.
+     */
+    function scheduleGetter(key) {
+        return function(row) {
+            let schedule = row.schedule;
+            let scheduleJson = JSON.parse(schedule)
+            return scheduleJson[key]
+        }
+    }
+
+    /**
+     * set background colour for rows in tables.
+     * @returns {Function} function for setting background colour.
+     */
+    function updateRowColour() {
+        return function (row, data, index) {
+            if (index % 2 == 0) {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myodd');
+            } else {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myeven');
+            }
+        }
+    }
+
+    /**
+     * Initialise lecture schedule Table
+     * @namespace
+     */
+    function createLectureScheduleTable() {
+        lecturerScheduleTable = $('#lecturers-schedule-table').DataTable({
+            ajax: {
+                url: '/api/lecturer/schedule',
+                dataSrc: ''
+            },
+            dom: 'Bfrtip',
+            responsive: true,
+            autoWidth: true,
+            sScrollY: 600,
+            language: {search: "", searchPlaceholder: "Search..."},
+            processing: true,
+            responsive: true,
+            paging: false,
+            fixedHeader: true,
+            columns: [
+                {'data': scheduleGetter('SubjectCode')},
+                {'data': scheduleGetter('SubjectName')},
+                {'data': scheduleGetter('SubjectStartDate')},
+                {'data': scheduleGetter('SubjectEndDate')},
+                {'data': scheduleGetter('LecturersRole')},
+                {'data': scheduleGetter('LecturerLoad')}
+            ],
+            rowCallback: updateRowColour(),
+            columnDefs: [
+                {targets: '_all', className: 'dt-left'}
+            ],
+            buttons: [
+                printButton(),
+                {
+                    extend: 'pdf',
+                    text: 'Export as PDF'
+                }
+            ]
+        })
+
+        lecturerScheduleTable.on('xhr', function(event, settings, json, xhr) {
+            if (json != null) {
+                createTimeline()
+            }
+        })
+
+        /**
+         * Set up functionality for print button
+         * @returns {{extend: string, text: string, customize: customize, autoPrint: boolean}} Datatables parameter for print button.
+         */
+        function printButton() {
+            return {
+                extend: 'print',
+                text: 'Print',
+                autoPrint: true,
+                customize: function (win) {
+                    $(win.document.body)
+                        .css('font-size', '10pt')
+
+                        .prepend(
+                            '&lt;img src="" style="position:absolute; top:0; left:0;" />'
+                        );
+
+                    $(win.document.body).find('table')
+                        .addClass('compact')
+                        .css('font-size', 'inherit');
+                    $(win.document.body).find('h1').remove()
+                    $(win.document.body).find('.dt-left').css('padding-left', '0px')
+
+                }
+            }
+        }
+    }
+
+    /**
+     * For the filter by date selector.
+     * @namespace
+     */
+    function filterByDate() {
+        $('#category-filter').on('change', function () {
+
+            var selectedValue = $('#category-filter').val()
+            let  threeMonths = createDateRangeForFilter(3)
+            let  sixMonths = createDateRangeForFilter(6)
+            let  twelveMonths = createDateRangeForFilter(12)
+
+            switch (selectedValue) {
+                case "":
+                    lecturerScheduleTable.columns().search('').draw()
+                    break
+                case "3 Months":
+                    lecturerScheduleTable.columns(2).search(threeMonths,true,false,false).draw()
+                    break
+                case "6 Months":
+                    lecturerScheduleTable.columns(2).search(sixMonths,true,false,false).draw()
+                    break
+                case "12 Months":
+                    lecturerScheduleTable.columns(2).search(twelveMonths,true,false,false).draw()
+            }
+        })
+
+        /**
+         * For creating date Ranges for filter selector.
+         * @param numberOfMonths The number of months needed for the date ranges.
+         * @returns {string} A String of date ranges.
+         */
+        function createDateRangeForFilter(numberOfMonths) {
+            var date = new Date();
+            var startDate = date.getFullYear() + "-" + leftPad((date.getMonth() + 1), 2);
+            var year = date.getFullYear()
+            var month = (date.getMonth()+1)
+            var dateRange = [startDate]
+
+            for (let i = 1; i &lt; numberOfMonths; i++) {
+                month = month + 1
+                if (month === 13) {
+                    month = month - 12
+                    year = year + 1
+                }
+                dateRange.push(year + '-' + leftPad(month, 2))
+            }
+            return dateRange.join('|')
+        }
+
+        /**
+         * Returns a string with 0 at the start.
+         * @param value the string you want to add 0 to.
+         * @param length how many 0 you want to add.
+         * @returns {string} the string with the added 0.
+         */
+        function leftPad(value, length) {
+            return ('0'.repeat(length) + value).slice(-length);
+        }
+    }
+
+    /**
+     * Set up functionality for logout link.
+     */
+    function logout() {
+        $('.logout-link').on('click', function () {
+          window.location.replace('/')
+        })
+    }
+
+    /**
+     * To get data out of schedule table
+     * @param key json object key
+     * @param data data to parse
+     * @returns {*} json object from parsed data
+     */
+    function getScheduleDataObject(key, data) {
+        let schedule = data.schedule;
+        let scheduleJson = JSON.parse(schedule)
+        return (scheduleJson[key])
+    }
+
+    /**
+     * For creating a time line of the lecturers schedule.
+     * @namespace
+     */
+    function createTimeline() {
+        /**
+         * For drawing time line of the lecturers schedule.
+         */
+        function drawChart() {
+            var container = document.getElementById('chart_div');
+            var chart = new google.visualization.Timeline(container);
+            var dataTable = new google.visualization.DataTable();
+
+            var colors = [];
+            var colorMap = {
+                // map of subject code -> color for every category
+                CSE1ITX: '#FFFF00',
+                CSE1PGX: '#F4B084',
+                CSE1CFX: '#92D050',
+                CSE1OFX: '#FF33CC',
+                CSE1ISX: '#7030A0',
+                CSE2NFX: '#00B0F0',
+                CSE2NFX: '#FF0000',
+                CSE1SPX: '#019900',
+                CSE1SIX: '#92D050',
+                CSE1IOX: '#003300',
+                CSE2ICX: '#060d1a',
+                CSE2CNX: '#800000',
+                CSE2SDX: '#FFC000',
+                BUS2PMX: '#FF99FF',
+                CSE2VVX: '#CC0066',
+                MAT2DMX: '#66CCFF',
+                CSE2MAX: '#FFFF66',
+                CSE2OSX: '#CCCC02',
+                CSE2ADX: '#FF0000',
+                CSE2CPX: '#00B04F',
+                CSE2MLX: '#92D050',
+                CSE2SAX: '#FF3300',
+                CSE2ANX: '#CC0000',
+                CSE2WDX: '#FFC000',
+                CSE3BGX: '#FF0000',
+                CSE3CIX: '#92D050',
+                CSE3CSX: '#00B0F0',
+                CSE3NWX: '#0070C0',
+                CSE3OTX: '#7030A0',
+                CSE3WSX: '#00B04F',
+                CSE3PAX: '#C65911',
+                CSE3PBX: '#B4C6E7',
+                CSE3PEX: '#003300',
+                CSE3ACX: '#FFC000',
+                CSE3SOX: '#FF99FF',
+                CSE3BDX: '#CC0000',
+                CSE3BDX: '#FF33CC',
+                CSE3PCX: '#CC0000',
+                CSE3CAX: '#FF33CC',
+                CSE3CBX: '#1F3764',
+            }
+
+            dataTable.addColumn({ type: 'string', id: 'SubjectName' });
+            dataTable.addColumn({ type: 'string', id: 'subjectCode' });
+            dataTable.addColumn({ type: 'string', id: 'subjectCode', role: 'style' });
+            dataTable.addColumn({ type: 'date', id: 'Start' });
+            dataTable.addColumn({ type: 'date', id: 'End' });
+
+            let data = lecturerScheduleTable.data().toArray()
+
+            data.forEach(function(schedule) {
+                let subjectName = getScheduleDataObject('SubjectName', schedule)
+                let startDate = getScheduleDataObject('SubjectStartDate', schedule).split('-')
+                let endDate = getScheduleDataObject('SubjectEndDate', schedule).split('-')
+                let role = getScheduleDataObject('LecturersRole', schedule)
+                let load = getScheduleDataObject('LecturerLoad', schedule)
+                let subjectCode = getScheduleDataObject('SubjectCode', schedule)
+
+                dataTable.addRow( [
+                        subjectCode + " - " + subjectName ,
+                        'Role: ' + role  +'  /  Load: ' + load,
+                        "color:" + colorMap[subjectCode] ,
+                        new Date(parseInt(startDate[0]), parseInt(startDate[1]) - 1),
+                        new Date(parseInt(endDate[0]), parseInt(endDate[1])),
+                    ]
+                )
+            })
+
+            dataTable.sort([{column: 3},{column: 4}]);
+
+            let scheduleDates = lecturerScheduleTable.column(2).data().sort()
+            let chartWidth = (scheduleDates.length * 250)
+
+            if (chartWidth &lt; 1143) {
+                chartWidth = '100%'
+            }
+
+            let setEvenRowColor = ''
+            let setOddRowColor = ''
+
+            let setTextColor = ''
+            if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+
+                setEvenRowColor = '#29364D'
+                setOddRowColor =  '#4B506A'
+                setTextColor = '#FAFAFA'
+            } else {
+                setEvenRowColor = '#BDD9F2'
+                setOddRowColor =  '#9FAFC7'
+                setTextColor = '#000000'
+            }
+
+            var rowHeight = 50;
+            var chartHeight = (dataTable.getNumberOfRows() + 1) * rowHeight;
+
+            var observer = new MutationObserver(setBorderRadius);
+            google.visualization.events.addListener(chart, 'ready', function () {
+                setBorderRadius();
+                observer.observe(container, {
+                    childList: true,
+                    subtree: true
+                });
+
+                //change h axis text colour
+                var labels = container.getElementsByTagName('text');
+                Array.prototype.forEach.call(labels, function(label) {
+                    if (label.getAttribute('text-anchor') === 'middle') {
+                        label.setAttribute('fill', setTextColor);
+                    }
+                })
+
+            });
+
+            function setBorderRadius() {
+                Array.prototype.forEach.call(container.getElementsByTagName('rect'), function (rect, index) {
+                    if (parseFloat(rect.getAttribute('x')) > 0) {
+                        rect.setAttribute('rx', 10);
+                        rect.setAttribute('ry', 10);
+                    }
+                });
+            }
+
+            google.visualization.events.addListener(chart, 'ready', function () {
+                var rects = container.getElementsByTagName('rect');
+                Array.prototype.forEach.call(rects, function(rect) {
+                    // make sure rect is a background row
+                    if ((rect.getAttribute('x') === '0') &amp;&amp; (rect.getAttribute('stroke') === 'none')) {
+                        // determine existing color
+                        if (rect.getAttribute('fill') === '#ffffff') {
+                            rect.setAttribute('fill', setOddRowColor);
+                        } else {
+                            rect.setAttribute('fill', setEvenRowColor);
+                        }
+                    }
+                });
+            });
+
+            if (chartHeight > 723) {
+                chartHeight = 723
+            }
+
+            var options = {
+                timeline: {
+                    colorByRowLabel: true,
+                    showBarLabels: false,
+                    groupByRowLabel: false,
+                    rowLabelStyle: {
+                        fontName: 'Nunito',
+                        fontSize: 14,
+                        color: setTextColor,
+                        radius: 10
+                    },
+                    barLabelStyle: {
+                        fontName: 'Nunito',
+                        fontSize: 10,
+                        color: setTextColor,
+                        radius: 14,
+                        height: 200
+                    }
+                },
+                avoidOverlappingGridLines: true,
+                height: chartHeight,
+                width: chartWidth,
+                tooltip: {isHtml: true},
+            };
+
+            var view = new google.visualization.DataView(dataTable);
+            chart.draw(view, options);
+        }
+        google.load('visualization', '1', {packages:['timeline'], callback: drawChart});
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Didasko Scheduling System Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-JS_LoginToTheSystem.html">JS/LoginToTheSystem</a></li><li><a href="module-JS_academic.html">JS/academic</a></li><li><a href="module-JS_manager.html">JS/manager</a></li><li><a href="module-convertData.html">convertData</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createLectureScheduleTable.html">createLectureScheduleTable</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createTimeline.html">createTimeline</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-filterByDate.html">filterByDate</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createDateRange.html">createDateRange</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleAndAddToScheduleTable.html">createScheduleAndAddToScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleTable.html">createScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-dataForSchedule.html">dataForSchedule</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-filterOnSelectedRow.html">filterOnSelectedRow</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-loadDataIntoTablesAndFormForEditingSchedule.html">loadDataIntoTablesAndFormForEditingSchedule</a></li></ul><h3>Classes</h3><ul><li><a href="module-JS_LoginToTheSystem-login.html">login</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions.html">AcademicPageManagementOfTablesAndFunctions</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions.html">ManagerPageManagementOfTablesAndFunctions</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME.html">loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable.html">loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 24 2023 10:04:42 GMT+1100 (Australian Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

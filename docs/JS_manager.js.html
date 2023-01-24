@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: JS/manager.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: JS/manager.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module
+ */
+$(function () {
+    var managerPageManagementOfTablesAndFunctions = new ManagerPageManagementOfTablesAndFunctions();
+    managerPageManagementOfTablesAndFunctions.confirmLogin();
+    managerPageManagementOfTablesAndFunctions.init();
+
+})
+
+/**
+ * @property {Class} ManagerPageManagementOfTablesAndFunctions Main class
+ * @constructor
+ */
+function ManagerPageManagementOfTablesAndFunctions() {
+
+    var scheduleTable = null
+    var instancesTable = null
+    var lecturersTable = null
+    var editingSchedule = false
+
+    /**
+     * To confirm login.
+     */
+    this.confirmLogin = function () {
+        $.ajax({
+            type: "POST",
+            url: '/api/login/confirm',
+            dataType: '',
+            data: {},
+            success: function (confirm) {
+                if (confirm === 'false') {
+                    window.location.replace('/')
+                }
+            },
+            error: function (obj, textStatus) {
+                alert(obj.msg);
+            }
+        });
+    }
+    /**
+     * To initialise the Class.
+     */
+    this.init = function () {
+        logout()
+        createInstanceTable()
+        createLecturersTable()
+        createScheduleTable()
+        filterOnSelectedRow()
+        createScheduleAndAddToScheduleTable()
+        removeSelectedRowsFromTablesResetForm()
+        cancelButton()
+    }
+
+    /**
+     * Set up functionality for cancel button.
+     */
+    function cancelButton() {
+        $('#cancel-button').on('click', function() {
+            resetTablesAndForm()
+            editingSchedule = false
+
+        })
+    }
+
+    /**
+     * Set up functionality for logout link.
+     */
+    function logout() {
+        $('.logout-link').on('click', function () {
+            window.location.replace('/')
+        })
+    }
+
+    /**
+     * Initialise lecturers table.
+     */
+    function createLecturersTable() {
+        lecturersTable = $('#lecturers-table').DataTable({
+            ajax: {
+                dataSrc: '',
+                url: '/api/lecturers',
+            },
+            autoWidth: true,
+            scrollY: 610,
+            language: { search: "",searchPlaceholder: "Search..." },
+            processing: true,
+            responsive: true,
+            paging: false,
+            fixedHeader: true,
+            select: true,
+            select: {
+                style: 'single'
+            },
+            "rowCallback": updateRowColour(),
+            columnDefs: [
+                { targets: '_all', className: 'dt-left' }
+            ],
+            columns: [
+                {'data': 'Name'},
+                {'data': 'BaseLoad'},
+                {
+                    'data': "SubjectsCodesLecturerCanTeach",
+                    "visible": false
+                },
+                {'data': 'MaximumLoad', "width": "10%"},
+                {'data': 'CurrentLoad',"width": "10%"}
+            ]
+        });
+    }
+
+    /**
+     * Initialise instance table.
+     */
+    function createInstanceTable() {
+        instancesTable = $('#instances-table').DataTable({
+            ajax: {
+                dataSrc: '',
+                url: '/api/instances',
+            },
+            processing: true,
+            responsive: true,
+            autoWidth: true,
+            language: { search: "",searchPlaceholder: "Search..." },
+            sScrollY: 610,
+            scrollCollapse: true,
+            paging: false,
+            processing: true,
+            fixedHeader: true,
+            select: true,
+            select: {
+                style: 'single'
+            },
+            "rowCallback": updateRowColour(),
+            columnDefs: [{
+                targets: '_all',
+                className: 'dt-left',
+            }],
+            columns: [
+                {'data': 'SubjectCode', "width": "10%"},
+                {'data': 'SubjectName', "width": "20%"},
+                {'data': 'StartDate', "width": "10%"},
+                {'data': 'EndDate', "width": "10%"},
+                {'data': 'NeededLoad',"width": "8%"},
+                {'data': 'CurrentLoad',"width": "8%"},
+                {'data': 'id', "visible": false}
+            ],
+            stateSave: true,
+
+        });
+
+        instancesTable.on('xhr', function(event, settings, json, xhr) {
+
+        });
+
+        filterByDate('#instances-filter', instancesTable, 2);
+
+    }
+
+    /**
+     * For getting the schedule data for the instance table.
+     * @param key The json object key
+     * @returns {function} A function for getting the data for the instance table.
+     */
+    function scheduleGetter(key) {
+        return function(row) {
+            let schedule = row.schedule;
+            let scheduleJson = JSON.parse(schedule)
+            return scheduleJson[key]
+        }
+    }
+
+    /**
+     * Initialise schedule table.
+     * @namespace
+     */
+    function createScheduleTable() {
+        scheduleTable = $('#schedule-table').DataTable( {
+            ajax: {
+                dataSrc: '',
+                url: '/api/schedules',
+            },
+            dom: 'Bfrtip',
+            responsive: true,
+            autoWidth: true,
+            sScrollY: 600,
+            language: {search: "", searchPlaceholder: "Search..."},
+            processing: true,
+            responsive: true,
+            paging: false,
+            fixedHeader: true,
+            columns: [
+                {
+                    'data': 'id',
+                    // "visible": false
+                },
+                {'data': overrideColumn('Override')},
+                {'data': scheduleGetter("SubjectCode")},
+                {'data': scheduleGetter("SubjectName")},
+                {'data': scheduleGetter("SubjectStartDate")},
+                {'data': scheduleGetter("SubjectEndDate")},
+                {'data': scheduleGetter("SubjectLoad")},
+                {'data': scheduleGetter("LecturerName")},
+                {'data': scheduleGetter("LecturerLoad")},
+                {'data': scheduleGetter("LecturersRole")},
+            ],
+            select: true,
+            select: {
+                style: 'single'
+            },
+            "rowCallback": updateRowColour(),
+            columnDefs: [
+                {targets: '_all', className: 'dt-left'}
+            ],
+            buttons: [ deleteButton(), editButton() ]
+
+        } )
+
+        //do things once table and data are loaded
+        scheduleTable.on('xhr', function(event, settings, json, xhr) {
+            if (json != null) {
+                updateCurrentLoadOnInstancesTable(json)
+            }
+        });
+
+        filterByDate('#schedule-filter', scheduleTable, 4);
+
+        /**
+         * For updating current load for instances table.
+         * @param allScheduleData all the schedule data
+         */
+        function updateCurrentLoadOnInstancesTable(allScheduleData) {
+
+            instancesTable.rows( function ( idx, data, node ) {
+                instancesTable
+                    .cell({row:idx, column:5})
+                    .data(0)
+            })
+
+            let keyValuePairsArray = []
+            allScheduleData.forEach(function(value, _) {
+                let code = getScheduleDataObject('SubjectCode', value)
+                let startDate = getScheduleDataObject('SubjectStartDate', value)
+                let load = getScheduleDataObject('LecturerLoad', value)
+
+                keyValuePairsArray.push([[code, startDate].join(","), load])
+            })
+
+            let combinedLoads = {}
+            keyValuePairsArray.forEach(function(keyValuePairArray, _) {
+                let key = keyValuePairArray[0]
+                let newLoad = keyValuePairArray[1]
+                let existingLoad = combinedLoads[key]
+
+                if (existingLoad === undefined) {
+                    combinedLoads[key] = newLoad
+                } else {
+                    combinedLoads[key] = parseFloat(existingLoad) + parseFloat(newLoad)
+                }
+            })
+
+            Object.keys(combinedLoads).forEach(function(key) {
+                let splitKey = key.split(',')
+
+                instancesTable.rows( function ( idx, data, node ) {
+                    let subjectCode = data['SubjectCode']
+                    let startDate = data['StartDate']
+                    if(subjectCode === splitKey[0] &amp;&amp; startDate === splitKey[1]){
+                        instancesTable
+                            .cell({row:idx, column:5})
+                            .data((parseFloat(combinedLoads[key])).toFixed(1))
+                    }
+                })
+            })
+
+            filterScheduleLoadsHaveNotBeenMeet()
+
+        }
+
+        /**
+         * Set up functionality for delete schedule button.
+         * @returns {{action: action, text: string}} Datatables parameter for delete button.
+         */
+        function deleteButton() {
+            return {
+                text: "Delete",
+                action: function (e, dt, node, config) {
+                    if (scheduleTable.rows('.selected').any()) {
+                        if (window.confirm("Click OK to delete Schedule")) {
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            deleteFromDataBase(selectRow[0].id)
+                        }
+                    } else {
+                        window.alert('Please select a schedule to delete.')
+                    }
+                }
+            }
+        }
+
+        /**
+         * Set up functionality for edit schedule button.
+         * @returns {{action: action, text: string}} Datatables parameter for edit button
+         */
+        function editButton() {
+            return {
+                text: "Edit",
+                action: function (e, dt, node, config) {
+                    if(scheduleTable.rows('.selected').any()) {
+                        if (window.confirm("Click OK to Edit Schedule")) {
+                            editingSchedule = true
+                            let selectRow = scheduleTable.rows('.selected').data()
+                            loadDataIntoTablesAndFormForEditingSchedule(selectRow)
+                            $('#selected-instance').disableClick(true)
+                            $('#close-x-container-instance').disableClick(true)
+                            instancesTable.select.style('api')
+                        }
+                    } else {
+                        window.alert('Please select a schedule to edit.')
+                    }
+                }
+            }
+        }
+
+        /**
+         * Add image to override column.
+         * @param key Json object key
+         * @returns {function} For setting image for override column.
+         */
+        function overrideColumn(key) {
+            return function(row) {
+                let schedule = row.schedule;
+                let scheduleJson = JSON.parse(schedule)
+                if (scheduleJson[key] === 'true') {
+                    return "&lt;img id='theImg' src='../Images/warning-sign-9760.png' height='40' width='40'/>"
+                } else {
+                    return ""
+                }
+            }
+        }
+    }
+
+    /**
+     * Disable selecting a row on the instance table when editing a schedule.
+     * @param disable To check if to disable selecting row.
+     * @returns {$} self.
+     */
+    $.fn.disableClick = function (disable){
+        this.each(function() {
+            if(disable){
+                if(this.onclick)
+                    $(this).data('onclick', this.onclick).removeAttr('onclick');
+                if($._data(this, 'events') &amp;&amp; $._data(this, 'events').click)
+                    $(this).data('click', $.extend(true, {}, $._data(this, 'events').click)).off('click');
+            }
+            else{
+                if($(this).data('onclick'))
+                    this.onclick = $(this).data('onclick');
+                if($(this).data('click'))
+                    for(var i in $(this).data('click'))
+                        $(this).on('click', $(this).data('click')[i].handler);
+            }
+        });
+        return this;
+    }
+
+    /**
+     * To get data out of schedule table
+     * @param key json object key
+     * @param data data to parse
+     * @returns {*} json object from parsed data
+     */
+    function getScheduleDataObject(key, data) {
+        let schedule = data.schedule;
+        let scheduleJson = JSON.parse(schedule)
+        return (scheduleJson[key])
+    }
+
+    /**
+     * Filter out instances that have had the loads met.
+     * @returns {Array} An array of instances id that have not had there loads met.
+     */
+    function filterScheduleLoadsHaveNotBeenMeet() {
+        var scheduleLoadsHaveNotBeenMeet = []
+        instancesTable.data()
+            .filter(function (value, index) {
+                if (parseFloat(value['CurrentLoad']) &lt; parseFloat(value['NeededLoad'])) {
+                    scheduleLoadsHaveNotBeenMeet.push('^' + value['index'] + '$')
+                }
+            }).toArray()
+
+        let scheduleIndex = scheduleLoadsHaveNotBeenMeet.join('|')
+        instancesTable
+            .column(6)
+            .search( scheduleIndex,true,false,false )
+            .draw()
+
+        return scheduleLoadsHaveNotBeenMeet
+    }
+
+    /**
+     * set background colour for rows in tables.
+     * @returns {Function} function for setting background colour.
+     */
+    function updateRowColour() {
+        return function (row, data, index) {
+            if (index % 2 == 0) {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myodd');
+            } else {
+                $(row).removeClass('myodd myeven');
+                $(row).addClass('myeven');
+            }
+        }
+    }
+
+    /**
+     * Filter tables on selected a row.
+     * @namespace
+     */
+    function filterOnSelectedRow() {
+        selectedRowFromInstancesTable()
+        selectedRowFromLecturersTable()
+
+        /**
+         * Selecting and deselect a row from the instances table.
+         */
+        function selectedRowFromInstancesTable() {
+            instancesTable
+                .on('select', function (e, dt, type, indexes) {
+                    var instancesData = instancesTable.rows({ selected: true}).data().toArray();
+                    var instancesDataJoin = instancesData[0].SubjectCode + " " + instancesData[0].SubjectName + " " + instancesData[0].StartDate + " " + instancesData[0].EndDate
+                    $('#selected-instance').text(instancesDataJoin )
+                    $('#close-x-instance').text("X")
+                    $('#selected-instance-error-massage').css('visibility', 'hidden')
+
+                    if (instancesData != null){
+                        lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
+                        if (!editingSchedule) {
+                            removeLecturersThatAreAssignedToInstance(instancesData)
+                        }
+                    } else {
+                        lecturersTable.columns().search('').draw()
+                    }
+
+                    calculateLecturersCurrentLoad()
+                })
+
+                .on('deselect', function (e, dt, type, indexes) {
+
+                    $('#selected-instance').text("Nothing Selected")
+                    lecturersTable.columns().search('').draw()
+                    $('#close-x-instance').text("")
+                    resetLecturersCurrentLoad()
+                })
+        }
+
+        /**
+         * Selecting and deselect a row from the lecturers table.
+         */
+        function selectedRowFromLecturersTable() {
+            lecturersTable
+                .on('select', function (e, dt, type, indexes) {
+                    var selectedLecturer = lecturersTable.rows({ selected: true}).data();
+                    $('#selected-lecturer').text(selectedLecturer[0]['Name'])
+                    $('#close-x-lecturer').text("X")
+                    $('#selected-lecturer-error-massage').css('visibility', 'hidden')
+
+                    var subjectCodes = $.map(JSON.parse(selectedLecturer[0]['SubjectsCodesLecturerCanTeach']),function (value) {
+                        return value
+                    }).join('|')
+
+                    if (selectedLecturer != null) {
+                        instancesTable.column(0).search(subjectCodes,true,false,false).draw()
+                        removeInstanceThatAreAssignedToLecturer(selectedLecturer)
+                    }
+                })
+                .on('deselect', function (e, dt, type, indexes) {
+                    instancesTable.column(0).search('').draw()
+                    $('#selected-lecturer').text("Nothing Selected")
+                    $('#close-x-lecturer').text("")
+                    filterScheduleLoadsHaveNotBeenMeet()
+                });
+        }
+
+        /**
+         * Remove instance that a lecturer is already assigned to.
+         * @param selectedLecturer The lecturer that is selected.
+         */
+        function removeInstanceThatAreAssignedToLecturer(selectedLecturer) {
+            let selectedLecturerName = selectedLecturer[0]['Name']
+            let lecturersInstancesDatesAndCodes = []
+            var availableInstances = filterScheduleLoadsHaveNotBeenMeet()
+
+            scheduleTable
+                .data()
+                .filter(function (value, index) {
+                    let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
+                    if (scheduleLecturersName === selectedLecturerName) {
+                        let subjectCode = getScheduleDataObject('SubjectCode', value)
+                        let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+                        lecturersInstancesDatesAndCodes.push( [subjectStartDate, subjectCode] )
+                    }
+                })
+
+            instancesTable
+                .data()
+                .filter(function (value, index) {
+                    lecturersInstancesDatesAndCodes.forEach(function(lecturersInstancesDateAndCode) {
+                        if(lecturersInstancesDateAndCode[0] === value['StartDate'] &amp;&amp;
+                            lecturersInstancesDateAndCode[1] === value['SubjectCode']) {
+                            let removeIndex = '^' + value['id'] + '$'
+                            availableInstances = jQuery.grep(availableInstances, function(value) {
+                                return removeIndex != value
+                            })
+                        }
+                    })
+                })
+
+            instancesTable
+                .column(6)
+                .search(availableInstances.join('|'), true, false, false)
+                .draw()
+        }
+
+        /**
+         * Remove lecturers that are already assigned to the selected instance.
+         * @param instancesData The instance that is selected.
+         */
+        function removeLecturersThatAreAssignedToInstance(instancesData) {
+            let excludeLecturers = []
+            scheduleTable.data().filter(function (value, index) {
+                let SubjectCode = getScheduleDataObject('SubjectCode', value)
+                let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+
+                if (instancesData[0].SubjectCode === SubjectCode &amp;&amp; instancesData[0].StartDate === subjectStartDate) {
+                    let lecturersName = getScheduleDataObject('LecturerName', value)
+                    excludeLecturers.push('^(?!' + lecturersName + '$)')
+                }
+            })
+            lecturersTable.column(0).search(excludeLecturers.join('|'), true, false).draw()
+        }
+    }
+
+    /**
+     * Reset current load in lecturers table.
+     */
+    function resetLecturersCurrentLoad() {
+        lecturersTable.rows( function ( idx, data, node ) {
+            lecturersTable
+                .cell({row:idx, column:4})
+                .data('0.0')
+        })
+    }
+
+    /**
+     * Calculate lecturers current load and update column in
+     * lecturers table.
+     */
+    function calculateLecturersCurrentLoad() {
+        resetLecturersCurrentLoad()
+
+        let lecturersData = lecturersTable.data().toArray()
+        let scheduleData =  scheduleTable.data()
+        let selectedInstance = instancesTable.rows({ selected: true}).data()
+        let instancesStartDate = selectedInstance[0]['StartDate']
+        let dateRange = createDateRange(6, "array", instancesStartDate)
+
+        lecturersData.forEach(function(lecturer) {
+            let lecturersName = lecturer['Name']
+            instancesDatesAndLoads = []
+
+            scheduleData
+                .filter(function (value, index) {
+                    let scheduleLecturersName = getScheduleDataObject('LecturerName', value)
+                    if (scheduleLecturersName === lecturersName) {
+                        let subjectStartDate = getScheduleDataObject('SubjectStartDate', value)
+                        let lecturersLoad = getScheduleDataObject('LecturerLoad', value)
+                        instancesDatesAndLoads.push( [subjectStartDate, lecturersLoad] )
+                    }
+                })
+
+            let calculatedLoadForLecturer = 0
+            dateRange.forEach(function(outterDate) {
+                instancesDatesAndLoads.forEach(function(instanceDateAndLoad) {
+                    if (outterDate === instanceDateAndLoad[0]) {
+                        calculatedLoadForLecturer = parseFloat(calculatedLoadForLecturer) + parseFloat(instanceDateAndLoad[1])
+                    }
+                })
+            })
+
+            lecturersTable.rows( function ( idx, data, node ) {
+                if (data['Name'] === lecturersName) {
+                    let newLoad = calculatedLoadForLecturer
+                    lecturersTable
+                        .cell({row:idx, column:4})
+                        .data((newLoad).toFixed(1))
+                }
+            })
+        })
+    }
+
+    /**
+     * Checks if all fields in the form are filled out and if not show a message
+     * asking the using to fill out that field.
+     * If all all fields in the form are filled out will Validate and create schedule.
+     * @namespace
+     */
+    function createScheduleAndAddToScheduleTable() {
+
+        $('#choose-a-lecturer-role').on('change', function () {
+            $('#choose-a-lecturer-role-error-massage').css('visibility', 'hidden')
+        })
+
+        $('#create-schedule').on('click', function() {
+
+            if ($('#selected-instance').text() == "Nothing Selected") {
+                $('#selected-instance-error-massage').css('visibility', 'revert')
+            }
+
+            if ($('#selected-lecturer').text() == "Nothing Selected") {
+                $('#selected-lecturer-error-massage').css('visibility', 'revert')
+            }
+
+            if ($('#choose-a-lecturer-role option:selected').text() == "Nothing Selected") {
+                $('#choose-a-lecturer-role-error-massage').css('visibility', 'revert')
+            }
+
+            if ($('#selected-instance').text() != "Nothing Selected" &amp;&amp;
+                $('#selected-lecturer').text() != "Nothing Selected" &amp;&amp;
+                $('#choose-a-lecturer-role option:selected').text() != "Nothing Selected")
+            {
+                ValidationAndCreateSchedule()
+            }
+        })
+
+        /**
+         * For creating or editing a schedule and showing a alert if
+         * the lecturers load is going to be overridden.
+         */
+        function ValidationAndCreateSchedule() {
+            let selectedInstanceData = instancesTable.rows({ selected: true}).data().toArray()
+            let instanceSubjectCode = selectedInstanceData[0]['SubjectCode']
+            let instanceSubjectStartDate = selectedInstanceData[0]['StartDate']
+            let instanceCurrentLoad = selectedInstanceData[0]['CurrentLoad']
+
+            let lecturersData = lecturersTable.rows({ selected: true}).data().toArray()
+            let lecturerCurrentLoad = lecturersData[0]['CurrentLoad']
+            let lecturerMaximumLoad = lecturersData[0]['MaximumLoad']
+            let lecturerLoad = lecturersData[0]['BaseLoad']
+
+            let potentialNewCurrentLoad = ((parseFloat(lecturerCurrentLoad) + parseFloat(lecturerLoad)) - parseFloat(instanceCurrentLoad)).toFixed(1)
+            var roleValidation = checkRoll(instanceSubjectCode, instanceSubjectStartDate)
+
+            if (potentialNewCurrentLoad > lecturerMaximumLoad &amp;&amp; roleValidation) {
+                if (window.confirm("Click OK to override maximum load")) {
+                    addOrEditSchedule('true')
+                }
+            }
+            else if(potentialNewCurrentLoad &lt;= lecturerMaximumLoad &amp;&amp; roleValidation) {
+                addOrEditSchedule('false')
+            }
+        }
+
+        /**
+         * For checking if a instance of a subject already has a main lecturer.
+         * @param instanceSubjectCode subject code of selected instance.
+         * @param instanceSubjectStartDate subject start date of selected instance.
+         * @returns {boolean} weather or not a subject already has a main lecturer.
+         */
+        function checkRoll(instanceSubjectCode, instanceSubjectStartDate) {
+            let roleValidation = true
+            let scheduleData = scheduleTable.rows().data().toArray()
+            let selectedRollEqualsMainLecturer = $('#choose-a-lecturer-role option:selected').text() === 'Main Lecturer'
+
+            scheduleData.forEach(function(schedule) {
+                let subjectCode = getScheduleDataObject('SubjectCode', schedule)
+                let subjectStartDate = getScheduleDataObject('SubjectStartDate', schedule)
+                let lecturersRole = getScheduleDataObject('LecturersRole',schedule)
+
+                if( subjectCode === instanceSubjectCode &amp;&amp;
+                    subjectStartDate === instanceSubjectStartDate &amp;&amp;
+                    lecturersRole === 'Main Lecturer' &amp;&amp; selectedRollEqualsMainLecturer
+                ) {
+                    roleValidation = false
+                }
+            })
+
+            if (editingSchedule) {
+                let scheduleData = scheduleTable.rows( { selected: true} ).data()
+                let lecturersRole = getScheduleDataObject('LecturersRole', scheduleData[0])
+
+                if (lecturersRole === 'Main Lecturer' &amp;&amp; selectedRollEqualsMainLecturer) {
+                    roleValidation = true
+                }
+            }
+
+            if (!roleValidation) {
+                window.alert('This instance already has a \'Main Lecturer\' \n please select a different role')
+            }
+            return roleValidation
+        }
+
+        /**
+         * For adding or editing a schedule.
+         * @param override Is the lecturers load being overridden.
+         */
+        function addOrEditSchedule(override) {
+            if ($('#create-schedule').val() === 'Create Schedule') {
+                addScheduleToDatabase(override)
+            } else  {
+                editScheduleOnDatabase(override)
+            }
+
+        }
+    }
+
+    /**
+     * Add schedule to database.
+     * @param override Is the lecturers load being overridden.
+     */
+    function addScheduleToDatabase(override) {
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/create',
+            async: true,
+            data: {'data': dataForSchedule(override, false)},
+            success: function() {
+                console.log('done');
+                scheduleTable.ajax.reload();
+                showToasterMessage('Schedule Created')
+                resetTablesAndForm()
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
+    }
+
+    /**
+     * Edit schedule in the database
+     * @param override Is the lecturers load being overridden.
+     */
+    function editScheduleOnDatabase(override) {
+        var scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
+        var id = scheduleData[0].id
+
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/edit',
+            async: true,
+            data: {'id': id, 'data': dataForSchedule(override, true)},
+            success: function() {
+                console.log('editing done');
+                scheduleTable.ajax.reload();
+                showToasterMessage('Edited Schedule')
+                resetTablesAndForm()
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        });
+
+    }
+
+    /**
+     * For creating a json object to be added to the schedule
+     * @param override Is the lecturers load being overridden.
+     * @param editing Is the schedule being edited.
+     * @returns {string} A json object that is a string.
+     * @namespace
+     */
+    function dataForSchedule(override, editing) {
+        var instancesData = instancesTable.rows({ selected: true}).data().toArray()
+        var lecturerData = lecturersTable.rows({ selected: true}).data().toArray()
+
+        let assignedLoad = calculateLoadNeededForSchedule()
+
+        var newSchedule = {};
+        newSchedule ['Override'] = override
+        newSchedule ['SubjectCode'] = instancesData[0].SubjectCode
+        newSchedule ['SubjectName'] = instancesData[0].SubjectName
+        newSchedule ['SubjectStartDate'] = instancesData[0].StartDate
+        newSchedule ['SubjectEndDate'] = instancesData[0].EndDate
+        newSchedule ['SubjectLoad'] = instancesData[0].NeededLoad
+        newSchedule ['LecturerName'] = lecturerData[0].Name
+        newSchedule ['LecturerLoad'] = assignedLoad
+        newSchedule ['LecturersRole'] = $('#choose-a-lecturer-role option:selected').text()
+        var data = JSON.stringify(newSchedule)
+
+        return data
+
+        /**
+         * For calculating the load needed for a schedule.
+         * @returns {number} the load that is needed for a schedule
+         */
+        function calculateLoadNeededForSchedule() {
+            let currentLoad = instancesData[0]['CurrentLoad']
+
+            //if editing remove the current lectures load from the instances current load.
+            if (editing) {
+                let scheduleData = scheduleTable.rows({ selected: true}).data().toArray()
+                let scheduleDataLecturerLoad = getScheduleDataObject('LecturerLoad', scheduleData[0])
+                currentLoad = currentLoad - scheduleDataLecturerLoad
+            }
+
+
+            let instancesLoad = instancesData[0]['NeededLoad']
+            let neededLoad = (instancesLoad - currentLoad).toFixed(1)
+            let lecturersLoad = lecturerData[0]['BaseLoad']
+            let assignedLoad = 0
+
+            if (neededLoad >= lecturersLoad) {
+                assignedLoad = lecturersLoad
+            } else {
+                assignedLoad = neededLoad
+            }
+
+            return assignedLoad
+        }
+    }
+
+    /**
+     * for showing a toaster message.
+     * @param text The text that will be shown in the toaster message.
+     */
+    function showToasterMessage(text) {
+        var x = document.getElementById("toaster-message");
+        x.className = "show";
+        $('#toaster-message').text(text)
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+    /**
+     * To reset table and forms.
+     */
+    function resetTablesAndForm() {
+        $('#selected-instance').text("Nothing Selected")
+        $('#close-x-instance').text("")
+        lecturersTable.columns().search('').draw()
+        instancesTable.rows('.selected').deselect().draw()
+
+        $('#selected-lecturer').text("Nothing Selected")
+        $('#close-x-lecturer').text("")
+        instancesTable.columns().search('').draw()
+        lecturersTable.rows('.selected').deselect()
+
+        $('#choose-a-lecturer-role').val('Nothing Selected')
+        $('#create-schedule').val('Create Schedule')
+
+        editingSchedule = false
+
+        resetLecturersCurrentLoad()
+        filterScheduleLoadsHaveNotBeenMeet()
+
+        $('#create-schedule-form').trigger('reset')
+        $('#instances-filter').trigger('change')
+        $('#schedule-filter').trigger('change')
+
+        $('#selected-instance').disableClick(false)
+        $('#close-x-container-instance').disableClick(false)
+        instancesTable.select.style('single')
+    }
+
+    /**
+     * For loading Data into tables and form when editing a schedule.
+     * @param selectRow The row that is selected in the schedule table.
+     * @namespace
+     */
+    function loadDataIntoTablesAndFormForEditingSchedule(selectRow) {
+        let schedule = JSON.parse(selectRow[0].schedule)
+        let subjectCode = schedule.SubjectCode
+        let startDate = schedule.SubjectStartDate
+        let lecturersName = schedule.LecturerName
+        let lecturersRole = schedule.LecturersRole
+
+        instancesTable.rows(function (idx, data, node) {
+            if (data['SubjectCode'] === subjectCode &amp;&amp; data['StartDate'] === startDate) {
+                return idx
+            }
+        }).select()
+
+        lecturersTable.row(':contains('+ lecturersName +')').select()
+
+        filterLecturersTableFillFormWithInstanceInformation()
+        filterInstancesTableFillFormWithLecturerInformation()
+        calculateLecturersCurrentLoad()
+
+        switch (lecturersRole) {
+            case "Main Lecturer" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 1)
+                break
+            case "Support - Live Demo" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 2)
+                break
+            case "Support - Support" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 3)
+                break
+            case "Support - Marking" :
+                $('#choose-a-lecturer-role').prop('selectedIndex', 4)
+                break
+            default:
+                $('#choose-a-lecturer-role').prop('selectedIndex', 0)
+                break
+        }
+
+        $('#create-schedule').val('Edit Schedule')
+
+        $('html, body').animate({
+            'scrollTop' : $(".heading").position().top
+        });
+
+        /**
+         * For filtering lecturers table and filling out form with instance information
+         * when a instance is selected.
+         */
+        function filterLecturersTableFillFormWithInstanceInformation() {
+            var instancesData = instancesTable.rows({ selected: true }).data().toArray();
+            var instancesDataJoin = instancesData[0]['SubjectCode'] + " " + instancesData[0]['SubjectName'] + " " + instancesData[0]['StartDate'] + " " + instancesData[0]['EndDate']
+            lecturersTable.column(2).search(instancesData[0].SubjectCode).draw()
+
+            $('#selected-instance').text(instancesDataJoin )
+            $('#close-x-instance').text("X")
+            $('#selected-instance-error-massage').css('visibility', 'hidden')
+        }
+
+        /**
+         * For filtering instances table and fill form with lecturer information
+         * when a lecturer is selected.
+         */
+        function filterInstancesTableFillFormWithLecturerInformation() {
+            var selectedLecturer = lecturersTable.rows({ selected: true}).data();
+            var subjectCodes = $.map(JSON.parse(selectedLecturer[0]['SubjectsCodesLecturerCanTeach']),function (value) {
+                return value
+            }).join('|')
+            instancesTable.column(0).search(subjectCodes,true,false,false).draw()
+
+            $('#selected-lecturer').text(selectedLecturer[0].name)
+            $('#close-x-lecturer').text("X")
+            $('#selected-lecturer-error-massage').css('visibility', 'hidden')
+        }
+    }
+
+    /**
+     * Delete schedule from database.
+     * @param id the id of the schedule which will be deleted.
+     */
+    function deleteFromDataBase(id) {
+        //console.log(id)
+        $.ajax({
+            type: 'POST',
+            // dataType: 'jsonp',
+            url: '/api/schedules/delete',
+            async: true,
+            data: {'id': id},
+            success: function() {
+                console.log('deleting done');
+                showToasterMessage('Schedule Deleted')
+                scheduleTable.ajax.reload()
+            },
+            error: function (obj, textStatus) {
+                console.log(obj.msg);
+            }
+        })
+    }
+
+    /**
+     * Reset the tables and forms.
+     */
+    function removeSelectedRowsFromTablesResetForm() {
+        $('#selected-instance, #close-x-container-instance').on('click',function () {
+            $('#selected-instance').text("Nothing Selected")
+            $('#close-x-instance').text("")
+            lecturersTable.columns().search('').draw()
+            instancesTable.rows('.selected').deselect().draw()
+        })
+
+        $('#selected-lecturer, #close-x-container-lecturer').on('click',function () {
+            $('#selected-lecturer').text("Nothing Selected")
+            $('#close-x-lecturer').text("")
+            instancesTable.columns().search('').draw()
+            lecturersTable.rows('.selected').deselect()
+        })
+    }
+
+    /**
+     * For the filter by date selector.
+     * @param filterID ID of the selector.
+     * @param table Which table the selector id on.
+     * @param columnIndex Which column to apply the filter on.
+     */
+    function filterByDate(filterID, table, columnIndex) {
+        $(filterID).on('change', function () {
+
+            var selectedValue = $(filterID).val()
+            let  threeMonths = createDateRange(3, "string")
+            console.log(threeMonths)
+            let  sixMonths = createDateRange(6, "string")
+            let  twelveMonths = createDateRange(12, "string")
+
+            switch (selectedValue) {
+                case "":
+                    table.columns().search('').draw()
+                    filterScheduleLoadsHaveNotBeenMeet()
+                    break
+                case "3 Months":
+                    table.columns(columnIndex).search(threeMonths,true,false,false).draw()
+                    break
+                case "6 Months":
+                    table.columns(columnIndex).search(sixMonths,true,false,false).draw()
+                    break
+                case "12 Months":
+                    table.columns(columnIndex).search(twelveMonths,true,false,false).draw()
+            }
+        })
+
+    }
+
+    /**
+     * Creates a date rage and either returns a string of dates or an array of dates.
+     * @param numberOfMonths Number of months you would like in the return.
+     * @param arrayOrString For selecting what is returned.
+     * @param startDate Start date of the date range if not entered will use today's date.
+     * @returns {string|Array.&lt;String>} string of dates or and array of dates.
+     * @namespace
+     */
+    function createDateRange(numberOfMonths, arrayOrString, startDate) {
+        var date = new Date();
+        var startDate = startDate ?? date.getFullYear() + "-" + leftPad((date.getMonth() + 1), 2);
+        let startDateSpilt = startDate.split('-')
+        var year = parseInt(startDateSpilt[0])
+        var month = parseInt(startDateSpilt[1])
+        var dateRange = [startDate]
+
+        for (let i = 1; i &lt; numberOfMonths; i++) {
+            month = month + 1
+            if (month === 13) {
+                month = month - 12
+                year = year + 1
+            }
+            dateRange.push(year + '-' + leftPad(month, 2))
+        }
+        if (arrayOrString === "string") {
+            return dateRange.join('|')
+        }
+        else if (arrayOrString === "array") {
+            return dateRange
+        }
+
+        /**
+         * Returns a string with 0 at the start.
+         * @param value the string you want to add 0 to.
+         * @param length how many 0 you want to add.
+         * @returns {string} the string with the added 0.
+         */
+        function leftPad(value, length) {
+            return ('0'.repeat(length) + value).slice(-length);
+        }
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Didasko Scheduling System Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-JS_LoginToTheSystem.html">JS/LoginToTheSystem</a></li><li><a href="module-JS_academic.html">JS/academic</a></li><li><a href="module-JS_manager.html">JS/manager</a></li><li><a href="module-convertData.html">convertData</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createLectureScheduleTable.html">createLectureScheduleTable</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createTimeline.html">createTimeline</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-filterByDate.html">filterByDate</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createDateRange.html">createDateRange</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleAndAddToScheduleTable.html">createScheduleAndAddToScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleTable.html">createScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-dataForSchedule.html">dataForSchedule</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-filterOnSelectedRow.html">filterOnSelectedRow</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-loadDataIntoTablesAndFormForEditingSchedule.html">loadDataIntoTablesAndFormForEditingSchedule</a></li></ul><h3>Classes</h3><ul><li><a href="module-JS_LoginToTheSystem-login.html">login</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions.html">AcademicPageManagementOfTablesAndFunctions</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions.html">ManagerPageManagementOfTablesAndFunctions</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME.html">loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable.html">loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 24 2023 10:04:42 GMT+1100 (Australian Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

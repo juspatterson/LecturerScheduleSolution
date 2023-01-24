@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ConvertCSVIntoUsableData/ConvertSubjectTTData.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ConvertCSVIntoUsableData/ConvertSubjectTTData.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module convertData
+ */
+
+// after `cd`ing into the `ConvertCSVIntoUsableData` directory,
+// run `node ConvertSubjectTTData.js` and it will generate
+// `../MockUpData/SubjectsTimeTable.json` from the CSV in `SubjectTT.csv`
+
+const formatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+});
+
+/**
+ * @property {Class} loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable Main class
+ * @constructor
+ */
+function loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable() {
+    var infileCSV = 'SubjectTT.csv'
+    var outfileJson = '../MockUpData/SubjectsTimeTable.json'
+
+    fs = require('fs');
+    fs.readFile(infileCSV, "utf8",  function (err,data) {
+        if (err) {
+            return console.log(err);
+        }
+        var output = convertCSV(data)
+        output = output.flat(1)
+        var jsonString = JSON.stringify(output)
+        //console.log(jsonString)
+        // fs.writeFile(outfileJson, jsonString, () => {})
+        updateDatabase(jsonString)
+    });
+}
+
+function updateDatabase(data) {
+    const axios = require('axios');
+
+    axios({
+        method: 'post',
+        url: "http://localhost:4567/schedules/instances/update",
+        async: true,
+        data: 'data=' + data
+    })
+        .then(function (response) {
+            console.log(response);
+            console.log("all good!!!!!");
+            console.log(response.data);
+        })
+        .catch(function (error) {
+            console.log("error!!!!!!!");
+            console.log(error);
+        });
+}
+
+
+function convertCSV(data) {
+    var allTextLines = data.split(/\r\n|\n/);
+    var dataLines = allTextLines.slice(2)
+    var years = []
+    //dataLines[0] nothing
+    //dataLines[1] years
+    //dataLines[2] months
+    //dataLines[3] nothing
+    //dataLines[4] Total Number of Instances
+    //dataLines[5] headers
+    //dataLines[6] onwards is instance data
+
+
+    years = findYears(dataLines[1])
+
+    dataLines.splice(0, 6);;
+    //console.log(dataLines)
+
+    var output = []
+    var subjectCodes = []
+    var subjectNames = []
+    for (var i = 0; i &lt; dataLines.length; i++) {
+        subjectCodes.push(findSubjectCode(dataLines[i]))
+        subjectNames.push(findSubjectName(dataLines[i]))
+        output.push(processLine(
+            dataLines[i],
+            years,
+            subjectCodes[i] ,
+            subjectNames[i]
+        ))
+    }
+    //console.log(output)
+    return output
+}
+
+function findSubjectCode(data) {
+    var subjectCode = data.split(",")
+    return subjectCode[0]
+}
+
+function findSubjectName(data) {
+    var regex = /([A-Za-z]+, [a-zA-z\s]* \([A-Za-z]+\))|,/
+
+    var subjectName = data.split(regex).slice(2);
+    //remove undefined
+    subjectName = subjectName.filter(Boolean)
+    //remove "
+    subjectName = subjectName.filter(item => item != "\"")
+
+    //console.log(subjectName)
+    return subjectName[0]
+}
+
+function findYears(data) {
+    data = data.split(',')
+    data = data.filter(Boolean)
+    data = data.filter(item => item != 'Year')
+
+    var years = []
+    years.push(data[0] + data[1] + data[2] + data[3])
+    years.push(data[4] + data[5] + data[6] + data[7])
+
+    return years
+
+}
+
+function processLine(data, years, subjectCode ,subjectName) {
+
+    data = data.split(',')
+
+    if (data[0] == 'CSE3NWX') {
+        data.splice(0, 3)
+    } else {
+        data.splice(0, 2)
+    }
+
+    var startDate = ""
+    var endDate = ""
+
+
+    var instance = {
+        "SubjectCode": subjectCode,
+        "SubjectName": subjectName,
+        "StartDate": startDate,
+        "EndDate": endDate,
+        "Load": 1.0,
+        "CurrentLoad": 0.0
+    };
+
+    var instances = []
+
+    for (var j = 0; j &lt; data.length; j++) {
+        startDate = ''
+        endDate = ''
+
+        switch (true) {
+            case data[j].toLowerCase() == "x" &amp;&amp; j === 0:
+                startDate = years[0].toString() + "-01"
+                endDate = years[0].toString() + "-03"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j === 1:
+                startDate = years[0].toString() + "-02"
+                endDate = years[0] + "-04"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j === 2:
+                startDate = years[0].toString() + "-03"
+                endDate = years[0] + "-05"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 3:
+                startDate = years[0].toString() + "-04"
+                endDate = years[0] + "-06"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 4:
+                startDate = years[0].toString() + "-05"
+                endDate = years[0] + "-07"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 5:
+                startDate = years[0].toString() + "-06"
+                endDate = years[0] + "-08"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 6:
+                startDate = years[0].toString() + "-07"
+                endDate = years[0] + "-09"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 7:
+                startDate = years[0].toString() + "-08"
+                endDate = years[0] + "-10"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 8:
+                startDate = years[0].toString() + "-09"
+                endDate = years[0] + "-11"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 9:
+                startDate = years[0].toString() + "-10"
+                endDate = years[0] + "-12"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 10:
+                var nextYear = (parseInt(years[0]) + 1).toString()
+                startDate = years[0].toString() + "-11"
+                endDate = nextYear + "-01"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 11:
+                var nextYear = (parseInt(years[0]) + 1).toString()
+                startDate = years[0].toString() + "-12"
+                endDate = nextYear + "-02"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 12:
+                startDate = years[1].toString() + "-01"
+                endDate = years[1] + "-03"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 13:
+                startDate = years[1].toString() + "-02"
+                endDate = years[1] + "-04"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 14:
+                startDate = years[1].toString() + "-03"
+                endDate = years[1] + "-05"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 15:
+                startDate = years[1].toString() + "-04"
+                endDate = years[1] + "-06"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 16:
+                startDate = years[1].toString() + "-05"
+                endDate = years[1] + "-07"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 17:
+                startDate = years[1].toString() + "-06"
+                endDate = years[1] + "-08"
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 18:
+                startDate = years[1].toString() + "-07"
+                endDate = years[1] + "-09"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 19:
+                startDate = years[1].toString() + "-08"
+                endDate = years[1] + "-10"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 20:
+                startDate = years[1].toString() + "-09"
+                endDate = years[1] + "-11"
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 21:
+                startDate = years[1].toString() + "-10"
+                endDate = years[1] + "-12"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 22:
+                var nextYear = (parseInt(years[1]) + 1).toString()
+                startDate = years[1].toString() + "-11"
+                endDate = nextYear.toString() + "-01"
+                break;
+
+            case data[j].toLowerCase() == "x" &amp;&amp; j == 23:
+                var nextYear = (parseInt(years[1]) + 1).toString()
+                startDate = years[1].toString() + "-12"
+                endDate = nextYear.toString() + "-02"
+                break;
+        }
+
+        let numberOfStudents = getRandomArbitrary(5, 300)
+
+        let load = calculateLoad(numberOfStudents)
+
+        instance = {
+            "SubjectCode": subjectCode,
+            "SubjectName": subjectName,
+            "StartDate": startDate,
+            "EndDate": endDate,
+            "NeededLoad": load,
+            "CurrentLoad": formatter.format(0.0),
+        };
+
+        if (startDate !== ''){
+            instances.push(instance)
+        }
+    }
+    return instances;
+}
+
+function calculateLoad(numberOfStudents) {
+    let load = 1.0
+    if (numberOfStudents > 20) {
+        numberOfStudents = numberOfStudents - 20
+        while (numberOfStudents > 0) {
+            load = load + 0.15
+            numberOfStudents = numberOfStudents - 20
+        }
+    }
+    return load.toFixed(2)
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+
+loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable()
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Didasko Scheduling System Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-JS_LoginToTheSystem.html">JS/LoginToTheSystem</a></li><li><a href="module-JS_academic.html">JS/academic</a></li><li><a href="module-JS_manager.html">JS/manager</a></li><li><a href="module-convertData.html">convertData</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createLectureScheduleTable.html">createLectureScheduleTable</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-createTimeline.html">createTimeline</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions-filterByDate.html">filterByDate</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createDateRange.html">createDateRange</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleAndAddToScheduleTable.html">createScheduleAndAddToScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-createScheduleTable.html">createScheduleTable</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-dataForSchedule.html">dataForSchedule</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-filterOnSelectedRow.html">filterOnSelectedRow</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions-loadDataIntoTablesAndFormForEditingSchedule.html">loadDataIntoTablesAndFormForEditingSchedule</a></li></ul><h3>Classes</h3><ul><li><a href="module-JS_LoginToTheSystem-login.html">login</a></li><li><a href="module-JS_academic-AcademicPageManagementOfTablesAndFunctions.html">AcademicPageManagementOfTablesAndFunctions</a></li><li><a href="module-JS_manager-ManagerPageManagementOfTablesAndFunctions.html">ManagerPageManagementOfTablesAndFunctions</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME.html">loadDataFromCSVFileAndLoadIntoJsonFileForLecturerSME</a></li><li><a href="module-convertData-loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable.html">loadDataFromCSVFileAndLoadIntoJsonFileForSubjectsTimeTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 24 2023 10:04:42 GMT+1100 (Australian Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
